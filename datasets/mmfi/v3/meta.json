@@ -1,0 +1,19 @@
+{
+  "name": "mmfi",
+  "version": "v3",
+  "changelog": [
+    "v3: injected rgb body-keypoint modality (17,2) from MMFi raw (ResNet-48 keypoints); splits/labels unchanged"
+  ],
+  "n_samples": 15866,
+  "n_modalities": 5,
+  "source": {
+    "dataset": "MMFi",
+    "split": "cs",
+    "parent": "mmfi/v2"
+  },
+  "license": "MMFi dataset license (NTU); see https://github.com/ybhbingo/MMFi_dataset",
+  "collection_protocol": {
+    "based_on": "mmfi/v2",
+    "rgb_source": "frameNNN.npy keypoints"
+  }
+}

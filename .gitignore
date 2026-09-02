@@ -1,0 +1,78 @@
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ===== Virtual envs =====
+.venv/
+venv/
+env/
+.env
+
+# ===== Local secrets / paths =====
+# 用户级 ssh key 不入库
+/.ssh/
+
+# ===== Project: Checkpoints (.pt 体积大，按用户选择不推) =====
+checkpoints*/
+**/checkpoints*/
+*.pt
+*.pth
+*.ckpt
+
+# ===== Project: 数据集（解压后 ~18-200GB）=====
+datasets/mmfi/*/data/
+datasets/mmfi/*/*/*.pkl
+datasets/mmfi/*/*/*/*.pkl
+
+# 保留 splits/*.json + meta.json (协议/规范)
+!datasets/mmfi/**/splits/*.json
+!datasets/mmfi/**/meta.json
+
+# ===== Project: Slurm/作业运行产物 =====
+jobs/*.out
+jobs/*.err
+*.out
+*.err
+slurm-*.out
+slurm-*.err
+
+# 保留 slurm 模板
+!jobs/*.slurm
+
+# ===== Project: 临时/cache =====
+tmp/
+*.log
+.cache/
+.pytest_cache/
+
+# ===== Project: 已有产物的子目录保留 =====
+# results/ JSON + PNG 报告 + plots/ 收
+# 但收 reports/plots 内的备份目录
+results/plots_v4/quality_v4_after_recover_plots/
+results/plots_v5/quality_v5_*_plots/
+results/quality_v4_after_recover.json
+results/plots*/__pycache__/
+results/__pycache__/
+**/__pycache__/
+
+# ===== Project: tokens intermediate =====
+# v5tokens 是中间表示产物（用户选择含 results，但不含中间表示）
+datasets/mmfi/v5tokens/

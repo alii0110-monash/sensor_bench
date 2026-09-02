@@ -1,0 +1,6 @@
+modalities:
+- wifi
+- depth
+- lidar
+- mmwave
+note: modalities derived from samples; list is authoritative registry

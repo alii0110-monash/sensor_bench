@@ -1,0 +1,18 @@
+{
+  "v3_to_v4": {
+    "rgb_norm": "hip_center+torso_len",
+    "augment": {
+      "n_aug": 4,
+      "seed": 0,
+      "flip_p": 0.5,
+      "trans_frac": 0.1,
+      "scale_range": [
+        0.9,
+        1.1
+      ]
+    },
+    "train_orig": 9689,
+    "train_variants": 36820
+  },
+  "n_written": 52686
+}

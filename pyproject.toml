@@ -1,0 +1,12 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "slow: real-LLM integration tests (load llama2-7b, ~14GB)",
+]
+addopts = "-m 'not slow'"
+
+[project]
+name = "sensorbench"
+version = "0.1.0"
+requires-python = ">=3.12"

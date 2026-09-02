@@ -1,0 +1,248 @@
+{
+  "config": {
+    "data_root": "datasets/mmfi/v3",
+    "n_train": 9689,
+    "n_val": 1968,
+    "n_classes": 27,
+    "epochs": 20,
+    "lr": 0.001,
+    "batch_size": 256,
+    "hidden_dim": 0,
+    "seed": 0,
+    "device": "cpu"
+  },
+  "dim_names": [
+    "x",
+    "y",
+    "z",
+    "doppler",
+    "intensity"
+  ],
+  "ablations": [
+    {
+      "label": "baseline_all_5",
+      "keep_dims": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "z",
+        "doppler",
+        "intensity"
+      ],
+      "val_acc": 0.3732620320855615,
+      "elapsed_s": 1.3,
+      "delta_vs_baseline": 0.0,
+      "delta_pct": 0.0
+    },
+    {
+      "label": "drop_dim0_x",
+      "keep_dims": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "kept_names": [
+        "y",
+        "z",
+        "doppler",
+        "intensity"
+      ],
+      "val_acc": 0.35561497326203206,
+      "elapsed_s": 0.8,
+      "delta_vs_baseline": -0.01764705882352946,
+      "delta_pct": -4.727793696275084
+    },
+    {
+      "label": "drop_dim1_y",
+      "keep_dims": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "kept_names": [
+        "x",
+        "z",
+        "doppler",
+        "intensity"
+      ],
+      "val_acc": 0.3764705882352941,
+      "elapsed_s": 0.9,
+      "delta_vs_baseline": 0.0032085561497325887,
+      "delta_pct": 0.8595988538681864
+    },
+    {
+      "label": "drop_dim2_z",
+      "keep_dims": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "doppler",
+        "intensity"
+      ],
+      "val_acc": 0.2732620320855615,
+      "elapsed_s": 0.8,
+      "delta_vs_baseline": -0.10000000000000003,
+      "delta_pct": -26.790830945558746
+    },
+    {
+      "label": "drop_dim3_doppler",
+      "keep_dims": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "z",
+        "intensity"
+      ],
+      "val_acc": 0.3502673796791444,
+      "elapsed_s": 0.5,
+      "delta_vs_baseline": -0.022994652406417126,
+      "delta_pct": -6.160458452722066
+    },
+    {
+      "label": "drop_dim4_intensity",
+      "keep_dims": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "z",
+        "doppler"
+      ],
+      "val_acc": 0.34598930481283424,
+      "elapsed_s": 0.6,
+      "delta_vs_baseline": -0.027272727272727282,
+      "delta_pct": -7.306590257879658
+    },
+    {
+      "label": "drop_geom_xyz",
+      "keep_dims": [
+        3,
+        4
+      ],
+      "kept_names": [
+        "doppler",
+        "intensity"
+      ],
+      "val_acc": 0.279144385026738,
+      "elapsed_s": 0.5,
+      "delta_vs_baseline": -0.09411764705882353,
+      "delta_pct": -25.214899713467048
+    },
+    {
+      "label": "only_doppler",
+      "keep_dims": [
+        3
+      ],
+      "kept_names": [
+        "doppler"
+      ],
+      "val_acc": 0.23957219251336898,
+      "elapsed_s": 0.5,
+      "delta_vs_baseline": -0.13368983957219255,
+      "delta_pct": -35.81661891117479
+    },
+    {
+      "label": "only_intensity",
+      "keep_dims": [
+        4
+      ],
+      "kept_names": [
+        "intensity"
+      ],
+      "val_acc": 0.1748663101604278,
+      "elapsed_s": 0.5,
+      "delta_vs_baseline": -0.19839572192513372,
+      "delta_pct": -53.15186246418339
+    },
+    {
+      "label": "only_geom_xyz",
+      "keep_dims": [
+        0,
+        1,
+        2
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "z"
+      ],
+      "val_acc": 0.3267379679144385,
+      "elapsed_s": 0.5,
+      "delta_vs_baseline": -0.046524064171123036,
+      "delta_pct": -12.464183381088835
+    },
+    {
+      "label": "only_doppler_intensity",
+      "keep_dims": [
+        3,
+        4
+      ],
+      "kept_names": [
+        "doppler",
+        "intensity"
+      ],
+      "val_acc": 0.279144385026738,
+      "elapsed_s": 0.4,
+      "delta_vs_baseline": -0.09411764705882353,
+      "delta_pct": -25.214899713467048
+    },
+    {
+      "label": "only_doppler_geom",
+      "keep_dims": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "z",
+        "doppler"
+      ],
+      "val_acc": 0.34598930481283424,
+      "elapsed_s": 0.3,
+      "delta_vs_baseline": -0.027272727272727282,
+      "delta_pct": -7.306590257879658
+    },
+    {
+      "label": "drop_doppler_AND_intensity",
+      "keep_dims": [
+        0,
+        1,
+        2
+      ],
+      "kept_names": [
+        "x",
+        "y",
+        "z"
+      ],
+      "val_acc": 0.3267379679144385,
+      "elapsed_s": 0.3,
+      "delta_vs_baseline": -0.046524064171123036,
+      "delta_pct": -12.464183381088835
+    }
+  ]
+}

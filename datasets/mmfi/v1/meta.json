@@ -1,0 +1,22 @@
+{
+  "name": "mmfi",
+  "version": "v1",
+  "changelog": [
+    "initial ingest of wifi/mmwave/lidar/depth, cs split",
+    "known simplifications: splits are plain id lists (subject/env are in sample.meta)"
+  ],
+  "n_samples": 16448,
+  "n_modalities": 4,
+  "source": {
+    "dataset": "MMFi",
+    "split": "cs"
+  },
+  "license": "MMFi dataset license (NTU); see https://github.com/ybhbingo/MMFi_dataset",
+  "collection_protocol": {
+    "envs": "E01-E04",
+    "subjects": 40,
+    "actions": 27,
+    "frames_per_sample": 5,
+    "sample_frames": "deterministic uniform"
+  }
+}

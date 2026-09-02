@@ -1,0 +1,2 @@
+# GUI edit logs are user data, not source
+edits/*.jsonl

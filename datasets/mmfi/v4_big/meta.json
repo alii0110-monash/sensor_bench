@@ -1,0 +1,18 @@
+{
+  "name": "mmfi",
+  "version": "v4",
+  "changelog": [
+    "v4: rgb keypoints normalized (hip-center+torso-length) on all splits; train extended with offline spatial variants (n_aug =4: flip/translate/scale). val/test unchanged ids."
+  ],
+  "n_samples": 52686,
+  "n_modalities": 5,
+  "source": {
+    "dataset": "MMFi",
+    "split": "cs",
+    "parent": "mmfi/v3"
+  },
+  "license": "MMFi dataset license (NTU); see https://github.com/ybhbingo/MMFi_dataset",
+  "collection_protocol": {
+    "based_on": "mmfi/v3"
+  }
+}

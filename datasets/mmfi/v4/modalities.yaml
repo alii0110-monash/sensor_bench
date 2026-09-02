@@ -1,0 +1,7 @@
+modalities:
+- wifi
+- depth
+- lidar
+- mmwave
+- rgb
+note: v4 = v3 rgb normalized (hip-center+torso-len) all splits; train augmented with spatial variants (flip/translate/scale)

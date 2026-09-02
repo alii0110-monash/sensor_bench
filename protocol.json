@@ -1,0 +1,122 @@
+{
+  "modalities": [
+    "wifi",
+    "depth",
+    "lidar",
+    "mmwave"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "profiles": [
+    {
+      "id": "full",
+      "available": [
+        "wifi",
+        "depth",
+        "lidar",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss-wifi",
+      "available": [
+        "depth",
+        "lidar",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss-depth",
+      "available": [
+        "wifi",
+        "lidar",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss-lidar",
+      "available": [
+        "wifi",
+        "depth",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss-mmwave",
+      "available": [
+        "wifi",
+        "depth",
+        "lidar"
+      ]
+    },
+    {
+      "id": "miss2-wifi-depth",
+      "available": [
+        "lidar",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss2-wifi-lidar",
+      "available": [
+        "depth",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss2-wifi-mmwave",
+      "available": [
+        "depth",
+        "lidar"
+      ]
+    },
+    {
+      "id": "miss2-depth-lidar",
+      "available": [
+        "wifi",
+        "mmwave"
+      ]
+    },
+    {
+      "id": "miss2-depth-mmwave",
+      "available": [
+        "wifi",
+        "lidar"
+      ]
+    },
+    {
+      "id": "miss2-lidar-mmwave",
+      "available": [
+        "wifi",
+        "depth"
+      ]
+    },
+    {
+      "id": "only-wifi",
+      "available": [
+        "wifi"
+      ]
+    },
+    {
+      "id": "only-depth",
+      "available": [
+        "depth"
+      ]
+    },
+    {
+      "id": "only-lidar",
+      "available": [
+        "lidar"
+      ]
+    },
+    {
+      "id": "only-mmwave",
+      "available": [
+        "mmwave"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "src": "datasets/mmfi/v4",
+  "dst": "datasets/mmfi/v5_structfeat",
+  "n_base_replaced": 15866,
+  "feature_dims": {
+    "depth": 63,
+    "wifi": 161,
+    "lidar": 353,
+    "mmwave": 134
+  }
+}

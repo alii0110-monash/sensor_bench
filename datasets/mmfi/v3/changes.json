@@ -1,0 +1,8 @@
+{
+  "v2_to_v3": {
+    "added": "rgb keypoints (17,2) per frame",
+    "n_missing": 0,
+    "missing": []
+  },
+  "kept": 15866
+}

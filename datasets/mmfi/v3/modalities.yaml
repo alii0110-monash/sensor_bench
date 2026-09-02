@@ -1,0 +1,7 @@
+modalities:
+- wifi
+- depth
+- lidar
+- mmwave
+- rgb
+note: v3 = v2 samples + rgb body-keypoints (17,2) modality

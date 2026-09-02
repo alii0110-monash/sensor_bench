@@ -1,0 +1,23 @@
+{
+  "src": "datasets/mmfi/v4",
+  "dst": "datasets/mmfi/v5_hardaug",
+  "hard_classes": [
+    4,
+    9,
+    14,
+    20,
+    21,
+    22
+  ],
+  "n_hard_base": 1683,
+  "n_new_variants": 13464,
+  "n_total_train_after": 59973,
+  "per_class_new_counts": {
+    "4": 2856,
+    "9": 2544,
+    "14": 1880,
+    "20": 1832,
+    "21": 2208,
+    "22": 2144
+  }
+}

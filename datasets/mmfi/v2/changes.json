@@ -1,0 +1,7 @@
+{
+  "v1_to_v2": {
+    "dropped": 582,
+    "reason": "cross-modal consistency filter"
+  },
+  "kept": 15866
+}

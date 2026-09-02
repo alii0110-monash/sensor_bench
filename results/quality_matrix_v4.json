@@ -1,0 +1,5031 @@
+{
+  "global": {
+    "quality": 0.8597035280349206,
+    "per_class": {
+      "A01": 0.8383153286161135,
+      "A02": 0.8647499714305344,
+      "A03": 0.8699311793084373,
+      "A04": 0.8581814698783018,
+      "A05": 0.859000256239758,
+      "A06": 0.8587458684404281,
+      "A07": 0.8701565106619925,
+      "A08": 0.8771056986317419,
+      "A09": 0.8639195292115269,
+      "A10": 0.8576455415209615,
+      "A11": 0.8655321754347723,
+      "A12": 0.8546185678390354,
+      "A13": 0.8723354996936346,
+      "A14": 0.8729409470591272,
+      "A15": 0.8517778009174983,
+      "A16": 0.8537659799410484,
+      "A17": 0.8668131979158409,
+      "A18": 0.8696576729938819,
+      "A19": 0.8444613679063622,
+      "A20": 0.8573800051049615,
+      "A21": 0.8587407379718868,
+      "A22": 0.8488935962449695,
+      "A24": 0.853742235656308,
+      "A25": 0.8532125958329148,
+      "A26": 0.8671062776313508,
+      "A27": 0.8512327448041246,
+      "A23": 0.8507986755501683
+    },
+    "per_subject": {
+      "S01": 0.8772163815717051,
+      "S02": 0.8827214524077562,
+      "S03": 0.8791031629351417,
+      "S04": 0.8679099894500487,
+      "S05": 0.8728166233293615,
+      "S06": 0.8721702956021495,
+      "S07": 0.8758768568032456,
+      "S11": 0.8641349594178701,
+      "S12": 0.8649152301197012,
+      "S13": 0.8627045530896902,
+      "S14": 0.8522321972979162,
+      "S15": 0.8595298692823881,
+      "S16": 0.8530230181081969,
+      "S17": 0.8567455194598281,
+      "S21": 0.8539351442995146,
+      "S22": 0.857038187994074,
+      "S23": 0.8601873271181771,
+      "S24": 0.8440631864070065,
+      "S25": 0.8401298624893209,
+      "S26": 0.8423460595372341,
+      "S27": 0.8440680676333481,
+      "S31": 0.8491435286792546,
+      "S32": 0.8458128531204582
+    },
+    "per_env": {
+      "E01": 0.8752317568962774,
+      "E02": 0.8590407638250844,
+      "E03": 0.8488239764969536,
+      "E04": 0.8474781908998564
+    }
+  },
+  "matrix": {
+    "A01_S01": {
+      "compactness": 0.9027989506721497,
+      "consistency": 0.853489339351654,
+      "separability": 0.8143321018023946,
+      "n": 48,
+      "quality": 0.8614660126150744,
+      "low_confidence": false
+    },
+    "A02_S01": {
+      "compactness": 0.9219647645950317,
+      "consistency": 0.8696098923683167,
+      "separability": 0.8173661543813968,
+      "n": 8,
+      "quality": 0.8748787198629266,
+      "low_confidence": false
+    },
+    "A03_S01": {
+      "compactness": 0.9123404622077942,
+      "consistency": 0.8800263404846191,
+      "separability": 0.8177397673128007,
+      "n": 10,
+      "quality": 0.8742660172223436,
+      "low_confidence": false
+    },
+    "A04_S01": {
+      "compactness": 0.9202606678009033,
+      "consistency": 0.8821269869804382,
+      "separability": 0.8503110049036908,
+      "n": 14,
+      "quality": 0.8878356646856,
+      "low_confidence": false
+    },
+    "A05_S01": {
+      "compactness": 0.9154272079467773,
+      "consistency": 0.8809147477149963,
+      "separability": 0.8510723181147475,
+      "n": 15,
+      "quality": 0.8857670029276341,
+      "low_confidence": false
+    },
+    "A06_S01": {
+      "compactness": 0.916215181350708,
+      "consistency": 0.8848412036895752,
+      "separability": 0.8621142079753984,
+      "n": 24,
+      "quality": 0.8905726960397753,
+      "low_confidence": false
+    },
+    "A07_S01": {
+      "compactness": 0.9270451068878174,
+      "consistency": 0.8521304130554199,
+      "separability": 0.8612099406733215,
+      "n": 12,
+      "quality": 0.8848201488737493,
+      "low_confidence": false
+    },
+    "A08_S01": {
+      "compactness": 0.9317693114280701,
+      "consistency": 0.8530276417732239,
+      "separability": 0.8701124308316246,
+      "n": 12,
+      "quality": 0.8896497463526825,
+      "low_confidence": false
+    },
+    "A09_S01": {
+      "compactness": 0.9187523722648621,
+      "consistency": 0.8671244978904724,
+      "separability": 0.849243390128758,
+      "n": 11,
+      "quality": 0.882411315311714,
+      "low_confidence": false
+    },
+    "A10_S01": {
+      "compactness": 0.9164097309112549,
+      "consistency": 0.8523575067520142,
+      "separability": 0.8414104993886674,
+      "n": 9,
+      "quality": 0.8746942942067064,
+      "low_confidence": false
+    },
+    "A11_S01": {
+      "compactness": 0.9186484217643738,
+      "consistency": 0.8651657700538635,
+      "separability": 0.8517783087901764,
+      "n": 14,
+      "quality": 0.8825425923589614,
+      "low_confidence": false
+    },
+    "A12_S01": {
+      "compactness": 0.9061645865440369,
+      "consistency": 0.8646907210350037,
+      "separability": 0.8228204959682553,
+      "n": 14,
+      "quality": 0.8687191997185925,
+      "low_confidence": false
+    },
+    "A13_S01": {
+      "compactness": 0.923984169960022,
+      "consistency": 0.853956401348114,
+      "separability": 0.8673525619632794,
+      "n": 6,
+      "quality": 0.8859863569774269,
+      "low_confidence": false
+    },
+    "A14_S01": {
+      "compactness": 0.9233983159065247,
+      "consistency": 0.8488214015960693,
+      "separability": 0.8608087703302207,
+      "n": 8,
+      "quality": 0.8822483779404968,
+      "low_confidence": false
+    },
+    "A15_S01": {
+      "compactness": 0.9152273535728455,
+      "consistency": 0.863929033279419,
+      "separability": 0.8159909396277742,
+      "n": 11,
+      "quality": 0.8700669333012961,
+      "low_confidence": false
+    },
+    "A16_S01": {
+      "compactness": 0.9104930758476257,
+      "consistency": 0.8559176921844482,
+      "separability": 0.8262650887333975,
+      "n": 11,
+      "quality": 0.868852064614404,
+      "low_confidence": false
+    },
+    "A17_S01": {
+      "compactness": 0.9220249652862549,
+      "consistency": 0.8446487188339233,
+      "separability": 0.8750609068570772,
+      "n": 24,
+      "quality": 0.884722873821802,
+      "low_confidence": false
+    },
+    "A18_S01": {
+      "compactness": 0.9250425696372986,
+      "consistency": 0.846014142036438,
+      "separability": 0.8929277853518521,
+      "n": 21,
+      "quality": 0.8916996060714064,
+      "low_confidence": false
+    },
+    "A19_S01": {
+      "compactness": 0.9122568964958191,
+      "consistency": 0.8709799647331238,
+      "separability": 0.8365426037027838,
+      "n": 4,
+      "quality": 0.8771595291291,
+      "low_confidence": false
+    },
+    "A20_S01": {
+      "compactness": 0.9040139317512512,
+      "consistency": 0.8701792359352112,
+      "separability": 0.8122289089481527,
+      "n": 10,
+      "quality": 0.8663280161655097,
+      "low_confidence": false
+    },
+    "A21_S01": {
+      "compactness": 0.9152308702468872,
+      "consistency": 0.8671375513076782,
+      "separability": 0.8325318361305052,
+      "n": 7,
+      "quality": 0.87599316433021,
+      "low_confidence": false
+    },
+    "A22_S01": {
+      "compactness": 0.8990113735198975,
+      "consistency": 0.8752169609069824,
+      "separability": 0.8255949579639487,
+      "n": 10,
+      "quality": 0.8698481250692383,
+      "low_confidence": false
+    },
+    "A23_S01": {
+      "n": 2,
+      "quality": null,
+      "low_confidence": true
+    },
+    "A24_S01": {
+      "compactness": 0.9162754416465759,
+      "consistency": 0.8538146018981934,
+      "separability": 0.8450280686926233,
+      "n": 7,
+      "quality": 0.8761629778358753,
+      "low_confidence": false
+    },
+    "A25_S01": {
+      "compactness": 0.9103573560714722,
+      "consistency": 0.8785276412963867,
+      "separability": 0.8143438811788218,
+      "n": 10,
+      "quality": 0.8720043991711514,
+      "low_confidence": false
+    },
+    "A26_S01": {
+      "compactness": 0.8705190420150757,
+      "consistency": 0.9082626700401306,
+      "separability": 0.8126130391896187,
+      "n": 27,
+      "quality": 0.8644703295749552,
+      "low_confidence": false
+    },
+    "A27_S01": {
+      "compactness": 0.9062579274177551,
+      "consistency": 0.8685232996940613,
+      "separability": 0.8046653193679171,
+      "n": 6,
+      "quality": 0.8644597566856955,
+      "low_confidence": false
+    },
+    "A01_S02": {
+      "compactness": 0.8907023668289185,
+      "consistency": 0.8620922565460205,
+      "separability": 0.7737865241548751,
+      "n": 40,
+      "quality": 0.8470445809418361,
+      "low_confidence": false
+    },
+    "A02_S02": {
+      "compactness": 0.9337007999420166,
+      "consistency": 0.8751291632652283,
+      "separability": 0.852106979838959,
+      "n": 7,
+      "quality": 0.8916511629080628,
+      "low_confidence": false
+    },
+    "A03_S02": {
+      "compactness": 0.9403271675109863,
+      "consistency": 0.8885752558708191,
+      "separability": 0.8458618864467177,
+      "n": 5,
+      "quality": 0.8964620096996556,
+      "low_confidence": false
+    },
+    "A04_S02": {
+      "compactness": 0.9291551113128662,
+      "consistency": 0.8887683153152466,
+      "separability": 0.8010430770047963,
+      "n": 7,
+      "quality": 0.8786054622211594,
+      "low_confidence": false
+    },
+    "A05_S02": {
+      "compactness": 0.9234030246734619,
+      "consistency": 0.8920760154724121,
+      "separability": 0.7960353685879104,
+      "n": 14,
+      "quality": 0.8757946250874815,
+      "low_confidence": false
+    },
+    "A06_S02": {
+      "compactness": 0.9279610514640808,
+      "consistency": 0.8939915895462036,
+      "separability": 0.809687649637274,
+      "n": 6,
+      "quality": 0.8822881923406756,
+      "low_confidence": false
+    },
+    "A07_S02": {
+      "compactness": 0.9308773875236511,
+      "consistency": 0.8682089447975159,
+      "separability": 0.8566682137709727,
+      "n": 9,
+      "quality": 0.889814102580007,
+      "low_confidence": false
+    },
+    "A08_S02": {
+      "compactness": 0.9318332076072693,
+      "consistency": 0.8692408204078674,
+      "separability": 0.8559689050692156,
+      "n": 12,
+      "quality": 0.8902962006860327,
+      "low_confidence": false
+    },
+    "A09_S02": {
+      "compactness": 0.9252529144287109,
+      "consistency": 0.8777018785476685,
+      "separability": 0.835371664282201,
+      "n": 14,
+      "quality": 0.8840232286204452,
+      "low_confidence": false
+    },
+    "A10_S02": {
+      "compactness": 0.9289644956588745,
+      "consistency": 0.874467670917511,
+      "separability": 0.8302310049232248,
+      "n": 9,
+      "quality": 0.8829954010157706,
+      "low_confidence": false
+    },
+    "A11_S02": {
+      "compactness": 0.9257668256759644,
+      "consistency": 0.8769421577453613,
+      "separability": 0.840970817681477,
+      "n": 12,
+      "quality": 0.8856806228984371,
+      "low_confidence": false
+    },
+    "A12_S02": {
+      "compactness": 0.9198987483978271,
+      "consistency": 0.8857485055923462,
+      "separability": 0.8142381910559979,
+      "n": 8,
+      "quality": 0.877955508353634,
+      "low_confidence": false
+    },
+    "A13_S02": {
+      "compactness": 0.9336962699890137,
+      "consistency": 0.8676234483718872,
+      "separability": 0.8499985076959984,
+      "n": 9,
+      "quality": 0.8887650948159711,
+      "low_confidence": false
+    },
+    "A14_S02": {
+      "compactness": 0.941992998123169,
+      "consistency": 0.8629502654075623,
+      "separability": 0.8589264237886662,
+      "n": 7,
+      "quality": 0.893360206008136,
+      "low_confidence": false
+    },
+    "A15_S02": {
+      "compactness": 0.9139335751533508,
+      "consistency": 0.8758857250213623,
+      "separability": 0.8002303866717363,
+      "n": 7,
+      "quality": 0.86840826356927,
+      "low_confidence": false
+    },
+    "A16_S02": {
+      "n": 1,
+      "quality": null,
+      "low_confidence": true
+    },
+    "A17_S02": {
+      "compactness": 0.9343175888061523,
+      "consistency": 0.8636065721511841,
+      "separability": 0.8616210443192847,
+      "n": 22,
+      "quality": 0.8912953204636016,
+      "low_confidence": false
+    },
+    "A18_S02": {
+      "compactness": 0.9305360913276672,
+      "consistency": 0.8550559878349304,
+      "separability": 0.8763962698365084,
+      "n": 29,
+      "quality": 0.8916501138324985,
+      "low_confidence": false
+    },
+    "A19_S02": {
+      "compactness": 0.9218586087226868,
+      "consistency": 0.8796043395996094,
+      "separability": 0.8475919148791525,
+      "n": 4,
+      "quality": 0.8869023198327033,
+      "low_confidence": false
+    },
+    "A20_S02": {
+      "n": 2,
+      "quality": null,
+      "low_confidence": true
+    },
+    "A22_S02": {
+      "compactness": 0.9166239500045776,
+      "consistency": 0.8808963298797607,
+      "separability": 0.8288256919104412,
+      "n": 16,
+      "quality": 0.8795661865388916,
+      "low_confidence": false
+    },
+    "A23_S02": {
+      "compactness": 0.9135915040969849,
+      "consistency": 0.8784510493278503,
+      "separability": 0.8312962749176425,
+      "n": 16,
+      "quality": 0.8783607989124418,
+      "low_confidence": false
+    },
+    "A24_S02": {
+      "compactness": 0.9145933985710144,
+      "consistency": 0.8649531602859497,
+      "separability": 0.8363808541004566,
+      "n": 9,
+      "quality": 0.8762375637443276,
+      "low_confidence": false
+    },
+    "A25_S02": {
+      "compactness": 0.9110224843025208,
+      "consistency": 0.8645641803741455,
+      "separability": 0.8430894555217019,
+      "n": 20,
+      "quality": 0.8767050844897626,
+      "low_confidence": false
+    },
+    "A26_S02": {
+      "compactness": 0.8831796646118164,
+      "consistency": 0.8964914083480835,
+      "separability": 0.8285433299413478,
+      "n": 29,
+      "quality": 0.8707822873315559,
+      "low_confidence": false
+    },
+    "A27_S02": {
+      "compactness": 0.9371445178985596,
+      "consistency": 0.871454119682312,
+      "separability": 0.8812549260989084,
+      "n": 3,
+      "quality": 0.90067052089379,
+      "low_confidence": false
+    },
+    "A01_S03": {
+      "compactness": 0.894185483455658,
+      "consistency": 0.8606427907943726,
+      "separability": 0.7797454508559527,
+      "n": 46,
+      "quality": 0.8497906658773607,
+      "low_confidence": false
+    },
+    "A02_S03": {
+      "compactness": 0.9245058298110962,
+      "consistency": 0.8797891736030579,
+      "separability": 0.8455003888690007,
+      "n": 11,
+      "quality": 0.887389200666056,
+      "low_confidence": false
+    },
+    "A03_S03": {
+      "compactness": 0.9301143288612366,
+      "consistency": 0.8887211680412292,
+      "separability": 0.8503315874615566,
+      "n": 9,
+      "quality": 0.8937615581953303,
+      "low_confidence": false
+    },
+    "A04_S03": {
+      "compactness": 0.9166343808174133,
+      "consistency": 0.883531928062439,
+      "separability": 0.8463842278973585,
+      "n": 20,
+      "quality": 0.8856285991149045,
+      "low_confidence": false
+    },
+    "A05_S03": {
+      "compactness": 0.9091448187828064,
+      "consistency": 0.886878252029419,
+      "separability": 0.8300818968972233,
+      "n": 17,
+      "quality": 0.8787459721911153,
+      "low_confidence": false
+    },
+    "A06_S03": {
+      "compactness": 0.8969871401786804,
+      "consistency": 0.8914828300476074,
+      "separability": 0.8434858984021846,
+      "n": 22,
+      "quality": 0.8792854746064098,
+      "low_confidence": false
+    },
+    "A07_S03": {
+      "compactness": 0.9196368455886841,
+      "consistency": 0.8638735413551331,
+      "separability": 0.8534229801820035,
+      "n": 8,
+      "quality": 0.8830436946966147,
+      "low_confidence": false
+    },
+    "A08_S03": {
+      "compactness": 0.9243829250335693,
+      "consistency": 0.8646978139877319,
+      "separability": 0.8505486253528322,
+      "n": 12,
+      "quality": 0.8843271018155969,
+      "low_confidence": false
+    },
+    "A09_S03": {
+      "compactness": 0.9199149012565613,
+      "consistency": 0.8856815695762634,
+      "separability": 0.8283135025915065,
+      "n": 12,
+      "quality": 0.8821644821529554,
+      "low_confidence": false
+    },
+    "A10_S03": {
+      "compactness": 0.9119004011154175,
+      "consistency": 0.8702762722969055,
+      "separability": 0.8317266103930352,
+      "n": 10,
+      "quality": 0.8753610252531491,
+      "low_confidence": false
+    },
+    "A11_S03": {
+      "compactness": 0.9163740873336792,
+      "consistency": 0.8733202219009399,
+      "separability": 0.82889716293129,
+      "n": 10,
+      "quality": 0.8772148503831406,
+      "low_confidence": false
+    },
+    "A12_S03": {
+      "compactness": 0.9001798629760742,
+      "consistency": 0.8798230290412903,
+      "separability": 0.804724209523196,
+      "n": 15,
+      "quality": 0.8654361167597757,
+      "low_confidence": false
+    },
+    "A13_S03": {
+      "compactness": 0.9204681515693665,
+      "consistency": 0.8659693002700806,
+      "separability": 0.8517963264475987,
+      "n": 12,
+      "quality": 0.8835169486430503,
+      "low_confidence": false
+    },
+    "A14_S03": {
+      "compactness": 0.9223676323890686,
+      "consistency": 0.8601979613304138,
+      "separability": 0.8537472164309519,
+      "n": 11,
+      "quality": 0.8831306062840372,
+      "low_confidence": false
+    },
+    "A15_S03": {
+      "n": 1,
+      "quality": null,
+      "low_confidence": true
+    },
+    "A16_S03": {
+      "compactness": 0.9036699533462524,
+      "consistency": 0.8860819339752197,
+      "separability": 0.7752528153788665,
+      "n": 4,
+      "quality": 0.8598684061447268,
+      "low_confidence": false
+    },
+    "A17_S03": {
+      "compactness": 0.924444317817688,
+      "consistency": 0.8640098571777344,
+      "separability": 0.8493202830281452,
+      "n": 10,
+      "quality": 0.8837767691888392,
+      "low_confidence": false
+    },
+    "A18_S03": {
+      "compactness": 0.9313105940818787,
+      "consistency": 0.8608803153038025,
+      "separability": 0.8715494642226096,
+      "n": 11,
+      "quality": 0.8922531714906752,
+      "low_confidence": false
+    },
+    "A19_S03": {
+      "compactness": 0.9005753993988037,
+      "consistency": 0.8719571232795715,
+      "separability": 0.8354956591397389,
+      "n": 10,
+      "quality": 0.8724659944853146,
+      "low_confidence": false
+    },
+    "A21_S03": {
+      "compactness": 0.9285534024238586,
+      "consistency": 0.8797467947006226,
+      "separability": 0.8512740212175517,
+      "n": 4,
+      "quality": 0.8907276057449958,
+      "low_confidence": false
+    },
+    "A22_S03": {
+      "compactness": 0.9231908321380615,
+      "consistency": 0.8878215551376343,
+      "separability": 0.8333404671775959,
+      "n": 4,
+      "quality": 0.8856249395497937,
+      "low_confidence": false
+    },
+    "A23_S03": {
+      "compactness": 0.908401608467102,
+      "consistency": 0.888445258140564,
+      "separability": 0.8300424251442529,
+      "n": 3,
+      "quality": 0.8789069483722858,
+      "low_confidence": false
+    },
+    "A24_S03": {
+      "compactness": 0.9132304787635803,
+      "consistency": 0.85971999168396,
+      "separability": 0.8129356134143074,
+      "n": 10,
+      "quality": 0.8670888730349122,
+      "low_confidence": false
+    },
+    "A25_S03": {
+      "compactness": 0.9058079719543457,
+      "consistency": 0.8708335161209106,
+      "separability": 0.8169474760977549,
+      "n": 15,
+      "quality": 0.868657486447338,
+      "low_confidence": false
+    },
+    "A26_S03": {
+      "compactness": 0.8968632221221924,
+      "consistency": 0.8973769545555115,
+      "separability": 0.8496169371104434,
+      "n": 32,
+      "quality": 0.8828434563486635,
+      "low_confidence": false
+    },
+    "A27_S03": {
+      "compactness": 0.9281558990478516,
+      "consistency": 0.8700182437896729,
+      "separability": 0.8476709772515243,
+      "n": 8,
+      "quality": 0.8865691259314998,
+      "low_confidence": false
+    },
+    "A01_S04": {
+      "compactness": 0.8576000928878784,
+      "consistency": 0.8837411999702454,
+      "separability": 0.6809000749182731,
+      "n": 27,
+      "quality": 0.812432419621707,
+      "low_confidence": false
+    },
+    "A02_S04": {
+      "compactness": 0.9222756624221802,
+      "consistency": 0.9014213681221008,
+      "separability": 0.7826801609983233,
+      "n": 9,
+      "quality": 0.8741407237049993,
+      "low_confidence": false
+    },
+    "A03_S04": {
+      "compactness": 0.9222476482391357,
+      "consistency": 0.9075464010238647,
+      "separability": 0.8133424391603459,
+      "n": 11,
+      "quality": 0.8851657113509175,
+      "low_confidence": false
+    },
+    "A04_S04": {
+      "compactness": 0.9203500151634216,
+      "consistency": 0.8992413878440857,
+      "separability": 0.8237643524878174,
+      "n": 19,
+      "quality": 0.8850417281649396,
+      "low_confidence": false
+    },
+    "A05_S04": {
+      "compactness": 0.9187169671058655,
+      "consistency": 0.9008098244667053,
+      "separability": 0.8097853636281009,
+      "n": 23,
+      "quality": 0.880665343270788,
+      "low_confidence": false
+    },
+    "A06_S04": {
+      "compactness": 0.9069159030914307,
+      "consistency": 0.908868134021759,
+      "separability": 0.8231854442207289,
+      "n": 26,
+      "quality": 0.8823824347093185,
+      "low_confidence": false
+    },
+    "A07_S04": {
+      "compactness": 0.9257203936576843,
+      "consistency": 0.8724358081817627,
+      "separability": 0.8236865418557915,
+      "n": 12,
+      "quality": 0.8791248624743401,
+      "low_confidence": false
+    },
+    "A08_S04": {
+      "compactness": 0.92926025390625,
+      "consistency": 0.8789734244346619,
+      "separability": 0.8539020454103626,
+      "n": 12,
+      "quality": 0.8915667425160073,
+      "low_confidence": false
+    },
+    "A09_S04": {
+      "compactness": 0.9147080779075623,
+      "consistency": 0.8931479454040527,
+      "separability": 0.7918752470604593,
+      "n": 14,
+      "quality": 0.8713901889023785,
+      "low_confidence": false
+    },
+    "A10_S04": {
+      "compactness": 0.8977330327033997,
+      "consistency": 0.8815084099769592,
+      "separability": 0.7634069115649506,
+      "n": 14,
+      "quality": 0.8525678095439329,
+      "low_confidence": false
+    },
+    "A11_S04": {
+      "compactness": 0.9204413294792175,
+      "consistency": 0.8827439546585083,
+      "separability": 0.8091935257337283,
+      "n": 10,
+      "quality": 0.875757775909358,
+      "low_confidence": false
+    },
+    "A12_S04": {
+      "compactness": 0.9046803712844849,
+      "consistency": 0.8917809724807739,
+      "separability": 0.7713984674846823,
+      "n": 15,
+      "quality": 0.8608259805034308,
+      "low_confidence": false
+    },
+    "A13_S04": {
+      "compactness": 0.927628219127655,
+      "consistency": 0.8806257843971252,
+      "separability": 0.8269063499266782,
+      "n": 13,
+      "quality": 0.8833109279482031,
+      "low_confidence": false
+    },
+    "A14_S04": {
+      "compactness": 0.9244973659515381,
+      "consistency": 0.8716340065002441,
+      "separability": 0.8194273104788056,
+      "n": 12,
+      "quality": 0.8771173414743302,
+      "low_confidence": false
+    },
+    "A15_S04": {
+      "compactness": 0.8996438384056091,
+      "consistency": 0.8940904140472412,
+      "separability": 0.7499439459044774,
+      "n": 11,
+      "quality": 0.8530678433477592,
+      "low_confidence": false
+    },
+    "A16_S04": {
+      "compactness": 0.9146394729614258,
+      "consistency": 0.88592129945755,
+      "separability": 0.7647303687440637,
+      "n": 11,
+      "quality": 0.8610512896450544,
+      "low_confidence": false
+    },
+    "A17_S04": {
+      "compactness": 0.9175679087638855,
+      "consistency": 0.8689074516296387,
+      "separability": 0.8399560822906869,
+      "n": 42,
+      "quality": 0.8796862236816518,
+      "low_confidence": false
+    },
+    "A18_S04": {
+      "compactness": 0.9108561873435974,
+      "consistency": 0.8684230446815491,
+      "separability": 0.8352868954412407,
+      "n": 37,
+      "quality": 0.8754554569742758,
+      "low_confidence": false
+    },
+    "A19_S04": {
+      "compactness": 0.8772487640380859,
+      "consistency": 0.8910039663314819,
+      "separability": 0.7429219608521707,
+      "n": 15,
+      "quality": 0.8410772837703302,
+      "low_confidence": false
+    },
+    "A20_S04": {
+      "compactness": 0.8795912265777588,
+      "consistency": 0.8903810381889343,
+      "separability": 0.7715368252779564,
+      "n": 12,
+      "quality": 0.8504118496711708,
+      "low_confidence": false
+    },
+    "A21_S04": {
+      "compactness": 0.8985849022865295,
+      "consistency": 0.8919137716293335,
+      "separability": 0.7857118291393324,
+      "n": 12,
+      "quality": 0.8627216411452115,
+      "low_confidence": false
+    },
+    "A22_S04": {
+      "compactness": 0.9033074975013733,
+      "consistency": 0.8958951234817505,
+      "separability": 0.7730247846312958,
+      "n": 12,
+      "quality": 0.8619989714344632,
+      "low_confidence": false
+    },
+    "A23_S04": {
+      "compactness": 0.9007596373558044,
+      "consistency": 0.8951325416564941,
+      "separability": 0.779248521266284,
+      "n": 14,
+      "quality": 0.8626181738191552,
+      "low_confidence": false
+    },
+    "A24_S04": {
+      "compactness": 0.9165284037590027,
+      "consistency": 0.8644081354141235,
+      "separability": 0.8152161916196881,
+      "n": 14,
+      "quality": 0.8704986596137445,
+      "low_confidence": false
+    },
+    "A25_S04": {
+      "compactness": 0.9167056679725647,
+      "consistency": 0.8758183717727661,
+      "separability": 0.8168059950577063,
+      "n": 15,
+      "quality": 0.8744695772381677,
+      "low_confidence": false
+    },
+    "A26_S04": {
+      "compactness": 0.8653445839881897,
+      "consistency": 0.9154124855995178,
+      "separability": 0.8207868046175305,
+      "n": 32,
+      "quality": 0.8669976206603903,
+      "low_confidence": false
+    },
+    "A27_S04": {
+      "compactness": 0.908827006816864,
+      "consistency": 0.884782075881958,
+      "separability": 0.7768656952131854,
+      "n": 14,
+      "quality": 0.8620251340552887,
+      "low_confidence": false
+    },
+    "A01_S05": {
+      "compactness": 0.8891538381576538,
+      "consistency": 0.866703987121582,
+      "separability": 0.7589131064354655,
+      "n": 21,
+      "quality": 0.8433466633301758,
+      "low_confidence": false
+    },
+    "A02_S05": {
+      "compactness": 0.9237763285636902,
+      "consistency": 0.8830662369728088,
+      "separability": 0.834882530009424,
+      "n": 10,
+      "quality": 0.8848951615201459,
+      "low_confidence": false
+    },
+    "A03_S05": {
+      "compactness": 0.922606348991394,
+      "consistency": 0.8986374139785767,
+      "separability": 0.8337641714858088,
+      "n": 9,
+      "quality": 0.8887630152358734,
+      "low_confidence": false
+    },
+    "A04_S05": {
+      "compactness": 0.9183036684989929,
+      "consistency": 0.8846040964126587,
+      "separability": 0.830564230362251,
+      "n": 23,
+      "quality": 0.8818719654320701,
+      "low_confidence": false
+    },
+    "A05_S05": {
+      "compactness": 0.9149048924446106,
+      "consistency": 0.8855225443840027,
+      "separability": 0.7884750321272931,
+      "n": 25,
+      "quality": 0.8681612299312329,
+      "low_confidence": false
+    },
+    "A06_S05": {
+      "compactness": 0.9031826257705688,
+      "consistency": 0.9036596417427063,
+      "separability": 0.8534753121948153,
+      "n": 24,
+      "quality": 0.8884135364894838,
+      "low_confidence": false
+    },
+    "A07_S05": {
+      "compactness": 0.9186542630195618,
+      "consistency": 0.8635268211364746,
+      "separability": 0.8515178887860972,
+      "n": 11,
+      "quality": 0.8819751181845963,
+      "low_confidence": false
+    },
+    "A08_S05": {
+      "compactness": 0.9180804491043091,
+      "consistency": 0.8677165508270264,
+      "separability": 0.8484842218416475,
+      "n": 10,
+      "quality": 0.8820924114423259,
+      "low_confidence": false
+    },
+    "A09_S05": {
+      "compactness": 0.9179614782333374,
+      "consistency": 0.8852111101150513,
+      "separability": 0.8083947890076555,
+      "n": 13,
+      "quality": 0.875266361030147,
+      "low_confidence": false
+    },
+    "A10_S05": {
+      "compactness": 0.9072615504264832,
+      "consistency": 0.869256317615509,
+      "separability": 0.8055446896880556,
+      "n": 12,
+      "quality": 0.8653449223616626,
+      "low_confidence": false
+    },
+    "A11_S05": {
+      "compactness": 0.9216237664222717,
+      "consistency": 0.8695314526557922,
+      "separability": 0.840349420604988,
+      "n": 10,
+      "quality": 0.8816137685471428,
+      "low_confidence": false
+    },
+    "A12_S05": {
+      "compactness": 0.905326247215271,
+      "consistency": 0.8809229135513306,
+      "separability": 0.7926557113172329,
+      "n": 16,
+      "quality": 0.8642040863466774,
+      "low_confidence": false
+    },
+    "A13_S05": {
+      "compactness": 0.9211674332618713,
+      "consistency": 0.873101532459259,
+      "separability": 0.8324176274215798,
+      "n": 13,
+      "quality": 0.880122721269,
+      "low_confidence": false
+    },
+    "A14_S05": {
+      "compactness": 0.9324432611465454,
+      "consistency": 0.8690946698188782,
+      "separability": 0.8299202048670227,
+      "n": 13,
+      "quality": 0.8826817668643884,
+      "low_confidence": false
+    },
+    "A15_S05": {
+      "compactness": 0.9069665670394897,
+      "consistency": 0.8867601752281189,
+      "separability": 0.7914870263151821,
+      "n": 12,
+      "quality": 0.8662607872787862,
+      "low_confidence": false
+    },
+    "A16_S05": {
+      "compactness": 0.8960021138191223,
+      "consistency": 0.8876026272773743,
+      "separability": 0.785083491174345,
+      "n": 12,
+      "quality": 0.8602066810631647,
+      "low_confidence": false
+    },
+    "A17_S05": {
+      "compactness": 0.9088329076766968,
+      "consistency": 0.8615612387657166,
+      "separability": 0.8477401375643826,
+      "n": 21,
+      "quality": 0.8763235759697086,
+      "low_confidence": false
+    },
+    "A18_S05": {
+      "compactness": 0.9238072633743286,
+      "consistency": 0.8611266613006592,
+      "separability": 0.8699239187518089,
+      "n": 20,
+      "quality": 0.8888380793654718,
+      "low_confidence": false
+    },
+    "A19_S05": {
+      "compactness": 0.8825163245201111,
+      "consistency": 0.8839997053146362,
+      "separability": 0.776603865773504,
+      "n": 18,
+      "quality": 0.8511876011344865,
+      "low_confidence": false
+    },
+    "A20_S05": {
+      "compactness": 0.9124788641929626,
+      "consistency": 0.8844508528709412,
+      "separability": 0.8431910566924379,
+      "n": 11,
+      "quality": 0.8832841185461986,
+      "low_confidence": false
+    },
+    "A21_S05": {
+      "compactness": 0.8972269892692566,
+      "consistency": 0.8863999843597412,
+      "separability": 0.8261249457364758,
+      "n": 12,
+      "quality": 0.8726482747365678,
+      "low_confidence": false
+    },
+    "A22_S05": {
+      "compactness": 0.889208972454071,
+      "consistency": 0.8906634449958801,
+      "separability": 0.7786547856601006,
+      "n": 13,
+      "quality": 0.8564790581784227,
+      "low_confidence": false
+    },
+    "A23_S05": {
+      "compactness": 0.9010897874832153,
+      "consistency": 0.8807278275489807,
+      "separability": 0.8078696692438169,
+      "n": 13,
+      "quality": 0.8670151640311254,
+      "low_confidence": false
+    },
+    "A24_S05": {
+      "compactness": 0.9054697751998901,
+      "consistency": 0.8735081553459167,
+      "separability": 0.8100875617569526,
+      "n": 15,
+      "quality": 0.8672666252108169,
+      "low_confidence": false
+    },
+    "A25_S05": {
+      "compactness": 0.9063552021980286,
+      "consistency": 0.877178966999054,
+      "separability": 0.8140942620253793,
+      "n": 13,
+      "quality": 0.8699240495865415,
+      "low_confidence": false
+    },
+    "A26_S05": {
+      "compactness": 0.8874673247337341,
+      "consistency": 0.9056671261787415,
+      "separability": 0.8381951828467384,
+      "n": 32,
+      "quality": 0.8781456226011377,
+      "low_confidence": false
+    },
+    "A27_S05": {
+      "compactness": 0.9004417657852173,
+      "consistency": 0.8734867572784424,
+      "separability": 0.7916457690259708,
+      "n": 14,
+      "quality": 0.8597164642054108,
+      "low_confidence": false
+    },
+    "A01_S06": {
+      "compactness": 0.8908995389938354,
+      "consistency": 0.8615757822990417,
+      "separability": 0.7574888052421359,
+      "n": 51,
+      "quality": 0.8420791918598874,
+      "low_confidence": false
+    },
+    "A02_S06": {
+      "compactness": 0.9218915104866028,
+      "consistency": 0.8779358863830566,
+      "separability": 0.8141799984573537,
+      "n": 8,
+      "quality": 0.8763913696467641,
+      "low_confidence": false
+    },
+    "A03_S06": {
+      "compactness": 0.9244467616081238,
+      "consistency": 0.8789792656898499,
+      "separability": 0.8358718599177376,
+      "n": 10,
+      "quality": 0.8842340423255257,
+      "low_confidence": false
+    },
+    "A04_S06": {
+      "compactness": 0.918837308883667,
+      "consistency": 0.8826085925102234,
+      "separability": 0.8232897509234901,
+      "n": 17,
+      "quality": 0.8793044265835809,
+      "low_confidence": false
+    },
+    "A05_S06": {
+      "compactness": 0.9110850095748901,
+      "consistency": 0.8794844150543213,
+      "separability": 0.8150377624602442,
+      "n": 17,
+      "quality": 0.8727906570843257,
+      "low_confidence": false
+    },
+    "A06_S06": {
+      "compactness": 0.9111650586128235,
+      "consistency": 0.8915923833847046,
+      "separability": 0.8463467304161749,
+      "n": 24,
+      "quality": 0.8858477575853931,
+      "low_confidence": false
+    },
+    "A07_S06": {
+      "compactness": 0.9220587015151978,
+      "consistency": 0.8637024760246277,
+      "separability": 0.8482190541149736,
+      "n": 11,
+      "quality": 0.8823999396479594,
+      "low_confidence": false
+    },
+    "A08_S06": {
+      "compactness": 0.9339137673377991,
+      "consistency": 0.8688274025917053,
+      "separability": 0.8579271726401976,
+      "n": 13,
+      "quality": 0.8915918795046904,
+      "low_confidence": false
+    },
+    "A09_S06": {
+      "compactness": 0.9013564586639404,
+      "consistency": 0.8836996555328369,
+      "separability": 0.7925103145151089,
+      "n": 13,
+      "quality": 0.8634055744799599,
+      "low_confidence": false
+    },
+    "A10_S06": {
+      "compactness": 0.9029544591903687,
+      "consistency": 0.8657561540603638,
+      "separability": 0.7827561344114626,
+      "n": 15,
+      "quality": 0.8557354702176954,
+      "low_confidence": false
+    },
+    "A11_S06": {
+      "compactness": 0.9236032962799072,
+      "consistency": 0.8751593232154846,
+      "separability": 0.8484694292156987,
+      "n": 13,
+      "quality": 0.8865299442413179,
+      "low_confidence": false
+    },
+    "A12_S06": {
+      "compactness": 0.9007508158683777,
+      "consistency": 0.8767760992050171,
+      "separability": 0.7944219299104053,
+      "n": 15,
+      "quality": 0.8616597350819778,
+      "low_confidence": false
+    },
+    "A13_S06": {
+      "compactness": 0.9173988699913025,
+      "consistency": 0.8623285293579102,
+      "separability": 0.8366024880268726,
+      "n": 18,
+      "quality": 0.8766388532119558,
+      "low_confidence": false
+    },
+    "A14_S06": {
+      "compactness": 0.9272867441177368,
+      "consistency": 0.8573194146156311,
+      "separability": 0.8437375302177126,
+      "n": 16,
+      "quality": 0.8812317810970978,
+      "low_confidence": false
+    },
+    "A15_S06": {
+      "compactness": 0.9018253087997437,
+      "consistency": 0.8885199427604675,
+      "separability": 0.7873122928286521,
+      "n": 10,
+      "quality": 0.8634797941966333,
+      "low_confidence": false
+    },
+    "A16_S06": {
+      "compactness": 0.9085975885391235,
+      "consistency": 0.8829793334007263,
+      "separability": 0.7964588021169073,
+      "n": 10,
+      "quality": 0.8672704760709394,
+      "low_confidence": false
+    },
+    "A17_S06": {
+      "compactness": 0.9143254160881042,
+      "consistency": 0.8608455061912537,
+      "separability": 0.8268753740915047,
+      "n": 22,
+      "quality": 0.8720464305200692,
+      "low_confidence": false
+    },
+    "A18_S06": {
+      "compactness": 0.9036653637886047,
+      "consistency": 0.8648138642311096,
+      "separability": 0.8213726333150215,
+      "n": 21,
+      "quality": 0.8673220947792812,
+      "low_confidence": false
+    },
+    "A19_S06": {
+      "compactness": 0.8978378772735596,
+      "consistency": 0.8821301460266113,
+      "separability": 0.8206393670693595,
+      "n": 18,
+      "quality": 0.869966004838215,
+      "low_confidence": false
+    },
+    "A20_S06": {
+      "compactness": 0.8971832990646362,
+      "consistency": 0.8806288838386536,
+      "separability": 0.8057805553802289,
+      "n": 13,
+      "quality": 0.8647961513915192,
+      "low_confidence": false
+    },
+    "A21_S06": {
+      "compactness": 0.9002752900123596,
+      "consistency": 0.8815311789512634,
+      "separability": 0.8160336946666203,
+      "n": 13,
+      "quality": 0.869379578090309,
+      "low_confidence": false
+    },
+    "A22_S06": {
+      "compactness": 0.9005028605461121,
+      "consistency": 0.8898827433586121,
+      "separability": 0.8183817897326279,
+      "n": 16,
+      "quality": 0.8726805041458168,
+      "low_confidence": false
+    },
+    "A23_S06": {
+      "compactness": 0.8983986377716064,
+      "consistency": 0.8884361982345581,
+      "separability": 0.8234187104682854,
+      "n": 15,
+      "quality": 0.8729159277194956,
+      "low_confidence": false
+    },
+    "A24_S06": {
+      "compactness": 0.9041523933410645,
+      "consistency": 0.8684765696525574,
+      "separability": 0.8272606078408707,
+      "n": 21,
+      "quality": 0.8703821105844541,
+      "low_confidence": false
+    },
+    "A25_S06": {
+      "compactness": 0.9021922945976257,
+      "consistency": 0.876605212688446,
+      "separability": 0.8141081873997954,
+      "n": 21,
+      "quality": 0.8680909378655227,
+      "low_confidence": false
+    },
+    "A26_S06": {
+      "compactness": 0.8770660161972046,
+      "consistency": 0.9053386449813843,
+      "separability": 0.8444180282789886,
+      "n": 25,
+      "quality": 0.8757534084569937,
+      "low_confidence": false
+    },
+    "A27_S06": {
+      "compactness": 0.9155880212783813,
+      "consistency": 0.8749096393585205,
+      "separability": 0.8198861323725007,
+      "n": 18,
+      "quality": 0.8746739400306589,
+      "low_confidence": false
+    },
+    "A01_S07": {
+      "compactness": 0.9021182060241699,
+      "consistency": 0.844802737236023,
+      "separability": 0.8063079788101553,
+      "n": 35,
+      "quality": 0.8561804972235214,
+      "low_confidence": false
+    },
+    "A02_S07": {
+      "compactness": 0.926507830619812,
+      "consistency": 0.8651179075241089,
+      "separability": 0.8537523155358139,
+      "n": 9,
+      "quality": 0.8862641991659017,
+      "low_confidence": false
+    },
+    "A03_S07": {
+      "compactness": 0.9187318086624146,
+      "consistency": 0.8709586262702942,
+      "separability": 0.8363613411640216,
+      "n": 9,
+      "quality": 0.8796887136952607,
+      "low_confidence": false
+    },
+    "A04_S07": {
+      "compactness": 0.9206390380859375,
+      "consistency": 0.8679305911064148,
+      "separability": 0.8350521887647635,
+      "n": 16,
+      "quality": 0.8791504491957285,
+      "low_confidence": false
+    },
+    "A05_S07": {
+      "compactness": 0.9211870431900024,
+      "consistency": 0.8654252290725708,
+      "separability": 0.8249118448228545,
+      "n": 15,
+      "quality": 0.8755759394446285,
+      "low_confidence": false
+    },
+    "A06_S07": {
+      "compactness": 0.8999580144882202,
+      "consistency": 0.8813037872314453,
+      "separability": 0.846744380293808,
+      "n": 27,
+      "quality": 0.878397656052864,
+      "low_confidence": false
+    },
+    "A07_S07": {
+      "compactness": 0.9354724884033203,
+      "consistency": 0.8447359800338745,
+      "separability": 0.8725801813790912,
+      "n": 11,
+      "quality": 0.8893838437852178,
+      "low_confidence": false
+    },
+    "A08_S07": {
+      "compactness": 0.9304952621459961,
+      "consistency": 0.8497402667999268,
+      "separability": 0.8826573665256215,
+      "n": 11,
+      "quality": 0.891917394856063,
+      "low_confidence": false
+    },
+    "A09_S07": {
+      "compactness": 0.9200493097305298,
+      "consistency": 0.8531980514526367,
+      "separability": 0.8552701881707778,
+      "n": 17,
+      "quality": 0.8805601957792364,
+      "low_confidence": false
+    },
+    "A10_S07": {
+      "compactness": 0.9196445941925049,
+      "consistency": 0.8522135019302368,
+      "separability": 0.8498836030070029,
+      "n": 16,
+      "quality": 0.8784869691581738,
+      "low_confidence": false
+    },
+    "A11_S07": {
+      "compactness": 0.9244869947433472,
+      "consistency": 0.8582330942153931,
+      "separability": 0.8628348349401451,
+      "n": 13,
+      "quality": 0.8861151766440003,
+      "low_confidence": false
+    },
+    "A12_S07": {
+      "compactness": 0.9081653952598572,
+      "consistency": 0.8635119199752808,
+      "separability": 0.8429943901074122,
+      "n": 15,
+      "quality": 0.8752180511287508,
+      "low_confidence": false
+    },
+    "A13_S07": {
+      "compactness": 0.9202063679695129,
+      "consistency": 0.8516327142715454,
+      "separability": 0.8658632712815647,
+      "n": 17,
+      "quality": 0.8833313428537382,
+      "low_confidence": false
+    },
+    "A14_S07": {
+      "compactness": 0.9214221239089966,
+      "consistency": 0.845777153968811,
+      "separability": 0.8726927993969376,
+      "n": 15,
+      "quality": 0.8841098355733232,
+      "low_confidence": false
+    },
+    "A15_S07": {
+      "compactness": 0.8963709473609924,
+      "consistency": 0.8593936562538147,
+      "separability": 0.7900831980390631,
+      "n": 11,
+      "quality": 0.8533914352322602,
+      "low_confidence": false
+    },
+    "A16_S07": {
+      "compactness": 0.9090246558189392,
+      "consistency": 0.8482041954994202,
+      "separability": 0.8420542628691909,
+      "n": 13,
+      "quality": 0.870687399838159,
+      "low_confidence": false
+    },
+    "A17_S07": {
+      "compactness": 0.9202887415885925,
+      "consistency": 0.8578359484672546,
+      "separability": 0.8499650360940662,
+      "n": 24,
+      "quality": 0.8804557920038333,
+      "low_confidence": false
+    },
+    "A18_S07": {
+      "compactness": 0.9277328252792358,
+      "consistency": 0.8540706634521484,
+      "separability": 0.878919240375508,
+      "n": 22,
+      "quality": 0.8909901012599912,
+      "low_confidence": false
+    },
+    "A19_S07": {
+      "compactness": 0.891998827457428,
+      "consistency": 0.8692891001701355,
+      "separability": 0.7918136662714736,
+      "n": 13,
+      "quality": 0.855130360915454,
+      "low_confidence": false
+    },
+    "A20_S07": {
+      "compactness": 0.9182654619216919,
+      "consistency": 0.863743245601654,
+      "separability": 0.8457089756267898,
+      "n": 10,
+      "quality": 0.8801418511372099,
+      "low_confidence": false
+    },
+    "A21_S07": {
+      "compactness": 0.9053324460983276,
+      "consistency": 0.8649924993515015,
+      "separability": 0.8228386367527873,
+      "n": 10,
+      "quality": 0.8684823192706177,
+      "low_confidence": false
+    },
+    "A22_S07": {
+      "compactness": 0.905931293964386,
+      "consistency": 0.8626843094825745,
+      "separability": 0.8281264220444061,
+      "n": 13,
+      "quality": 0.8696157370438486,
+      "low_confidence": false
+    },
+    "A23_S07": {
+      "compactness": 0.9022122621536255,
+      "consistency": 0.8538554310798645,
+      "separability": 0.8250681043874781,
+      "n": 12,
+      "quality": 0.864561965501653,
+      "low_confidence": false
+    },
+    "A24_S07": {
+      "compactness": 0.9119819402694702,
+      "consistency": 0.8468375205993652,
+      "separability": 0.8353725236414208,
+      "n": 15,
+      "quality": 0.8694557893800239,
+      "low_confidence": false
+    },
+    "A25_S07": {
+      "compactness": 0.9135621190071106,
+      "consistency": 0.8492013812065125,
+      "separability": 0.8577604462399274,
+      "n": 16,
+      "quality": 0.8775133958367762,
+      "low_confidence": false
+    },
+    "A26_S07": {
+      "compactness": 0.9043976664543152,
+      "consistency": 0.8779256939888,
+      "separability": 0.8354860336730403,
+      "n": 20,
+      "quality": 0.875782584880278,
+      "low_confidence": false
+    },
+    "A27_S07": {
+      "compactness": 0.9031721949577332,
+      "consistency": 0.8644446730613708,
+      "separability": 0.8249461897653708,
+      "n": 13,
+      "quality": 0.8680861368311157,
+      "low_confidence": false
+    },
+    "A01_S11": {
+      "compactness": 0.8935896754264832,
+      "consistency": 0.8933360576629639,
+      "separability": 0.7598686682524317,
+      "n": 34,
+      "quality": 0.853397287945212,
+      "low_confidence": false
+    },
+    "A02_S11": {
+      "compactness": 0.9286869168281555,
+      "consistency": 0.9129219651222229,
+      "separability": 0.762232855404038,
+      "n": 8,
+      "quality": 0.8740212128891405,
+      "low_confidence": false
+    },
+    "A03_S11": {
+      "compactness": 0.9195690751075745,
+      "consistency": 0.9170217514038086,
+      "separability": 0.774330866895757,
+      "n": 8,
+      "quality": 0.8752334155328994,
+      "low_confidence": false
+    },
+    "A04_S11": {
+      "compactness": 0.9167786240577698,
+      "consistency": 0.9050629138946533,
+      "separability": 0.7473096458446399,
+      "n": 13,
+      "quality": 0.8624232175448958,
+      "low_confidence": false
+    },
+    "A05_S11": {
+      "compactness": 0.9169590473175049,
+      "consistency": 0.8954737186431885,
+      "separability": 0.7337032334801827,
+      "n": 13,
+      "quality": 0.8555367045640133,
+      "low_confidence": false
+    },
+    "A06_S11": {
+      "compactness": 0.8733245730400085,
+      "consistency": 0.9267019629478455,
+      "separability": 0.7448622406847148,
+      "n": 23,
+      "quality": 0.8507990903057715,
+      "low_confidence": false
+    },
+    "A07_S11": {
+      "compactness": 0.9262251257896423,
+      "consistency": 0.8658230304718018,
+      "separability": 0.78590864106149,
+      "n": 7,
+      "quality": 0.8660095517758446,
+      "low_confidence": false
+    },
+    "A08_S11": {
+      "compactness": 0.9285575747489929,
+      "consistency": 0.8774983882904053,
+      "separability": 0.8276537851736043,
+      "n": 8,
+      "quality": 0.8829686819388001,
+      "low_confidence": false
+    },
+    "A09_S11": {
+      "compactness": 0.922732949256897,
+      "consistency": 0.8984178304672241,
+      "separability": 0.7669322875737055,
+      "n": 12,
+      "quality": 0.8686982151150376,
+      "low_confidence": false
+    },
+    "A10_S11": {
+      "compactness": 0.929487943649292,
+      "consistency": 0.8945286273956299,
+      "separability": 0.7268281880743167,
+      "n": 11,
+      "quality": 0.8582022221007007,
+      "low_confidence": false
+    },
+    "A11_S11": {
+      "compactness": 0.9154363870620728,
+      "consistency": 0.868910014629364,
+      "separability": 0.7728719946303063,
+      "n": 6,
+      "quality": 0.8587091576027301,
+      "low_confidence": false
+    },
+    "A12_S11": {
+      "compactness": 0.928080677986145,
+      "consistency": 0.8965514898300171,
+      "separability": 0.7997502498895416,
+      "n": 9,
+      "quality": 0.8801227931103255,
+      "low_confidence": false
+    },
+    "A13_S11": {
+      "compactness": 0.9301982522010803,
+      "consistency": 0.8917867541313171,
+      "separability": 0.7700728932341295,
+      "n": 12,
+      "quality": 0.8706371950900661,
+      "low_confidence": false
+    },
+    "A14_S11": {
+      "compactness": 0.9230413436889648,
+      "consistency": 0.8993719816207886,
+      "separability": 0.7725660912693415,
+      "n": 11,
+      "quality": 0.8707979593426249,
+      "low_confidence": false
+    },
+    "A15_S11": {
+      "compactness": 0.9155158400535583,
+      "consistency": 0.9079200029373169,
+      "separability": 0.736328858931163,
+      "n": 7,
+      "quality": 0.8594809945819674,
+      "low_confidence": false
+    },
+    "A16_S11": {
+      "compactness": 0.9028855562210083,
+      "consistency": 0.9102349281311035,
+      "separability": 0.7014416245326428,
+      "n": 7,
+      "quality": 0.8446571882875272,
+      "low_confidence": false
+    },
+    "A17_S11": {
+      "compactness": 0.927178680896759,
+      "consistency": 0.8500450849533081,
+      "separability": 0.8141012151374536,
+      "n": 15,
+      "quality": 0.8701153623859321,
+      "low_confidence": false
+    },
+    "A18_S11": {
+      "compactness": 0.9244391322135925,
+      "consistency": 0.869102954864502,
+      "separability": 0.8080141768182708,
+      "n": 13,
+      "quality": 0.8729107923902688,
+      "low_confidence": false
+    },
+    "A19_S11": {
+      "compactness": 0.9131980538368225,
+      "consistency": 0.9042255282402039,
+      "separability": 0.7011480412543141,
+      "n": 9,
+      "quality": 0.8468912923830844,
+      "low_confidence": false
+    },
+    "A20_S11": {
+      "compactness": 0.9199761748313904,
+      "consistency": 0.9080989360809326,
+      "separability": 0.7609822552517013,
+      "n": 7,
+      "quality": 0.8687148273323463,
+      "low_confidence": false
+    },
+    "A21_S11": {
+      "compactness": 0.9091048836708069,
+      "consistency": 0.9002422094345093,
+      "separability": 0.7177893089656421,
+      "n": 8,
+      "quality": 0.8490514089883682,
+      "low_confidence": false
+    },
+    "A22_S11": {
+      "compactness": 0.921040952205658,
+      "consistency": 0.9037147760391235,
+      "separability": 0.7555838000838813,
+      "n": 10,
+      "quality": 0.8662059537191646,
+      "low_confidence": false
+    },
+    "A23_S11": {
+      "compactness": 0.9148390889167786,
+      "consistency": 0.9089862704277039,
+      "separability": 0.7294258643317434,
+      "n": 10,
+      "quality": 0.8574592759945456,
+      "low_confidence": false
+    },
+    "A24_S11": {
+      "compactness": 0.9220359325408936,
+      "consistency": 0.9001258015632629,
+      "separability": 0.7810182055524332,
+      "n": 12,
+      "quality": 0.8731575751510663,
+      "low_confidence": false
+    },
+    "A25_S11": {
+      "compactness": 0.9215903282165527,
+      "consistency": 0.8973352313041687,
+      "separability": 0.7734782387780956,
+      "n": 11,
+      "quality": 0.8698801723113003,
+      "low_confidence": false
+    },
+    "A26_S11": {
+      "compactness": 0.8771265149116516,
+      "consistency": 0.9396899342536926,
+      "separability": 0.7736848970352018,
+      "n": 27,
+      "quality": 0.8648630553513289,
+      "low_confidence": false
+    },
+    "A27_S11": {
+      "compactness": 0.9182065725326538,
+      "consistency": 0.9053760170936584,
+      "separability": 0.7393462213545543,
+      "n": 10,
+      "quality": 0.8606993005475253,
+      "low_confidence": false
+    },
+    "A01_S12": {
+      "compactness": 0.8654122352600098,
+      "consistency": 0.8975335955619812,
+      "separability": 0.6992221000959211,
+      "n": 46,
+      "quality": 0.8251916028013746,
+      "low_confidence": false
+    },
+    "A02_S12": {
+      "compactness": 0.9001904129981995,
+      "consistency": 0.9146469235420227,
+      "separability": 0.7099942240540976,
+      "n": 9,
+      "quality": 0.8474685094781159,
+      "low_confidence": false
+    },
+    "A03_S12": {
+      "compactness": 0.922635555267334,
+      "consistency": 0.9179887175559998,
+      "separability": 0.7830237302544293,
+      "n": 10,
+      "quality": 0.8793579564500623,
+      "low_confidence": false
+    },
+    "A04_S12": {
+      "compactness": 0.915815532207489,
+      "consistency": 0.8991109728813171,
+      "separability": 0.730587388216077,
+      "n": 11,
+      "quality": 0.8552357212122138,
+      "low_confidence": false
+    },
+    "A05_S12": {
+      "compactness": 0.9275228381156921,
+      "consistency": 0.907903254032135,
+      "separability": 0.7622370279303682,
+      "n": 14,
+      "quality": 0.8720512198350279,
+      "low_confidence": false
+    },
+    "A06_S12": {
+      "compactness": 0.8774516582489014,
+      "consistency": 0.9300161600112915,
+      "separability": 0.7730866477327087,
+      "n": 27,
+      "quality": 0.8619115056227606,
+      "low_confidence": false
+    },
+    "A07_S12": {
+      "compactness": 0.9267919063568115,
+      "consistency": 0.8983829617500305,
+      "separability": 0.8025065109025964,
+      "n": 10,
+      "quality": 0.8809836043385126,
+      "low_confidence": false
+    },
+    "A08_S12": {
+      "compactness": 0.9386626482009888,
+      "consistency": 0.9015184640884399,
+      "separability": 0.8320319912535253,
+      "n": 10,
+      "quality": 0.8955301958829851,
+      "low_confidence": false
+    },
+    "A09_S12": {
+      "compactness": 0.9278703927993774,
+      "consistency": 0.9168403148651123,
+      "separability": 0.7718190990822392,
+      "n": 14,
+      "quality": 0.8777459813039563,
+      "low_confidence": false
+    },
+    "A10_S12": {
+      "compactness": 0.9271402955055237,
+      "consistency": 0.9059750437736511,
+      "separability": 0.7751274322600703,
+      "n": 14,
+      "quality": 0.8751868610123259,
+      "low_confidence": false
+    },
+    "A11_S12": {
+      "compactness": 0.9229248762130737,
+      "consistency": 0.9082106351852417,
+      "separability": 0.7698833973902175,
+      "n": 11,
+      "quality": 0.8725981602578673,
+      "low_confidence": false
+    },
+    "A12_S12": {
+      "compactness": 0.9110422134399414,
+      "consistency": 0.9167686700820923,
+      "separability": 0.7393302896052392,
+      "n": 12,
+      "quality": 0.8612465732821761,
+      "low_confidence": false
+    },
+    "A13_S12": {
+      "compactness": 0.9272080063819885,
+      "consistency": 0.8997909426689148,
+      "separability": 0.782484607527098,
+      "n": 12,
+      "quality": 0.8755658676115992,
+      "low_confidence": false
+    },
+    "A14_S12": {
+      "compactness": 0.9209542274475098,
+      "consistency": 0.9013261198997498,
+      "separability": 0.7637786567865951,
+      "n": 15,
+      "quality": 0.8679131239849074,
+      "low_confidence": false
+    },
+    "A15_S12": {
+      "compactness": 0.905110776424408,
+      "consistency": 0.9242773652076721,
+      "separability": 0.7212985559730829,
+      "n": 12,
+      "quality": 0.8557170869239897,
+      "low_confidence": false
+    },
+    "A16_S12": {
+      "compactness": 0.8994909524917603,
+      "consistency": 0.9238071441650391,
+      "separability": 0.7317754390838875,
+      "n": 12,
+      "quality": 0.856471155971382,
+      "low_confidence": false
+    },
+    "A17_S12": {
+      "compactness": 0.9223787784576416,
+      "consistency": 0.884759783744812,
+      "separability": 0.8239005341429723,
+      "n": 14,
+      "quality": 0.881549606749392,
+      "low_confidence": false
+    },
+    "A18_S12": {
+      "compactness": 0.92184978723526,
+      "consistency": 0.8878323435783386,
+      "separability": 0.8095171268046942,
+      "n": 16,
+      "quality": 0.8779447560090138,
+      "low_confidence": false
+    },
+    "A19_S12": {
+      "compactness": 0.8983607292175293,
+      "consistency": 0.914340078830719,
+      "separability": 0.691292565622202,
+      "n": 11,
+      "quality": 0.8410340850228881,
+      "low_confidence": false
+    },
+    "A20_S12": {
+      "compactness": 0.921541154384613,
+      "consistency": 0.9217247366905212,
+      "separability": 0.7579442528459074,
+      "n": 12,
+      "quality": 0.8725171586147737,
+      "low_confidence": false
+    },
+    "A21_S12": {
+      "compactness": 0.9227438569068909,
+      "consistency": 0.918701171875,
+      "separability": 0.7337274109044627,
+      "n": 11,
+      "quality": 0.8648261175965951,
+      "low_confidence": false
+    },
+    "A22_S12": {
+      "compactness": 0.9045582413673401,
+      "consistency": 0.9141405820846558,
+      "separability": 0.7215121745417419,
+      "n": 12,
+      "quality": 0.8525191235348554,
+      "low_confidence": false
+    },
+    "A23_S12": {
+      "compactness": 0.9084458351135254,
+      "consistency": 0.9137169718742371,
+      "separability": 0.7358482062183366,
+      "n": 13,
+      "quality": 0.8582478874731823,
+      "low_confidence": false
+    },
+    "A24_S12": {
+      "compactness": 0.9221958518028259,
+      "consistency": 0.9029881358146667,
+      "separability": 0.7359161211563104,
+      "n": 12,
+      "quality": 0.8605496178124235,
+      "low_confidence": false
+    },
+    "A25_S12": {
+      "compactness": 0.9145095348358154,
+      "consistency": 0.9015456438064575,
+      "separability": 0.7634378198932011,
+      "n": 13,
+      "quality": 0.8652988530442238,
+      "low_confidence": false
+    },
+    "A26_S12": {
+      "compactness": 0.8865349292755127,
+      "consistency": 0.9353723526000977,
+      "separability": 0.7876724162952335,
+      "n": 30,
+      "quality": 0.8715274023788044,
+      "low_confidence": false
+    },
+    "A27_S12": {
+      "compactness": 0.9168453216552734,
+      "consistency": 0.8976641893386841,
+      "separability": 0.7016136452093611,
+      "n": 10,
+      "quality": 0.846521479026523,
+      "low_confidence": false
+    },
+    "A01_S13": {
+      "compactness": 0.861801028251648,
+      "consistency": 0.8879843950271606,
+      "separability": 0.7436833758917837,
+      "n": 35,
+      "quality": 0.8342207425763426,
+      "low_confidence": false
+    },
+    "A02_S13": {
+      "compactness": 0.9228559732437134,
+      "consistency": 0.9030377864837646,
+      "separability": 0.7588622383766347,
+      "n": 8,
+      "quality": 0.8677123967556053,
+      "low_confidence": false
+    },
+    "A03_S13": {
+      "compactness": 0.9258699417114258,
+      "consistency": 0.9148301482200623,
+      "separability": 0.7455579278003396,
+      "n": 7,
+      "quality": 0.8684643994906908,
+      "low_confidence": false
+    },
+    "A04_S13": {
+      "compactness": 0.9143962860107422,
+      "consistency": 0.9022567868232727,
+      "separability": 0.7234556666404385,
+      "n": 10,
+      "quality": 0.8534722504434102,
+      "low_confidence": false
+    },
+    "A05_S13": {
+      "compactness": 0.921934962272644,
+      "consistency": 0.8992651700973511,
+      "separability": 0.744703810883167,
+      "n": 9,
+      "quality": 0.8619646792032131,
+      "low_confidence": false
+    },
+    "A06_S13": {
+      "compactness": 0.8992937207221985,
+      "consistency": 0.9291307330131531,
+      "separability": 0.7821900871215869,
+      "n": 22,
+      "quality": 0.8731137343293014,
+      "low_confidence": false
+    },
+    "A07_S13": {
+      "compactness": 0.9356668591499329,
+      "consistency": 0.8513307571411133,
+      "separability": 0.8197768775363194,
+      "n": 7,
+      "quality": 0.8755990340632029,
+      "low_confidence": false
+    },
+    "A08_S13": {
+      "compactness": 0.9308821558952332,
+      "consistency": 0.8738001585006714,
+      "separability": 0.8066823513455249,
+      "n": 8,
+      "quality": 0.8764976153119522,
+      "low_confidence": false
+    },
+    "A09_S13": {
+      "compactness": 0.9201706051826477,
+      "consistency": 0.9106167554855347,
+      "separability": 0.7582954668056205,
+      "n": 12,
+      "quality": 0.8687419087604057,
+      "low_confidence": false
+    },
+    "A10_S13": {
+      "compactness": 0.8913360834121704,
+      "consistency": 0.8368715047836304,
+      "separability": 0.7683456872424749,
+      "n": 12,
+      "quality": 0.8380995909726998,
+      "low_confidence": false
+    },
+    "A11_S13": {
+      "compactness": 0.9301624894142151,
+      "consistency": 0.8835121989250183,
+      "separability": 0.8269531316170148,
+      "n": 10,
+      "quality": 0.8852045949282961,
+      "low_confidence": false
+    },
+    "A12_S13": {
+      "compactness": 0.9244408011436462,
+      "consistency": 0.907668948173523,
+      "separability": 0.7705751343096792,
+      "n": 12,
+      "quality": 0.8732495452024192,
+      "low_confidence": false
+    },
+    "A13_S13": {
+      "compactness": 0.9197981953620911,
+      "consistency": 0.8984127044677734,
+      "separability": 0.7878305868386288,
+      "n": 14,
+      "quality": 0.8737922655367572,
+      "low_confidence": false
+    },
+    "A14_S13": {
+      "compactness": 0.9249809980392456,
+      "consistency": 0.8984888195991516,
+      "separability": 0.7882268232503686,
+      "n": 14,
+      "quality": 0.8760070920705543,
+      "low_confidence": false
+    },
+    "A15_S13": {
+      "compactness": 0.9082850813865662,
+      "consistency": 0.9231938123703003,
+      "separability": 0.712446181993731,
+      "n": 11,
+      "quality": 0.8540060308638359,
+      "low_confidence": false
+    },
+    "A16_S13": {
+      "compactness": 0.9093184471130371,
+      "consistency": 0.922477126121521,
+      "separability": 0.7066922729599275,
+      "n": 12,
+      "quality": 0.8524781985696493,
+      "low_confidence": false
+    },
+    "A17_S13": {
+      "compactness": 0.9183114171028137,
+      "consistency": 0.8668791055679321,
+      "separability": 0.7628817676955623,
+      "n": 14,
+      "quality": 0.8562528288201738,
+      "low_confidence": false
+    },
+    "A18_S13": {
+      "compactness": 0.9248256683349609,
+      "consistency": 0.8817545771598816,
+      "separability": 0.8137670457643927,
+      "n": 14,
+      "quality": 0.8785867542112666,
+      "low_confidence": false
+    },
+    "A19_S13": {
+      "compactness": 0.9035817384719849,
+      "consistency": 0.9157429933547974,
+      "separability": 0.7162772490802014,
+      "n": 11,
+      "quality": 0.8510387681192936,
+      "low_confidence": false
+    },
+    "A20_S13": {
+      "compactness": 0.9146580100059509,
+      "consistency": 0.9215956926345825,
+      "separability": 0.6948984294347936,
+      "n": 10,
+      "quality": 0.8508114406231932,
+      "low_confidence": false
+    },
+    "A21_S13": {
+      "compactness": 0.9224254488945007,
+      "consistency": 0.9224691987037659,
+      "separability": 0.7513194382825268,
+      "n": 9,
+      "quality": 0.8711067706536881,
+      "low_confidence": false
+    },
+    "A22_S13": {
+      "compactness": 0.9092996120452881,
+      "consistency": 0.921664297580719,
+      "separability": 0.7014499143233016,
+      "n": 10,
+      "quality": 0.8506541083893213,
+      "low_confidence": false
+    },
+    "A23_S13": {
+      "compactness": 0.90852290391922,
+      "consistency": 0.9180062413215637,
+      "separability": 0.7111448251454295,
+      "n": 11,
+      "quality": 0.8521544815077859,
+      "low_confidence": false
+    },
+    "A24_S13": {
+      "compactness": 0.9130910634994507,
+      "consistency": 0.9026113152503967,
+      "separability": 0.7740627883662815,
+      "n": 13,
+      "quality": 0.8682386564847837,
+      "low_confidence": false
+    },
+    "A25_S13": {
+      "compactness": 0.9176673889160156,
+      "consistency": 0.9021958112716675,
+      "separability": 0.7391653022519448,
+      "n": 13,
+      "quality": 0.85947528962349,
+      "low_confidence": false
+    },
+    "A26_S13": {
+      "compactness": 0.9050233364105225,
+      "consistency": 0.9331898093223572,
+      "separability": 0.7654322163487902,
+      "n": 34,
+      "quality": 0.8715959422655533,
+      "low_confidence": false
+    },
+    "A27_S13": {
+      "compactness": 0.9113042950630188,
+      "consistency": 0.9030468463897705,
+      "separability": 0.7168268056753727,
+      "n": 10,
+      "quality": 0.8504838136447505,
+      "low_confidence": false
+    },
+    "A01_S14": {
+      "compactness": 0.8784832954406738,
+      "consistency": 0.8962340950965881,
+      "separability": 0.7328245212608913,
+      "n": 43,
+      "quality": 0.8401109030835133,
+      "low_confidence": false
+    },
+    "A02_S14": {
+      "compactness": 0.9273868203163147,
+      "consistency": 0.9141260385513306,
+      "separability": 0.7456350021843983,
+      "n": 8,
+      "quality": 0.8688830403472446,
+      "low_confidence": false
+    },
+    "A03_S14": {
+      "compactness": 0.9195899367332458,
+      "consistency": 0.9184413552284241,
+      "separability": 0.755517165753768,
+      "n": 8,
+      "quality": 0.870023530987956,
+      "low_confidence": false
+    },
+    "A04_S14": {
+      "compactness": 0.9029453992843628,
+      "consistency": 0.9074637293815613,
+      "separability": 0.6681971405346275,
+      "n": 12,
+      "quality": 0.8338764206886018,
+      "low_confidence": false
+    },
+    "A05_S14": {
+      "compactness": 0.9086819291114807,
+      "consistency": 0.9088827967643738,
+      "separability": 0.6293184578288257,
+      "n": 13,
+      "quality": 0.8249331480225521,
+      "low_confidence": false
+    },
+    "A06_S14": {
+      "compactness": 0.8776280879974365,
+      "consistency": 0.9224936962127686,
+      "separability": 0.6797933733660673,
+      "n": 19,
+      "quality": 0.8317373560726253,
+      "low_confidence": false
+    },
+    "A07_S14": {
+      "compactness": 0.9314947128295898,
+      "consistency": 0.9011029005050659,
+      "separability": 0.7801540668772644,
+      "n": 8,
+      "quality": 0.876974975346535,
+      "low_confidence": false
+    },
+    "A08_S14": {
+      "compactness": 0.9317476749420166,
+      "consistency": 0.8960390090942383,
+      "separability": 0.832490745884983,
+      "n": 8,
+      "quality": 0.891257996470573,
+      "low_confidence": false
+    },
+    "A09_S14": {
+      "compactness": 0.9067410230636597,
+      "consistency": 0.9101176261901855,
+      "separability": 0.7268425432451373,
+      "n": 16,
+      "quality": 0.8537844600560607,
+      "low_confidence": false
+    },
+    "A10_S14": {
+      "compactness": 0.9111766815185547,
+      "consistency": 0.892963707447052,
+      "separability": 0.6735153125173631,
+      "n": 14,
+      "quality": 0.8344143785967464,
+      "low_confidence": false
+    },
+    "A11_S14": {
+      "compactness": 0.9221994876861572,
+      "consistency": 0.9058694243431091,
+      "separability": 0.7542301356440883,
+      "n": 8,
+      "quality": 0.8669096630706221,
+      "low_confidence": false
+    },
+    "A12_S14": {
+      "compactness": 0.9021995067596436,
+      "consistency": 0.9019070267677307,
+      "separability": 0.7229706518910287,
+      "n": 9,
+      "quality": 0.8483431063014854,
+      "low_confidence": false
+    },
+    "A13_S14": {
+      "compactness": 0.9267253279685974,
+      "consistency": 0.8914106488227844,
+      "separability": 0.7759520919057508,
+      "n": 13,
+      "quality": 0.8708989534059997,
+      "low_confidence": false
+    },
+    "A14_S14": {
+      "compactness": 0.9291813373565674,
+      "consistency": 0.8910895586013794,
+      "separability": 0.7774455580364348,
+      "n": 12,
+      "quality": 0.8722330699339712,
+      "low_confidence": false
+    },
+    "A15_S14": {
+      "compactness": 0.9090238213539124,
+      "consistency": 0.9194152355194092,
+      "separability": 0.7119691494821566,
+      "n": 10,
+      "quality": 0.8530248440420347,
+      "low_confidence": false
+    },
+    "A16_S14": {
+      "compactness": 0.9009348750114441,
+      "consistency": 0.9189097881317139,
+      "separability": 0.6555970742140039,
+      "n": 9,
+      "quality": 0.8327260087082929,
+      "low_confidence": false
+    },
+    "A17_S14": {
+      "compactness": 0.9181907176971436,
+      "consistency": 0.881557822227478,
+      "separability": 0.7951513467729511,
+      "n": 22,
+      "quality": 0.8702890377789861,
+      "low_confidence": false
+    },
+    "A18_S14": {
+      "compactness": 0.9128715991973877,
+      "consistency": 0.880888819694519,
+      "separability": 0.7899615843301742,
+      "n": 23,
+      "quality": 0.866403760886363,
+      "low_confidence": false
+    },
+    "A19_S14": {
+      "compactness": 0.9013693332672119,
+      "consistency": 0.8840212821960449,
+      "separability": 0.7331909851022794,
+      "n": 9,
+      "quality": 0.8457114134963821,
+      "low_confidence": false
+    },
+    "A20_S14": {
+      "compactness": 0.9126188158988953,
+      "consistency": 0.9209284782409668,
+      "separability": 0.6812676513620319,
+      "n": 8,
+      "quality": 0.8457063652404577,
+      "low_confidence": false
+    },
+    "A21_S14": {
+      "compactness": 0.8989013433456421,
+      "consistency": 0.919188916683197,
+      "separability": 0.658916352334106,
+      "n": 8,
+      "quality": 0.8329921180434479,
+      "low_confidence": false
+    },
+    "A22_S14": {
+      "compactness": 0.8978502750396729,
+      "consistency": 0.9095404744148254,
+      "separability": 0.6869667529508259,
+      "n": 11,
+      "quality": 0.8380922782255645,
+      "low_confidence": false
+    },
+    "A23_S14": {
+      "compactness": 0.8815497756004333,
+      "consistency": 0.9232870936393738,
+      "separability": 0.6519686605410587,
+      "n": 12,
+      "quality": 0.8251966364943031,
+      "low_confidence": false
+    },
+    "A24_S14": {
+      "compactness": 0.9003499150276184,
+      "consistency": 0.9011784791946411,
+      "separability": 0.7099530857795288,
+      "n": 12,
+      "quality": 0.8434794355032984,
+      "low_confidence": false
+    },
+    "A25_S14": {
+      "compactness": 0.9044532775878906,
+      "consistency": 0.903967022895813,
+      "separability": 0.678939984338206,
+      "n": 12,
+      "quality": 0.8366534132053619,
+      "low_confidence": false
+    },
+    "A26_S14": {
+      "compactness": 0.885434091091156,
+      "consistency": 0.9431159496307373,
+      "separability": 0.8018181919739235,
+      "n": 26,
+      "quality": 0.8776538789178607,
+      "low_confidence": false
+    },
+    "A27_S14": {
+      "compactness": 0.9113942384719849,
+      "consistency": 0.9056170582771301,
+      "separability": 0.7390544041498738,
+      "n": 12,
+      "quality": 0.8579591341168951,
+      "low_confidence": false
+    },
+    "A01_S15": {
+      "compactness": 0.9211367964744568,
+      "consistency": 0.8974485397338867,
+      "separability": 0.7508852511198146,
+      "n": 42,
+      "quality": 0.8629548558458932,
+      "low_confidence": false
+    },
+    "A02_S15": {
+      "compactness": 0.9169976711273193,
+      "consistency": 0.9188429713249207,
+      "separability": 0.7503654684494078,
+      "n": 8,
+      "quality": 0.8675616003832263,
+      "low_confidence": false
+    },
+    "A03_S15": {
+      "compactness": 0.9143257737159729,
+      "consistency": 0.9204129576683044,
+      "separability": 0.754434934009178,
+      "n": 9,
+      "quality": 0.8681846769896339,
+      "low_confidence": false
+    },
+    "A04_S15": {
+      "compactness": 0.9194883704185486,
+      "consistency": 0.911191463470459,
+      "separability": 0.7526496609915945,
+      "n": 13,
+      "quality": 0.8669476855060355,
+      "low_confidence": false
+    },
+    "A05_S15": {
+      "compactness": 0.9053875803947449,
+      "consistency": 0.9057486057281494,
+      "separability": 0.7151756291392387,
+      "n": 13,
+      "quality": 0.8484323026181143,
+      "low_confidence": false
+    },
+    "A06_S15": {
+      "compactness": 0.8384354114532471,
+      "consistency": 0.9268651604652405,
+      "separability": 0.731353211221223,
+      "n": 27,
+      "quality": 0.8328396760872379,
+      "low_confidence": false
+    },
+    "A07_S15": {
+      "compactness": 0.9237009286880493,
+      "consistency": 0.9062979817390442,
+      "separability": 0.7733197665170528,
+      "n": 10,
+      "quality": 0.8733656959520488,
+      "low_confidence": false
+    },
+    "A08_S15": {
+      "compactness": 0.9339790940284729,
+      "consistency": 0.9050835967063904,
+      "separability": 0.820519437713639,
+      "n": 10,
+      "quality": 0.891272547937398,
+      "low_confidence": false
+    },
+    "A09_S15": {
+      "compactness": 0.9036663174629211,
+      "consistency": 0.9163991808891296,
+      "separability": 0.7420917553519305,
+      "n": 13,
+      "quality": 0.8590138078574865,
+      "low_confidence": false
+    },
+    "A10_S15": {
+      "compactness": 0.9078891277313232,
+      "consistency": 0.906907320022583,
+      "separability": 0.7204848920730852,
+      "n": 13,
+      "quality": 0.8513733147212298,
+      "low_confidence": false
+    },
+    "A11_S15": {
+      "compactness": 0.9223119616508484,
+      "consistency": 0.9131232500076294,
+      "separability": 0.7471322079447622,
+      "n": 9,
+      "quality": 0.8670014220460569,
+      "low_confidence": false
+    },
+    "A12_S15": {
+      "compactness": 0.9230787754058838,
+      "consistency": 0.9075571894645691,
+      "separability": 0.7887767319074965,
+      "n": 10,
+      "quality": 0.8781316865739731,
+      "low_confidence": false
+    },
+    "A13_S15": {
+      "compactness": 0.9327254295349121,
+      "consistency": 0.9003181457519531,
+      "separability": 0.8188711399433397,
+      "n": 12,
+      "quality": 0.8888469575225527,
+      "low_confidence": false
+    },
+    "A14_S15": {
+      "compactness": 0.9368274807929993,
+      "consistency": 0.9029094576835632,
+      "separability": 0.8202645683187769,
+      "n": 12,
+      "quality": 0.8916832001179018,
+      "low_confidence": false
+    },
+    "A15_S15": {
+      "compactness": 0.9052637219429016,
+      "consistency": 0.9296475648880005,
+      "separability": 0.7182276779056881,
+      "n": 10,
+      "quality": 0.8564680616152671,
+      "low_confidence": false
+    },
+    "A16_S15": {
+      "compactness": 0.9000319242477417,
+      "consistency": 0.9261876344680786,
+      "separability": 0.667915173542405,
+      "n": 10,
+      "quality": 0.8382436121022417,
+      "low_confidence": false
+    },
+    "A17_S15": {
+      "compactness": 0.9151614904403687,
+      "consistency": 0.8844148516654968,
+      "separability": 0.8026514342573404,
+      "n": 15,
+      "quality": 0.8721844819529987,
+      "low_confidence": false
+    },
+    "A18_S15": {
+      "compactness": 0.9193794131278992,
+      "consistency": 0.8886756300926208,
+      "separability": 0.7965007269629033,
+      "n": 15,
+      "quality": 0.8733046723678168,
+      "low_confidence": false
+    },
+    "A19_S15": {
+      "compactness": 0.888491153717041,
+      "consistency": 0.9167727828025818,
+      "separability": 0.6505584322495835,
+      "n": 14,
+      "quality": 0.825595826002466,
+      "low_confidence": false
+    },
+    "A20_S15": {
+      "compactness": 0.9155721664428711,
+      "consistency": 0.9193378686904907,
+      "separability": 0.7414339933026269,
+      "n": 12,
+      "quality": 0.8644604251750838,
+      "low_confidence": false
+    },
+    "A21_S15": {
+      "compactness": 0.9128703474998474,
+      "consistency": 0.9245938062667847,
+      "separability": 0.7342304276538927,
+      "n": 12,
+      "quality": 0.8627954091761421,
+      "low_confidence": false
+    },
+    "A22_S15": {
+      "compactness": 0.8647693395614624,
+      "consistency": 0.9163410067558289,
+      "separability": 0.600069725777167,
+      "n": 12,
+      "quality": 0.8008309555844838,
+      "low_confidence": false
+    },
+    "A23_S15": {
+      "compactness": 0.9026756882667542,
+      "consistency": 0.9206571578979492,
+      "separability": 0.7186074480169693,
+      "n": 10,
+      "quality": 0.8528496570811772,
+      "low_confidence": false
+    },
+    "A24_S15": {
+      "compactness": 0.8951759934425354,
+      "consistency": 0.9106256365776062,
+      "separability": 0.6655656144063317,
+      "n": 16,
+      "quality": 0.8309277726721955,
+      "low_confidence": false
+    },
+    "A25_S15": {
+      "compactness": 0.9038845896720886,
+      "consistency": 0.9123857617378235,
+      "separability": 0.7080169700879018,
+      "n": 16,
+      "quality": 0.847674655416553,
+      "low_confidence": false
+    },
+    "A26_S15": {
+      "compactness": 0.8683963418006897,
+      "consistency": 0.9403496980667114,
+      "separability": 0.7900226908369413,
+      "n": 26,
+      "quality": 0.8664702533913716,
+      "low_confidence": false
+    },
+    "A27_S15": {
+      "compactness": 0.9221295714378357,
+      "consistency": 0.904629647731781,
+      "separability": 0.7588351167773929,
+      "n": 14,
+      "quality": 0.8678912579278865,
+      "low_confidence": false
+    },
+    "A01_S16": {
+      "compactness": 0.8660296201705933,
+      "consistency": 0.8938164710998535,
+      "separability": 0.6804094267508244,
+      "n": 61,
+      "quality": 0.8186796174234406,
+      "low_confidence": false
+    },
+    "A02_S16": {
+      "compactness": 0.9232699871063232,
+      "consistency": 0.9181482791900635,
+      "separability": 0.7269860437353478,
+      "n": 9,
+      "quality": 0.8628482917201526,
+      "low_confidence": false
+    },
+    "A03_S16": {
+      "compactness": 0.918209433555603,
+      "consistency": 0.920504629611969,
+      "separability": 0.7583646940311584,
+      "n": 10,
+      "quality": 0.8709445705151794,
+      "low_confidence": false
+    },
+    "A04_S16": {
+      "compactness": 0.9048161506652832,
+      "consistency": 0.9118892550468445,
+      "separability": 0.7243411006624101,
+      "n": 17,
+      "quality": 0.8527955669788897,
+      "low_confidence": false
+    },
+    "A05_S16": {
+      "compactness": 0.9047261476516724,
+      "consistency": 0.9110540747642517,
+      "separability": 0.7280931517080023,
+      "n": 17,
+      "quality": 0.853634627002345,
+      "low_confidence": false
+    },
+    "A06_S16": {
+      "compactness": 0.8303608894348145,
+      "consistency": 0.9310246109962463,
+      "separability": 0.7059987008439097,
+      "n": 26,
+      "quality": 0.8232513493259725,
+      "low_confidence": false
+    },
+    "A07_S16": {
+      "compactness": 0.9225576519966125,
+      "consistency": 0.8993541598320007,
+      "separability": 0.763967531630857,
+      "n": 14,
+      "quality": 0.8680195682375024,
+      "low_confidence": false
+    },
+    "A08_S16": {
+      "compactness": 0.9255937337875366,
+      "consistency": 0.8991348743438721,
+      "separability": 0.7904641000807698,
+      "n": 17,
+      "quality": 0.8771171858424072,
+      "low_confidence": false
+    },
+    "A09_S16": {
+      "compactness": 0.9281525611877441,
+      "consistency": 0.9155592322349548,
+      "separability": 0.7563339133263092,
+      "n": 22,
+      "quality": 0.8728289681434769,
+      "low_confidence": false
+    },
+    "A10_S16": {
+      "compactness": 0.9184514880180359,
+      "consistency": 0.9039059281349182,
+      "separability": 0.7365030644542778,
+      "n": 22,
+      "quality": 0.8595032929839732,
+      "low_confidence": false
+    },
+    "A11_S16": {
+      "compactness": 0.9160785675048828,
+      "consistency": 0.9043093323707581,
+      "separability": 0.7434645185643171,
+      "n": 17,
+      "quality": 0.8607635822824756,
+      "low_confidence": false
+    },
+    "A12_S16": {
+      "compactness": 0.8985276222229004,
+      "consistency": 0.9097609519958496,
+      "separability": 0.7221228850630983,
+      "n": 22,
+      "quality": 0.8489762000068446,
+      "low_confidence": false
+    },
+    "A13_S16": {
+      "compactness": 0.9343899488449097,
+      "consistency": 0.9007656574249268,
+      "separability": 0.7788024350771123,
+      "n": 14,
+      "quality": 0.8776264072885757,
+      "low_confidence": false
+    },
+    "A14_S16": {
+      "compactness": 0.9232622981071472,
+      "consistency": 0.8973416090011597,
+      "separability": 0.7434463742630735,
+      "n": 18,
+      "quality": 0.8615413142221289,
+      "low_confidence": false
+    },
+    "A15_S16": {
+      "compactness": 0.895459771156311,
+      "consistency": 0.921110987663269,
+      "separability": 0.6579401560456235,
+      "n": 12,
+      "quality": 0.8318992515751922,
+      "low_confidence": false
+    },
+    "A16_S16": {
+      "compactness": 0.9013972878456116,
+      "consistency": 0.9245638847351074,
+      "separability": 0.6867964607730941,
+      "n": 13,
+      "quality": 0.843967018790705,
+      "low_confidence": false
+    },
+    "A17_S16": {
+      "compactness": 0.9216621518135071,
+      "consistency": 0.8847960829734802,
+      "separability": 0.8085161170463399,
+      "n": 21,
+      "quality": 0.8766585207313489,
+      "low_confidence": false
+    },
+    "A18_S16": {
+      "compactness": 0.9185041189193726,
+      "consistency": 0.8884140849113464,
+      "separability": 0.7951023952231202,
+      "n": 21,
+      "quality": 0.8724565916080891,
+      "low_confidence": false
+    },
+    "A19_S16": {
+      "compactness": 0.8907868266105652,
+      "consistency": 0.908211350440979,
+      "separability": 0.6984408399022701,
+      "n": 14,
+      "quality": 0.8383103877472008,
+      "low_confidence": false
+    },
+    "A20_S16": {
+      "compactness": 0.901572048664093,
+      "consistency": 0.9316034913063049,
+      "separability": 0.709629504355435,
+      "n": 12,
+      "quality": 0.8529987181641592,
+      "low_confidence": false
+    },
+    "A21_S16": {
+      "compactness": 0.9141480922698975,
+      "consistency": 0.9272674918174744,
+      "separability": 0.7296154132014019,
+      "n": 13,
+      "quality": 0.8627241084136218,
+      "low_confidence": false
+    },
+    "A22_S16": {
+      "compactness": 0.8759103417396545,
+      "consistency": 0.9218446612358093,
+      "separability": 0.6588945810830601,
+      "n": 14,
+      "quality": 0.8245859093915227,
+      "low_confidence": false
+    },
+    "A23_S16": {
+      "compactness": 0.902493417263031,
+      "consistency": 0.9133806228637695,
+      "separability": 0.7431591069059228,
+      "n": 14,
+      "quality": 0.8579592858361201,
+      "low_confidence": false
+    },
+    "A24_S16": {
+      "compactness": 0.9053603410720825,
+      "consistency": 0.9119267463684082,
+      "separability": 0.6677293203338729,
+      "n": 19,
+      "quality": 0.8360409564395174,
+      "low_confidence": false
+    },
+    "A25_S16": {
+      "compactness": 0.9087958335876465,
+      "consistency": 0.9117745161056519,
+      "separability": 0.7093794876901718,
+      "n": 20,
+      "quality": 0.8498645345738056,
+      "low_confidence": false
+    },
+    "A26_S16": {
+      "compactness": 0.825242817401886,
+      "consistency": 0.9373465180397034,
+      "separability": 0.7328964157320329,
+      "n": 27,
+      "quality": 0.8311700070922753,
+      "low_confidence": false
+    },
+    "A27_S16": {
+      "compactness": 0.9027995467185974,
+      "consistency": 0.9126757383346558,
+      "separability": 0.6984437213218606,
+      "n": 14,
+      "quality": 0.8444556565843938,
+      "low_confidence": false
+    },
+    "A01_S17": {
+      "compactness": 0.8523439168930054,
+      "consistency": 0.8973639011383057,
+      "separability": 0.6506088588182901,
+      "n": 36,
+      "quality": 0.8053293947441809,
+      "low_confidence": false
+    },
+    "A02_S17": {
+      "compactness": 0.9053198099136353,
+      "consistency": 0.9182942509651184,
+      "separability": 0.7118063496350263,
+      "n": 9,
+      "quality": 0.8511581041454974,
+      "low_confidence": false
+    },
+    "A03_S17": {
+      "compactness": 0.9118944406509399,
+      "consistency": 0.9224156141281128,
+      "separability": 0.7585787124665576,
+      "n": 8,
+      "quality": 0.8690560742387772,
+      "low_confidence": false
+    },
+    "A04_S17": {
+      "compactness": 0.9049831628799438,
+      "consistency": 0.9151785373687744,
+      "separability": 0.6925963619907944,
+      "n": 15,
+      "quality": 0.8443257349598482,
+      "low_confidence": false
+    },
+    "A05_S17": {
+      "compactness": 0.9088605642318726,
+      "consistency": 0.9131695032119751,
+      "separability": 0.7136860499948536,
+      "n": 16,
+      "quality": 0.8516008916547976,
+      "low_confidence": false
+    },
+    "A06_S17": {
+      "compactness": 0.8892353773117065,
+      "consistency": 0.932684600353241,
+      "separability": 0.7661319569627347,
+      "n": 23,
+      "quality": 0.8653391181194754,
+      "low_confidence": false
+    },
+    "A07_S17": {
+      "compactness": 0.9139827489852905,
+      "consistency": 0.905677855014801,
+      "separability": 0.7689945763527141,
+      "n": 11,
+      "quality": 0.8679948290043707,
+      "low_confidence": false
+    },
+    "A08_S17": {
+      "compactness": 0.925861120223999,
+      "consistency": 0.9075016975402832,
+      "separability": 0.8112701919758197,
+      "n": 12,
+      "quality": 0.8859760149444305,
+      "low_confidence": false
+    },
+    "A09_S17": {
+      "compactness": 0.92246013879776,
+      "consistency": 0.9198093414306641,
+      "separability": 0.7717341396052545,
+      "n": 17,
+      "quality": 0.8764470998298795,
+      "low_confidence": false
+    },
+    "A10_S17": {
+      "compactness": 0.919874906539917,
+      "consistency": 0.9064438343048096,
+      "separability": 0.7363978688345535,
+      "n": 16,
+      "quality": 0.8608024735577757,
+      "low_confidence": false
+    },
+    "A11_S17": {
+      "compactness": 0.9044710993766785,
+      "consistency": 0.912209153175354,
+      "separability": 0.7189483559688625,
+      "n": 13,
+      "quality": 0.8511356924939364,
+      "low_confidence": false
+    },
+    "A12_S17": {
+      "compactness": 0.8983467221260071,
+      "consistency": 0.9143133759498596,
+      "separability": 0.683430451925964,
+      "n": 15,
+      "quality": 0.8386618372131498,
+      "low_confidence": false
+    },
+    "A13_S17": {
+      "compactness": 0.9351229667663574,
+      "consistency": 0.9015389084815979,
+      "separability": 0.809366399021803,
+      "n": 15,
+      "quality": 0.8873207789575631,
+      "low_confidence": false
+    },
+    "A14_S17": {
+      "compactness": 0.9163009524345398,
+      "consistency": 0.907905101776123,
+      "separability": 0.7486795989848593,
+      "n": 17,
+      "quality": 0.8634957912021107,
+      "low_confidence": false
+    },
+    "A15_S17": {
+      "compactness": 0.9182220101356506,
+      "consistency": 0.9164971113204956,
+      "separability": 0.7685312158283715,
+      "n": 13,
+      "quality": 0.8727973021989205,
+      "low_confidence": false
+    },
+    "A16_S17": {
+      "compactness": 0.9111492037773132,
+      "consistency": 0.9269505739212036,
+      "separability": 0.7119277514038059,
+      "n": 14,
+      "quality": 0.8561231791084282,
+      "low_confidence": false
+    },
+    "A17_S17": {
+      "compactness": 0.9195852279663086,
+      "consistency": 0.8863653540611267,
+      "separability": 0.7742227056022178,
+      "n": 19,
+      "quality": 0.8660105090855267,
+      "low_confidence": false
+    },
+    "A18_S17": {
+      "compactness": 0.9188948273658752,
+      "consistency": 0.8883092999458313,
+      "separability": 0.772415897979374,
+      "n": 20,
+      "quality": 0.8657754903239117,
+      "low_confidence": false
+    },
+    "A19_S17": {
+      "compactness": 0.9090564846992493,
+      "consistency": 0.9115492105484009,
+      "separability": 0.7032916310503696,
+      "n": 13,
+      "quality": 0.8480748463593308,
+      "low_confidence": false
+    },
+    "A20_S17": {
+      "compactness": 0.8945943117141724,
+      "consistency": 0.9141404032707214,
+      "separability": 0.6865380687426751,
+      "n": 15,
+      "quality": 0.838041266289688,
+      "low_confidence": false
+    },
+    "A21_S17": {
+      "compactness": 0.9020359516143799,
+      "consistency": 0.9178434014320374,
+      "separability": 0.7706907091030952,
+      "n": 13,
+      "quality": 0.8673746138062918,
+      "low_confidence": false
+    },
+    "A22_S17": {
+      "compactness": 0.9024168252944946,
+      "consistency": 0.9164143800735474,
+      "separability": 0.7463275272758653,
+      "n": 15,
+      "quality": 0.8597893023226216,
+      "low_confidence": false
+    },
+    "A23_S17": {
+      "compactness": 0.8921226263046265,
+      "consistency": 0.9222059845924377,
+      "separability": 0.7246224652104788,
+      "n": 16,
+      "quality": 0.8508975854627256,
+      "low_confidence": false
+    },
+    "A24_S17": {
+      "compactness": 0.9020698070526123,
+      "consistency": 0.9163926839828491,
+      "separability": 0.6794138508894518,
+      "n": 18,
+      "quality": 0.8395698832827351,
+      "low_confidence": false
+    },
+    "A25_S17": {
+      "compactness": 0.9027379751205444,
+      "consistency": 0.9101688265800476,
+      "separability": 0.6669576834555536,
+      "n": 18,
+      "quality": 0.8342331430588981,
+      "low_confidence": false
+    },
+    "A26_S17": {
+      "compactness": 0.8666214942932129,
+      "consistency": 0.9408379793167114,
+      "separability": 0.8009663337797366,
+      "n": 28,
+      "quality": 0.8691898916462195,
+      "low_confidence": false
+    },
+    "A27_S17": {
+      "compactness": 0.9006452560424805,
+      "consistency": 0.9112051129341125,
+      "separability": 0.70662847035681,
+      "n": 13,
+      "quality": 0.845608177404269,
+      "low_confidence": false
+    },
+    "A01_S21": {
+      "compactness": 0.8933418989181519,
+      "consistency": 0.8766905665397644,
+      "separability": 0.7952094268366868,
+      "n": 35,
+      "quality": 0.8589067575801961,
+      "low_confidence": false
+    },
+    "A02_S21": {
+      "compactness": 0.8984942436218262,
+      "consistency": 0.902238667011261,
+      "separability": 0.7477356731816713,
+      "n": 8,
+      "quality": 0.8543899995066101,
+      "low_confidence": false
+    },
+    "A03_S21": {
+      "compactness": 0.9027767777442932,
+      "consistency": 0.9011714458465576,
+      "separability": 0.7620871319370698,
+      "n": 8,
+      "quality": 0.8600882844328055,
+      "low_confidence": false
+    },
+    "A04_S21": {
+      "compactness": 0.8970157504081726,
+      "consistency": 0.8802733421325684,
+      "separability": 0.6725770214974818,
+      "n": 11,
+      "quality": 0.8246614092522841,
+      "low_confidence": false
+    },
+    "A05_S21": {
+      "compactness": 0.9053323268890381,
+      "consistency": 0.8930124044418335,
+      "separability": 0.752303902303029,
+      "n": 11,
+      "quality": 0.855727822779074,
+      "low_confidence": false
+    },
+    "A06_S21": {
+      "compactness": 0.8089138865470886,
+      "consistency": 0.9179131388664246,
+      "separability": 0.7129758750208881,
+      "n": 19,
+      "quality": 0.8128322587850293,
+      "low_confidence": false
+    },
+    "A07_S21": {
+      "compactness": 0.912114143371582,
+      "consistency": 0.8771063685417175,
+      "separability": 0.7702096729735207,
+      "n": 9,
+      "quality": 0.8590404698032044,
+      "low_confidence": false
+    },
+    "A08_S21": {
+      "compactness": 0.9070260524749756,
+      "consistency": 0.8784379959106445,
+      "separability": 0.8383382300887724,
+      "n": 9,
+      "quality": 0.8778432887898153,
+      "low_confidence": false
+    },
+    "A09_S21": {
+      "compactness": 0.8946952819824219,
+      "consistency": 0.8940149545669556,
+      "separability": 0.757000251704557,
+      "n": 11,
+      "quality": 0.8531826746744224,
+      "low_confidence": false
+    },
+    "A10_S21": {
+      "compactness": 0.9016162753105164,
+      "consistency": 0.8918544054031372,
+      "separability": 0.7873498975483726,
+      "n": 12,
+      "quality": 0.8644078010096595,
+      "low_confidence": false
+    },
+    "A11_S21": {
+      "compactness": 0.9177563786506653,
+      "consistency": 0.8817716240882874,
+      "separability": 0.8039826915406373,
+      "n": 9,
+      "quality": 0.8728288461489435,
+      "low_confidence": false
+    },
+    "A12_S21": {
+      "compactness": 0.8990182280540466,
+      "consistency": 0.8841826319694519,
+      "separability": 0.7660329774482318,
+      "n": 11,
+      "quality": 0.8546719740469237,
+      "low_confidence": false
+    },
+    "A13_S21": {
+      "compactness": 0.9082072377204895,
+      "consistency": 0.8828721642494202,
+      "separability": 0.8021272013273283,
+      "n": 10,
+      "quality": 0.8687827047612202,
+      "low_confidence": false
+    },
+    "A14_S21": {
+      "compactness": 0.905895471572876,
+      "consistency": 0.8866856098175049,
+      "separability": 0.7914934070047704,
+      "n": 10,
+      "quality": 0.865811893675833,
+      "low_confidence": false
+    },
+    "A15_S21": {
+      "compactness": 0.8908809423446655,
+      "consistency": 0.9059786796569824,
+      "separability": 0.72265621110615,
+      "n": 10,
+      "quality": 0.844942844166806,
+      "low_confidence": false
+    },
+    "A16_S21": {
+      "compactness": 0.9145568609237671,
+      "consistency": 0.903858482837677,
+      "separability": 0.8003630420991933,
+      "n": 9,
+      "quality": 0.8770892018505679,
+      "low_confidence": false
+    },
+    "A17_S21": {
+      "compactness": 0.9126940965652466,
+      "consistency": 0.8332135081291199,
+      "separability": 0.8086772068030489,
+      "n": 14,
+      "quality": 0.8576448531057492,
+      "low_confidence": false
+    },
+    "A18_S21": {
+      "compactness": 0.9007276892662048,
+      "consistency": 0.8429428339004517,
+      "separability": 0.8319075253311368,
+      "n": 14,
+      "quality": 0.8627461834759584,
+      "low_confidence": false
+    },
+    "A19_S21": {
+      "compactness": 0.8907939791679382,
+      "consistency": 0.893189549446106,
+      "separability": 0.7191384361092377,
+      "n": 9,
+      "quality": 0.8400159873337784,
+      "low_confidence": false
+    },
+    "A20_S21": {
+      "compactness": 0.8951551914215088,
+      "consistency": 0.884691596031189,
+      "separability": 0.7657407064088964,
+      "n": 9,
+      "quality": 0.8531917673006291,
+      "low_confidence": false
+    },
+    "A21_S21": {
+      "compactness": 0.8912747502326965,
+      "consistency": 0.9139227867126465,
+      "separability": 0.7394293054270046,
+      "n": 9,
+      "quality": 0.8525155277349741,
+      "low_confidence": false
+    },
+    "A22_S21": {
+      "compactness": 0.8787210583686829,
+      "consistency": 0.8993894457817078,
+      "separability": 0.7178694168409168,
+      "n": 11,
+      "quality": 0.8366660821342605,
+      "low_confidence": false
+    },
+    "A23_S21": {
+      "compactness": 0.8872948884963989,
+      "consistency": 0.9110560417175293,
+      "separability": 0.740578817460222,
+      "n": 10,
+      "quality": 0.850408413151885,
+      "low_confidence": false
+    },
+    "A24_S21": {
+      "compactness": 0.8943508863449097,
+      "consistency": 0.8877062201499939,
+      "separability": 0.7187720561829252,
+      "n": 13,
+      "quality": 0.8396838374378396,
+      "low_confidence": false
+    },
+    "A25_S21": {
+      "compactness": 0.8948556184768677,
+      "consistency": 0.8809865713119507,
+      "separability": 0.7658315017042424,
+      "n": 12,
+      "quality": 0.851987669295605,
+      "low_confidence": false
+    },
+    "A26_S21": {
+      "compactness": 0.8786182403564453,
+      "consistency": 0.9283444881439209,
+      "separability": 0.824705947925917,
+      "n": 26,
+      "quality": 0.8773624269635295,
+      "low_confidence": false
+    },
+    "A27_S21": {
+      "compactness": 0.8929330110549927,
+      "consistency": 0.8661375641822815,
+      "separability": 0.7060114773753449,
+      "n": 8,
+      "quality": 0.828817916889285,
+      "low_confidence": false
+    },
+    "A01_S22": {
+      "compactness": 0.8895289897918701,
+      "consistency": 0.8849167227745056,
+      "separability": 0.783182100961179,
+      "n": 38,
+      "quality": 0.8562412430374534,
+      "low_confidence": false
+    },
+    "A02_S22": {
+      "compactness": 0.8752623200416565,
+      "consistency": 0.8980383276939392,
+      "separability": 0.7500808946372411,
+      "n": 10,
+      "quality": 0.8445406947160166,
+      "low_confidence": false
+    },
+    "A03_S22": {
+      "compactness": 0.8993001580238342,
+      "consistency": 0.9070825576782227,
+      "separability": 0.7379842275484775,
+      "n": 5,
+      "quality": 0.8532400987775437,
+      "low_confidence": false
+    },
+    "A04_S22": {
+      "compactness": 0.8897460699081421,
+      "consistency": 0.9029083251953125,
+      "separability": 0.7355594916780109,
+      "n": 18,
+      "quality": 0.8474387730252538,
+      "low_confidence": false
+    },
+    "A05_S22": {
+      "compactness": 0.8929586410522461,
+      "consistency": 0.8900389671325684,
+      "separability": 0.7348237576884917,
+      "n": 16,
+      "quality": 0.8446422738672165,
+      "low_confidence": false
+    },
+    "A06_S22": {
+      "compactness": 0.8570969104766846,
+      "consistency": 0.9176899790763855,
+      "separability": 0.7753974503163357,
+      "n": 26,
+      "quality": 0.8507649930084901,
+      "low_confidence": false
+    },
+    "A07_S22": {
+      "compactness": 0.9079928398132324,
+      "consistency": 0.883220911026001,
+      "separability": 0.7729121186722828,
+      "n": 10,
+      "quality": 0.860037044834778,
+      "low_confidence": false
+    },
+    "A08_S22": {
+      "compactness": 0.9097503423690796,
+      "consistency": 0.883164644241333,
+      "separability": 0.8043691866112227,
+      "n": 9,
+      "quality": 0.8701602862033986,
+      "low_confidence": false
+    },
+    "A09_S22": {
+      "compactness": 0.9077485203742981,
+      "consistency": 0.9051927328109741,
+      "separability": 0.7823247902490446,
+      "n": 21,
+      "quality": 0.8693546650677249,
+      "low_confidence": false
+    },
+    "A10_S22": {
+      "compactness": 0.9129987359046936,
+      "consistency": 0.8938462138175964,
+      "separability": 0.8000328254247738,
+      "n": 19,
+      "quality": 0.8733632061345886,
+      "low_confidence": false
+    },
+    "A11_S22": {
+      "compactness": 0.8995246887207031,
+      "consistency": 0.8923681974411011,
+      "separability": 0.7350433267884698,
+      "n": 10,
+      "quality": 0.8480333327571525,
+      "low_confidence": false
+    },
+    "A12_S22": {
+      "compactness": 0.9007168412208557,
+      "consistency": 0.9005774855613708,
+      "separability": 0.7741326622245444,
+      "n": 13,
+      "quality": 0.8626997808241169,
+      "low_confidence": false
+    },
+    "A13_S22": {
+      "compactness": 0.9078260660171509,
+      "consistency": 0.8835174441337585,
+      "separability": 0.8064627293893003,
+      "n": 12,
+      "quality": 0.870124478463778,
+      "low_confidence": false
+    },
+    "A14_S22": {
+      "compactness": 0.9110109210014343,
+      "consistency": 0.8857737183570862,
+      "separability": 0.8233396287987707,
+      "n": 12,
+      "quality": 0.8771383725473307,
+      "low_confidence": false
+    },
+    "A15_S22": {
+      "compactness": 0.8934860825538635,
+      "consistency": 0.9121368527412415,
+      "separability": 0.7268698822612641,
+      "n": 10,
+      "quality": 0.849096453522297,
+      "low_confidence": false
+    },
+    "A16_S22": {
+      "compactness": 0.8997417688369751,
+      "consistency": 0.9087103009223938,
+      "separability": 0.7611407653441286,
+      "n": 11,
+      "quality": 0.8608520274147468,
+      "low_confidence": false
+    },
+    "A17_S22": {
+      "compactness": 0.900795042514801,
+      "consistency": 0.8593454360961914,
+      "separability": 0.8113530045212365,
+      "n": 15,
+      "quality": 0.8615275491911488,
+      "low_confidence": false
+    },
+    "A18_S22": {
+      "compactness": 0.9118058085441589,
+      "consistency": 0.8628235459327698,
+      "separability": 0.8183147085402429,
+      "n": 15,
+      "quality": 0.8690637997595674,
+      "low_confidence": false
+    },
+    "A19_S22": {
+      "compactness": 0.8913409113883972,
+      "consistency": 0.891893208026886,
+      "separability": 0.7302608422445144,
+      "n": 10,
+      "quality": 0.8431825796367791,
+      "low_confidence": false
+    },
+    "A20_S22": {
+      "compactness": 0.9053065776824951,
+      "consistency": 0.8982245922088623,
+      "separability": 0.7683073308924191,
+      "n": 9,
+      "quality": 0.8620822080033824,
+      "low_confidence": false
+    },
+    "A21_S22": {
+      "compactness": 0.9057272672653198,
+      "consistency": 0.9021568298339844,
+      "separability": 0.7512029689616284,
+      "n": 8,
+      "quality": 0.8582988465448118,
+      "low_confidence": false
+    },
+    "A22_S22": {
+      "compactness": 0.901523768901825,
+      "consistency": 0.8953099250793457,
+      "separability": 0.7445223532814877,
+      "n": 12,
+      "quality": 0.85255919106898,
+      "low_confidence": false
+    },
+    "A23_S22": {
+      "compactness": 0.8862967491149902,
+      "consistency": 0.901320219039917,
+      "separability": 0.6892155779633319,
+      "n": 11,
+      "quality": 0.8316794387469708,
+      "low_confidence": false
+    },
+    "A24_S22": {
+      "compactness": 0.9047242999076843,
+      "consistency": 0.8822824954986572,
+      "separability": 0.7630450390559467,
+      "n": 13,
+      "quality": 0.8554879803294548,
+      "low_confidence": false
+    },
+    "A25_S22": {
+      "compactness": 0.8984369039535522,
+      "consistency": 0.8813939094543457,
+      "separability": 0.7789316858528033,
+      "n": 14,
+      "quality": 0.8574724401735656,
+      "low_confidence": false
+    },
+    "A26_S22": {
+      "compactness": 0.8918294906616211,
+      "consistency": 0.9241400361061096,
+      "separability": 0.7723464580027294,
+      "n": 16,
+      "quality": 0.8656777444973001,
+      "low_confidence": false
+    },
+    "A27_S22": {
+      "compactness": 0.9043870568275452,
+      "consistency": 0.8786556720733643,
+      "separability": 0.7330668311104112,
+      "n": 10,
+      "quality": 0.8452715736861508,
+      "low_confidence": false
+    },
+    "A01_S23": {
+      "compactness": 0.8815723061561584,
+      "consistency": 0.8832831978797913,
+      "separability": 0.7697495050911923,
+      "n": 40,
+      "quality": 0.8485387333537584,
+      "low_confidence": false
+    },
+    "A02_S23": {
+      "compactness": 0.9083622694015503,
+      "consistency": 0.9058244824409485,
+      "separability": 0.7738456868995349,
+      "n": 8,
+      "quality": 0.867245958562765,
+      "low_confidence": false
+    },
+    "A03_S23": {
+      "compactness": 0.903566837310791,
+      "consistency": 0.9054856896400452,
+      "separability": 0.7681245561171879,
+      "n": 9,
+      "quality": 0.8635098086514864,
+      "low_confidence": false
+    },
+    "A04_S23": {
+      "compactness": 0.9032803773880005,
+      "consistency": 0.889013946056366,
+      "separability": 0.7781290658159642,
+      "n": 13,
+      "quality": 0.8614550545168992,
+      "low_confidence": false
+    },
+    "A05_S23": {
+      "compactness": 0.9088294506072998,
+      "consistency": 0.8773466348648071,
+      "separability": 0.7858062454620818,
+      "n": 14,
+      "quality": 0.8624776443409866,
+      "low_confidence": false
+    },
+    "A06_S23": {
+      "compactness": 0.8967592716217041,
+      "consistency": 0.9197245836257935,
+      "separability": 0.7802322009846997,
+      "n": 23,
+      "quality": 0.8686907440318296,
+      "low_confidence": false
+    },
+    "A07_S23": {
+      "compactness": 0.9129501581192017,
+      "consistency": 0.8845604062080383,
+      "separability": 0.8114477879804318,
+      "n": 9,
+      "quality": 0.8739825215042218,
+      "low_confidence": false
+    },
+    "A08_S23": {
+      "compactness": 0.9124191403388977,
+      "consistency": 0.8754346370697021,
+      "separability": 0.8254943519312054,
+      "n": 9,
+      "quality": 0.8752463528358313,
+      "low_confidence": false
+    },
+    "A09_S23": {
+      "compactness": 0.8905380368232727,
+      "consistency": 0.9005558490753174,
+      "separability": 0.7451229489078564,
+      "n": 12,
+      "quality": 0.8499188541242613,
+      "low_confidence": false
+    },
+    "A10_S23": {
+      "compactness": 0.8939798474311829,
+      "consistency": 0.8920705914497375,
+      "separability": 0.7564325846289947,
+      "n": 12,
+      "quality": 0.8521428917960928,
+      "low_confidence": false
+    },
+    "A11_S23": {
+      "compactness": 0.9151650071144104,
+      "consistency": 0.8867737054824829,
+      "separability": 0.8124597129762169,
+      "n": 8,
+      "quality": 0.8758360283833742,
+      "low_confidence": false
+    },
+    "A12_S23": {
+      "compactness": 0.8884977698326111,
+      "consistency": 0.8942721486091614,
+      "separability": 0.6979126130671996,
+      "n": 11,
+      "quality": 0.8330545364359527,
+      "low_confidence": false
+    },
+    "A13_S23": {
+      "compactness": 0.9080992937088013,
+      "consistency": 0.8757859468460083,
+      "separability": 0.8061008572065897,
+      "n": 10,
+      "quality": 0.8678057586992999,
+      "low_confidence": false
+    },
+    "A14_S23": {
+      "compactness": 0.9174048900604248,
+      "consistency": 0.8827102184295654,
+      "separability": 0.8225471913621859,
+      "n": 10,
+      "quality": 0.8785391789616953,
+      "low_confidence": false
+    },
+    "A15_S23": {
+      "compactness": 0.8983262181282043,
+      "consistency": 0.9079774022102356,
+      "separability": 0.7409580690532959,
+      "n": 10,
+      "quality": 0.8540111286303411,
+      "low_confidence": false
+    },
+    "A16_S23": {
+      "compactness": 0.9029116034507751,
+      "consistency": 0.9049606323242188,
+      "separability": 0.7639068198232357,
+      "n": 10,
+      "quality": 0.8618248770245464,
+      "low_confidence": false
+    },
+    "A17_S23": {
+      "compactness": 0.9046034812927246,
+      "consistency": 0.8601987957954407,
+      "separability": 0.8106639952352132,
+      "n": 13,
+      "quality": 0.863100229826286,
+      "low_confidence": false
+    },
+    "A18_S23": {
+      "compactness": 0.9061813354492188,
+      "consistency": 0.8665181398391724,
+      "separability": 0.8114975250452245,
+      "n": 13,
+      "quality": 0.8658772336450066,
+      "low_confidence": false
+    },
+    "A19_S23": {
+      "compactness": 0.8832092881202698,
+      "consistency": 0.8862665891647339,
+      "separability": 0.7372362129980996,
+      "n": 9,
+      "quality": 0.8403345558969579,
+      "low_confidence": false
+    },
+    "A20_S23": {
+      "compactness": 0.9028650522232056,
+      "consistency": 0.9108594655990601,
+      "separability": 0.749662726191878,
+      "n": 10,
+      "quality": 0.8593026784265637,
+      "low_confidence": false
+    },
+    "A21_S23": {
+      "compactness": 0.9013765454292297,
+      "consistency": 0.9139766693115234,
+      "separability": 0.7564974239499753,
+      "n": 10,
+      "quality": 0.8616928461501415,
+      "low_confidence": false
+    },
+    "A22_S23": {
+      "compactness": 0.8889874219894409,
+      "consistency": 0.9017735719680786,
+      "separability": 0.7394532156351336,
+      "n": 9,
+      "quality": 0.8479630050767402,
+      "low_confidence": false
+    },
+    "A23_S23": {
+      "compactness": 0.8900038003921509,
+      "consistency": 0.9127354621887207,
+      "separability": 0.728167227788359,
+      "n": 10,
+      "quality": 0.8482723271499842,
+      "low_confidence": false
+    },
+    "A24_S23": {
+      "compactness": 0.9047743678092957,
+      "consistency": 0.8708384037017822,
+      "separability": 0.7707536416953301,
+      "n": 12,
+      "quality": 0.8543873607428519,
+      "low_confidence": false
+    },
+    "A25_S23": {
+      "compactness": 0.9005762338638306,
+      "consistency": 0.8711562156677246,
+      "separability": 0.7753704840256306,
+      "n": 11,
+      "quality": 0.8541885034535388,
+      "low_confidence": false
+    },
+    "A26_S23": {
+      "compactness": 0.8902478814125061,
+      "consistency": 0.9300365447998047,
+      "separability": 0.8363945081536288,
+      "n": 26,
+      "quality": 0.8860284684510326,
+      "low_confidence": false
+    },
+    "A27_S23": {
+      "compactness": 0.8933046460151672,
+      "consistency": 0.8586004972457886,
+      "separability": 0.7824284797951059,
+      "n": 10,
+      "quality": 0.8496305515183353,
+      "low_confidence": false
+    },
+    "A01_S24": {
+      "compactness": 0.8491466045379639,
+      "consistency": 0.8797134757041931,
+      "separability": 0.7116474007641973,
+      "n": 48,
+      "quality": 0.8170669047557026,
+      "low_confidence": false
+    },
+    "A02_S24": {
+      "compactness": 0.8823388814926147,
+      "consistency": 0.9052603840827942,
+      "separability": 0.7287043293243406,
+      "n": 8,
+      "quality": 0.8431249666191862,
+      "low_confidence": false
+    },
+    "A03_S24": {
+      "compactness": 0.8781844973564148,
+      "consistency": 0.9009814858436584,
+      "separability": 0.7467760331537592,
+      "n": 9,
+      "quality": 0.8456010546417911,
+      "low_confidence": false
+    },
+    "A04_S24": {
+      "compactness": 0.8907210230827332,
+      "consistency": 0.8984218239784241,
+      "separability": 0.7455217319363329,
+      "n": 16,
+      "quality": 0.8494714760075203,
+      "low_confidence": false
+    },
+    "A05_S24": {
+      "compactness": 0.8930764198303223,
+      "consistency": 0.8989899754524231,
+      "separability": 0.7367165892964951,
+      "n": 17,
+      "quality": 0.8479425373568045,
+      "low_confidence": false
+    },
+    "A06_S24": {
+      "compactness": 0.8599940538406372,
+      "consistency": 0.9146425127983093,
+      "separability": 0.7394171680708423,
+      "n": 25,
+      "quality": 0.8402155257970004,
+      "low_confidence": false
+    },
+    "A07_S24": {
+      "compactness": 0.8988491296768188,
+      "consistency": 0.8798075318336487,
+      "separability": 0.7815867493963239,
+      "n": 18,
+      "quality": 0.8579579362397193,
+      "low_confidence": false
+    },
+    "A08_S24": {
+      "compactness": 0.8920899629592896,
+      "consistency": 0.879511833190918,
+      "separability": 0.7953663666548854,
+      "n": 18,
+      "quality": 0.8592994451374568,
+      "low_confidence": false
+    },
+    "A09_S24": {
+      "compactness": 0.8880292773246765,
+      "consistency": 0.9001950025558472,
+      "separability": 0.7513970272926219,
+      "n": 20,
+      "quality": 0.8506893198844113,
+      "low_confidence": false
+    },
+    "A10_S24": {
+      "compactness": 0.888232946395874,
+      "consistency": 0.8923609256744385,
+      "separability": 0.7570698479210792,
+      "n": 23,
+      "quality": 0.8501224106370049,
+      "low_confidence": false
+    },
+    "A11_S24": {
+      "compactness": 0.8861511945724487,
+      "consistency": 0.8905947208404541,
+      "separability": 0.753776671421312,
+      "n": 17,
+      "quality": 0.8477718955075093,
+      "low_confidence": false
+    },
+    "A12_S24": {
+      "compactness": 0.880622923374176,
+      "consistency": 0.8862023949623108,
+      "separability": 0.7504952579894208,
+      "n": 18,
+      "quality": 0.84325846523519,
+      "low_confidence": false
+    },
+    "A13_S24": {
+      "compactness": 0.8923416137695312,
+      "consistency": 0.8824323415756226,
+      "separability": 0.7817483683210112,
+      "n": 17,
+      "quality": 0.8561908584768025,
+      "low_confidence": false
+    },
+    "A14_S24": {
+      "compactness": 0.9028967618942261,
+      "consistency": 0.8850022554397583,
+      "separability": 0.8078667639383889,
+      "n": 16,
+      "quality": 0.8690194105711346,
+      "low_confidence": false
+    },
+    "A15_S24": {
+      "compactness": 0.8778024911880493,
+      "consistency": 0.9061877727508545,
+      "separability": 0.7202978458940342,
+      "n": 11,
+      "quality": 0.8390666820686863,
+      "low_confidence": false
+    },
+    "A16_S24": {
+      "compactness": 0.8887901902198792,
+      "consistency": 0.9062014818191528,
+      "separability": 0.7446432569167778,
+      "n": 10,
+      "quality": 0.8507694977087308,
+      "low_confidence": false
+    },
+    "A17_S24": {
+      "compactness": 0.8951742649078369,
+      "consistency": 0.858119785785675,
+      "separability": 0.8002631448583902,
+      "n": 26,
+      "quality": 0.8555845851563544,
+      "low_confidence": false
+    },
+    "A18_S24": {
+      "compactness": 0.8978615999221802,
+      "consistency": 0.8629686236381531,
+      "separability": 0.8073451734658635,
+      "n": 23,
+      "quality": 0.8602387791000771,
+      "low_confidence": false
+    },
+    "A19_S24": {
+      "compactness": 0.844255805015564,
+      "consistency": 0.9002728462219238,
+      "separability": 0.6717396453296293,
+      "n": 12,
+      "quality": 0.8093060694716916,
+      "low_confidence": false
+    },
+    "A20_S24": {
+      "compactness": 0.8900484442710876,
+      "consistency": 0.9121444821357727,
+      "separability": 0.7400746691947501,
+      "n": 13,
+      "quality": 0.8516851231075919,
+      "low_confidence": false
+    },
+    "A21_S24": {
+      "compactness": 0.8849074840545654,
+      "consistency": 0.9104146957397461,
+      "separability": 0.7261946578685013,
+      "n": 14,
+      "quality": 0.8449457997043004,
+      "low_confidence": false
+    },
+    "A22_S24": {
+      "compactness": 0.8607631325721741,
+      "consistency": 0.9027796387672424,
+      "separability": 0.705594033795552,
+      "n": 15,
+      "quality": 0.826817354797708,
+      "low_confidence": false
+    },
+    "A23_S24": {
+      "compactness": 0.8650208711624146,
+      "consistency": 0.9097609519958496,
+      "separability": 0.6916052052884798,
+      "n": 15,
+      "quality": 0.8264181956502648,
+      "low_confidence": false
+    },
+    "A24_S24": {
+      "compactness": 0.8852372765541077,
+      "consistency": 0.8913633823394775,
+      "separability": 0.7114443834361915,
+      "n": 19,
+      "quality": 0.8349372403543439,
+      "low_confidence": false
+    },
+    "A25_S24": {
+      "compactness": 0.8536057472229004,
+      "consistency": 0.8880195617675781,
+      "separability": 0.7187247874638396,
+      "n": 18,
+      "quality": 0.8234656036585855,
+      "low_confidence": false
+    },
+    "A26_S24": {
+      "compactness": 0.8719673156738281,
+      "consistency": 0.9277560710906982,
+      "separability": 0.8034508798689989,
+      "n": 28,
+      "quality": 0.8681490115574404,
+      "low_confidence": false
+    },
+    "A27_S24": {
+      "compactness": 0.8671261668205261,
+      "consistency": 0.892233669757843,
+      "separability": 0.6868977204353316,
+      "n": 13,
+      "quality": 0.8205898837861629,
+      "low_confidence": false
+    },
+    "A01_S25": {
+      "compactness": 0.8634752631187439,
+      "consistency": 0.8767951130867004,
+      "separability": 0.7284097681036403,
+      "n": 43,
+      "quality": 0.8269515696045997,
+      "low_confidence": false
+    },
+    "A02_S25": {
+      "compactness": 0.8933080434799194,
+      "consistency": 0.8991186022758484,
+      "separability": 0.7417378641152912,
+      "n": 11,
+      "quality": 0.8495801573093097,
+      "low_confidence": false
+    },
+    "A03_S25": {
+      "compactness": 0.8900368809700012,
+      "consistency": 0.9017258286476135,
+      "separability": 0.7765373047970334,
+      "n": 11,
+      "quality": 0.8594936924213946,
+      "low_confidence": false
+    },
+    "A04_S25": {
+      "compactness": 0.8764988780021667,
+      "consistency": 0.8857118487358093,
+      "separability": 0.7613405863331252,
+      "n": 19,
+      "quality": 0.8447152817215471,
+      "low_confidence": false
+    },
+    "A05_S25": {
+      "compactness": 0.8810906410217285,
+      "consistency": 0.8872041702270508,
+      "separability": 0.7292403114904131,
+      "n": 18,
+      "quality": 0.8373696009239305,
+      "low_confidence": false
+    },
+    "A06_S25": {
+      "compactness": 0.8380645513534546,
+      "consistency": 0.9137696623802185,
+      "separability": 0.7770824011572723,
+      "n": 28,
+      "quality": 0.8424814396026291,
+      "low_confidence": false
+    },
+    "A07_S25": {
+      "compactness": 0.8715214729309082,
+      "consistency": 0.869461178779602,
+      "separability": 0.7440630479418864,
+      "n": 16,
+      "quality": 0.8326658571888098,
+      "low_confidence": false
+    },
+    "A08_S25": {
+      "compactness": 0.8801075220108032,
+      "consistency": 0.8618846535682678,
+      "separability": 0.7437834663065586,
+      "n": 16,
+      "quality": 0.8337434447667693,
+      "low_confidence": false
+    },
+    "A09_S25": {
+      "compactness": 0.8972983956336975,
+      "consistency": 0.900627851486206,
+      "separability": 0.763420245606621,
+      "n": 16,
+      "quality": 0.8581337873813271,
+      "low_confidence": false
+    },
+    "A10_S25": {
+      "compactness": 0.8893133401870728,
+      "consistency": 0.8938617706298828,
+      "separability": 0.7464887301424225,
+      "n": 17,
+      "quality": 0.8478304863065207,
+      "low_confidence": false
+    },
+    "A11_S25": {
+      "compactness": 0.8939953446388245,
+      "consistency": 0.8846873641014099,
+      "separability": 0.740813643623006,
+      "n": 15,
+      "quality": 0.8452484401728545,
+      "low_confidence": false
+    },
+    "A12_S25": {
+      "compactness": 0.872368335723877,
+      "consistency": 0.8807654976844788,
+      "separability": 0.7127408267228039,
+      "n": 16,
+      "quality": 0.8269992316117355,
+      "low_confidence": false
+    },
+    "A13_S25": {
+      "compactness": 0.8939217329025269,
+      "consistency": 0.8728955388069153,
+      "separability": 0.7504523703500722,
+      "n": 16,
+      "quality": 0.844573065908107,
+      "low_confidence": false
+    },
+    "A14_S25": {
+      "compactness": 0.8906248211860657,
+      "consistency": 0.8798560500144958,
+      "separability": 0.7544835014398847,
+      "n": 17,
+      "quality": 0.8465517939107404,
+      "low_confidence": false
+    },
+    "A15_S25": {
+      "compactness": 0.8801774978637695,
+      "consistency": 0.90438312292099,
+      "separability": 0.7186572324204545,
+      "n": 10,
+      "quality": 0.8389831057479411,
+      "low_confidence": false
+    },
+    "A16_S25": {
+      "compactness": 0.8931803703308105,
+      "consistency": 0.8967862129211426,
+      "separability": 0.7744852020980723,
+      "n": 12,
+      "quality": 0.8586535726380887,
+      "low_confidence": false
+    },
+    "A17_S25": {
+      "compactness": 0.8917182087898254,
+      "consistency": 0.8505690693855286,
+      "separability": 0.7732073584716123,
+      "n": 29,
+      "quality": 0.8438202118730724,
+      "low_confidence": false
+    },
+    "A18_S25": {
+      "compactness": 0.8800355195999146,
+      "consistency": 0.8427188992500305,
+      "separability": 0.7501539249337448,
+      "n": 30,
+      "quality": 0.8298760550950984,
+      "low_confidence": false
+    },
+    "A19_S25": {
+      "compactness": 0.8666990995407104,
+      "consistency": 0.8901180624961853,
+      "separability": 0.6621033211157877,
+      "n": 12,
+      "quality": 0.8123460548998761,
+      "low_confidence": false
+    },
+    "A20_S25": {
+      "compactness": 0.8723816275596619,
+      "consistency": 0.9086152911186218,
+      "separability": 0.7238505632681296,
+      "n": 9,
+      "quality": 0.8386924073398901,
+      "low_confidence": false
+    },
+    "A21_S25": {
+      "compactness": 0.8932491540908813,
+      "consistency": 0.9040326476097107,
+      "separability": 0.7099592023398504,
+      "n": 9,
+      "quality": 0.8414972166212209,
+      "low_confidence": false
+    },
+    "A22_S25": {
+      "compactness": 0.8701624870300293,
+      "consistency": 0.8946880102157593,
+      "separability": 0.7066588042984256,
+      "n": 10,
+      "quality": 0.8284690391662672,
+      "low_confidence": false
+    },
+    "A23_S25": {
+      "compactness": 0.8766934275627136,
+      "consistency": 0.8997730612754822,
+      "separability": 0.6781887155590182,
+      "n": 10,
+      "quality": 0.8240659040754356,
+      "low_confidence": false
+    },
+    "A24_S25": {
+      "compactness": 0.8828669190406799,
+      "consistency": 0.8843285441398621,
+      "separability": 0.7478879287599631,
+      "n": 16,
+      "quality": 0.8428117094862195,
+      "low_confidence": false
+    },
+    "A25_S25": {
+      "compactness": 0.8857704401016235,
+      "consistency": 0.879279375076294,
+      "separability": 0.7088833383869296,
+      "n": 17,
+      "quality": 0.8307569900796166,
+      "low_confidence": false
+    },
+    "A26_S25": {
+      "compactness": 0.8611920475959778,
+      "consistency": 0.9243977665901184,
+      "separability": 0.8190649214780645,
+      "n": 33,
+      "quality": 0.8675156254588461,
+      "low_confidence": false
+    },
+    "A27_S25": {
+      "compactness": 0.8735634684562683,
+      "consistency": 0.8912243247032166,
+      "separability": 0.7096262036877955,
+      "n": 16,
+      "quality": 0.8296805458998109,
+      "low_confidence": false
+    },
+    "A01_S26": {
+      "compactness": 0.872749388217926,
+      "consistency": 0.8750361800193787,
+      "separability": 0.763980052137751,
+      "n": 42,
+      "quality": 0.8408046249343093,
+      "low_confidence": false
+    },
+    "A02_S26": {
+      "compactness": 0.9032297134399414,
+      "consistency": 0.9012179374694824,
+      "separability": 0.7642615957074755,
+      "n": 12,
+      "quality": 0.8609357453290638,
+      "low_confidence": false
+    },
+    "A03_S26": {
+      "compactness": 0.8955242037773132,
+      "consistency": 0.895700216293335,
+      "separability": 0.7767196347179809,
+      "n": 13,
+      "quality": 0.8599356368143201,
+      "low_confidence": false
+    },
+    "A04_S26": {
+      "compactness": 0.8643065094947815,
+      "consistency": 0.8946264982223511,
+      "separability": 0.7103125539992392,
+      "n": 17,
+      "quality": 0.8272043194643897,
+      "low_confidence": false
+    },
+    "A05_S26": {
+      "compactness": 0.8845999836921692,
+      "consistency": 0.893770694732666,
+      "separability": 0.7457201383390244,
+      "n": 20,
+      "quality": 0.8456872433983748,
+      "low_confidence": false
+    },
+    "A06_S26": {
+      "compactness": 0.8726211190223694,
+      "consistency": 0.9176517128944397,
+      "separability": 0.7641056849522145,
+      "n": 22,
+      "quality": 0.853575666962944,
+      "low_confidence": false
+    },
+    "A07_S26": {
+      "compactness": 0.8854623436927795,
+      "consistency": 0.8675677180290222,
+      "separability": 0.7511098810646959,
+      "n": 15,
+      "quality": 0.8397882172052272,
+      "low_confidence": false
+    },
+    "A08_S26": {
+      "compactness": 0.8978652954101562,
+      "consistency": 0.873299777507782,
+      "separability": 0.778137823230549,
+      "n": 16,
+      "quality": 0.8545773983855618,
+      "low_confidence": false
+    },
+    "A09_S26": {
+      "compactness": 0.8895907402038574,
+      "consistency": 0.8937948942184448,
+      "separability": 0.7619966446623793,
+      "n": 21,
+      "quality": 0.8525737577457901,
+      "low_confidence": false
+    },
+    "A10_S26": {
+      "compactness": 0.8930651545524597,
+      "consistency": 0.8862606287002563,
+      "separability": 0.7727033273655067,
+      "n": 17,
+      "quality": 0.8549152486407129,
+      "low_confidence": false
+    },
+    "A11_S26": {
+      "compactness": 0.8777989149093628,
+      "consistency": 0.8720335960388184,
+      "separability": 0.6967477052528958,
+      "n": 15,
+      "quality": 0.8217539563512595,
+      "low_confidence": false
+    },
+    "A12_S26": {
+      "compactness": 0.8860921263694763,
+      "consistency": 0.8923923373222351,
+      "separability": 0.7297550652609927,
+      "n": 21,
+      "quality": 0.8410810713227589,
+      "low_confidence": false
+    },
+    "A13_S26": {
+      "compactness": 0.8879180550575256,
+      "consistency": 0.8699299097061157,
+      "separability": 0.7522269972874361,
+      "n": 22,
+      "quality": 0.8418142941210758,
+      "low_confidence": false
+    },
+    "A14_S26": {
+      "compactness": 0.9006603956222534,
+      "consistency": 0.8818351030349731,
+      "separability": 0.7656426514297108,
+      "n": 24,
+      "quality": 0.8545074845883065,
+      "low_confidence": false
+    },
+    "A15_S26": {
+      "compactness": 0.878372848033905,
+      "consistency": 0.9028409123420715,
+      "separability": 0.7440703751425369,
+      "n": 15,
+      "quality": 0.8454225254589446,
+      "low_confidence": false
+    },
+    "A16_S26": {
+      "compactness": 0.8823890686035156,
+      "consistency": 0.8906740546226501,
+      "separability": 0.7553499785312202,
+      "n": 17,
+      "quality": 0.8467628373875674,
+      "low_confidence": false
+    },
+    "A17_S26": {
+      "compactness": 0.8986212611198425,
+      "consistency": 0.8189451098442078,
+      "separability": 0.7812581426679871,
+      "n": 21,
+      "quality": 0.8395094802015954,
+      "low_confidence": false
+    },
+    "A18_S26": {
+      "compactness": 0.9036923050880432,
+      "consistency": 0.82630854845047,
+      "separability": 0.7686513842760009,
+      "n": 27,
+      "quality": 0.8399649018531585,
+      "low_confidence": false
+    },
+    "A19_S26": {
+      "compactness": 0.8635592460632324,
+      "consistency": 0.89745032787323,
+      "separability": 0.7153706014591608,
+      "n": 18,
+      "quality": 0.8292699772250101,
+      "low_confidence": false
+    },
+    "A20_S26": {
+      "compactness": 0.8857243657112122,
+      "consistency": 0.9036458730697632,
+      "separability": 0.7473475607581471,
+      "n": 16,
+      "quality": 0.8495877764328579,
+      "low_confidence": false
+    },
+    "A21_S26": {
+      "compactness": 0.8803650736808777,
+      "consistency": 0.9068714380264282,
+      "separability": 0.7343385706462905,
+      "n": 15,
+      "quality": 0.8445090320741666,
+      "low_confidence": false
+    },
+    "A22_S26": {
+      "compactness": 0.8487237095832825,
+      "consistency": 0.8942624926567078,
+      "separability": 0.7235937159141915,
+      "n": 17,
+      "quality": 0.8248463464045828,
+      "low_confidence": false
+    },
+    "A23_S26": {
+      "compactness": 0.8411750793457031,
+      "consistency": 0.8970996737480164,
+      "separability": 0.7168842052414884,
+      "n": 17,
+      "quality": 0.8206651954351327,
+      "low_confidence": false
+    },
+    "A24_S26": {
+      "compactness": 0.8804981708526611,
+      "consistency": 0.8548526167869568,
+      "separability": 0.7859674966927815,
+      "n": 24,
+      "quality": 0.844445302384986,
+      "low_confidence": false
+    },
+    "A25_S26": {
+      "compactness": 0.8722836971282959,
+      "consistency": 0.8675189018249512,
+      "separability": 0.7188738555894751,
+      "n": 26,
+      "quality": 0.8248313060756463,
+      "low_confidence": false
+    },
+    "A26_S26": {
+      "compactness": 0.8370141983032227,
+      "consistency": 0.9246442914009094,
+      "separability": 0.7986187458687646,
+      "n": 31,
+      "quality": 0.8517845905021912,
+      "low_confidence": false
+    },
+    "A27_S26": {
+      "compactness": 0.8703121542930603,
+      "consistency": 0.8945989608764648,
+      "separability": 0.7202837360840743,
+      "n": 16,
+      "quality": 0.8325896708053858,
+      "low_confidence": false
+    },
+    "A01_S27": {
+      "compactness": 0.8401471376419067,
+      "consistency": 0.8750240802764893,
+      "separability": 0.7039020123491911,
+      "n": 44,
+      "quality": 0.8097366828444668,
+      "low_confidence": false
+    },
+    "A02_S27": {
+      "compactness": 0.8854885697364807,
+      "consistency": 0.9027569890022278,
+      "separability": 0.7488704627616337,
+      "n": 8,
+      "quality": 0.8496836634237508,
+      "low_confidence": false
+    },
+    "A03_S27": {
+      "compactness": 0.8877602815628052,
+      "consistency": 0.9028211236000061,
+      "separability": 0.7746674341692806,
+      "n": 8,
+      "quality": 0.8583506799559081,
+      "low_confidence": false
+    },
+    "A04_S27": {
+      "compactness": 0.8836215138435364,
+      "consistency": 0.8960815668106079,
+      "separability": 0.7401905067271976,
+      "n": 15,
+      "quality": 0.8443302275987562,
+      "low_confidence": false
+    },
+    "A05_S27": {
+      "compactness": 0.8847631812095642,
+      "consistency": 0.8972294926643372,
+      "separability": 0.7384411020008289,
+      "n": 16,
+      "quality": 0.8446064508833755,
+      "low_confidence": false
+    },
+    "A06_S27": {
+      "compactness": 0.864459753036499,
+      "consistency": 0.9174405932426453,
+      "separability": 0.7834874371703104,
+      "n": 21,
+      "quality": 0.8560623103384863,
+      "low_confidence": false
+    },
+    "A07_S27": {
+      "compactness": 0.9010302424430847,
+      "consistency": 0.8777992129325867,
+      "separability": 0.8195600453396863,
+      "n": 8,
+      "quality": 0.8696198744589158,
+      "low_confidence": false
+    },
+    "A08_S27": {
+      "compactness": 0.8902489542961121,
+      "consistency": 0.8765467405319214,
+      "separability": 0.8019943820494578,
+      "n": 9,
+      "quality": 0.8596619184928587,
+      "low_confidence": false
+    },
+    "A09_S27": {
+      "compactness": 0.8910412788391113,
+      "consistency": 0.9019058346748352,
+      "separability": 0.731623675240264,
+      "n": 12,
+      "quality": 0.8464753645101742,
+      "low_confidence": false
+    },
+    "A10_S27": {
+      "compactness": 0.8853198289871216,
+      "consistency": 0.8888354897499084,
+      "separability": 0.7200500071266194,
+      "n": 10,
+      "quality": 0.8367935806578071,
+      "low_confidence": false
+    },
+    "A11_S27": {
+      "compactness": 0.8823601007461548,
+      "consistency": 0.8900689482688904,
+      "separability": 0.7651188357416311,
+      "n": 8,
+      "quality": 0.8495003755016184,
+      "low_confidence": false
+    },
+    "A12_S27": {
+      "compactness": 0.8756019473075867,
+      "consistency": 0.8888631463050842,
+      "separability": 0.7223343325567944,
+      "n": 9,
+      "quality": 0.8336000225815983,
+      "low_confidence": false
+    },
+    "A13_S27": {
+      "compactness": 0.9022085666656494,
+      "consistency": 0.8825796842575073,
+      "separability": 0.8086067534709445,
+      "n": 11,
+      "quality": 0.8682393579847952,
+      "low_confidence": false
+    },
+    "A14_S27": {
+      "compactness": 0.9002537727355957,
+      "consistency": 0.8884369730949402,
+      "separability": 0.7914690903084168,
+      "n": 13,
+      "quality": 0.8640733281152454,
+      "low_confidence": false
+    },
+    "A15_S27": {
+      "compactness": 0.8792381286621094,
+      "consistency": 0.9078419208526611,
+      "separability": 0.7347986863839057,
+      "n": 10,
+      "quality": 0.8444874336358137,
+      "low_confidence": false
+    },
+    "A16_S27": {
+      "compactness": 0.8558809757232666,
+      "consistency": 0.8982044458389282,
+      "separability": 0.7375069721380705,
+      "n": 11,
+      "quality": 0.8330658156824062,
+      "low_confidence": false
+    },
+    "A17_S27": {
+      "compactness": 0.8844478130340576,
+      "consistency": 0.8514267802238464,
+      "separability": 0.7835293627885567,
+      "n": 21,
+      "quality": 0.8442659681173441,
+      "low_confidence": false
+    },
+    "A18_S27": {
+      "compactness": 0.8905313611030579,
+      "consistency": 0.8571810722351074,
+      "separability": 0.8011009507016958,
+      "n": 25,
+      "quality": 0.8536971513222642,
+      "low_confidence": false
+    },
+    "A19_S27": {
+      "compactness": 0.8621970415115356,
+      "consistency": 0.8992681503295898,
+      "separability": 0.6942939437460212,
+      "n": 12,
+      "quality": 0.8229474448272975,
+      "low_confidence": false
+    },
+    "A20_S27": {
+      "compactness": 0.8764530420303345,
+      "consistency": 0.9111070036888123,
+      "separability": 0.724292155588228,
+      "n": 9,
+      "quality": 0.8412009645952458,
+      "low_confidence": false
+    },
+    "A21_S27": {
+      "compactness": 0.8756275177001953,
+      "consistency": 0.9113641381263733,
+      "separability": 0.7260493487766053,
+      "n": 11,
+      "quality": 0.8414750531509716,
+      "low_confidence": false
+    },
+    "A22_S27": {
+      "compactness": 0.8741018772125244,
+      "consistency": 0.9019010066986084,
+      "separability": 0.7401761844049084,
+      "n": 10,
+      "quality": 0.8422639082160648,
+      "low_confidence": false
+    },
+    "A23_S27": {
+      "compactness": 0.8764609694480896,
+      "consistency": 0.9066771268844604,
+      "separability": 0.7375263065628731,
+      "n": 9,
+      "quality": 0.8438454178134358,
+      "low_confidence": false
+    },
+    "A24_S27": {
+      "compactness": 0.8818371295928955,
+      "consistency": 0.8830717206001282,
+      "separability": 0.724084502365038,
+      "n": 14,
+      "quality": 0.8348817187267081,
+      "low_confidence": false
+    },
+    "A25_S27": {
+      "compactness": 0.8678507804870605,
+      "consistency": 0.8871947526931763,
+      "separability": 0.684535446027711,
+      "n": 15,
+      "quality": 0.8186593718110903,
+      "low_confidence": false
+    },
+    "A26_S27": {
+      "compactness": 0.8461004495620728,
+      "consistency": 0.9245335459709167,
+      "separability": 0.7944336521040147,
+      "n": 29,
+      "quality": 0.8541303392473085,
+      "low_confidence": false
+    },
+    "A27_S27": {
+      "compactness": 0.8666354417800903,
+      "consistency": 0.8944326639175415,
+      "separability": 0.6973314190646294,
+      "n": 14,
+      "quality": 0.8241834016066873,
+      "low_confidence": false
+    },
+    "A01_S31": {
+      "compactness": 0.899971067905426,
+      "consistency": 0.8829036355018616,
+      "separability": 0.7666353753693319,
+      "n": 51,
+      "quality": 0.8548501304235285,
+      "low_confidence": false
+    },
+    "A02_S31": {
+      "compactness": 0.9035683274269104,
+      "consistency": 0.8964653611183167,
+      "separability": 0.7496912825393363,
+      "n": 8,
+      "quality": 0.85527432406806,
+      "low_confidence": false
+    },
+    "A03_S31": {
+      "compactness": 0.8991947770118713,
+      "consistency": 0.8942856788635254,
+      "separability": 0.736261685123031,
+      "n": 7,
+      "quality": 0.8488421200007155,
+      "low_confidence": false
+    },
+    "A04_S31": {
+      "compactness": 0.8994486927986145,
+      "consistency": 0.8838202357292175,
+      "separability": 0.7540715520964211,
+      "n": 14,
+      "quality": 0.8511470134671373,
+      "low_confidence": false
+    },
+    "A05_S31": {
+      "compactness": 0.9074756503105164,
+      "consistency": 0.8975984454154968,
+      "separability": 0.7512780049727354,
+      "n": 15,
+      "quality": 0.8576531952406761,
+      "low_confidence": false
+    },
+    "A06_S31": {
+      "compactness": 0.8525242805480957,
+      "consistency": 0.9070393443107605,
+      "separability": 0.715580828431271,
+      "n": 47,
+      "quality": 0.8277957640418478,
+      "low_confidence": false
+    },
+    "A07_S31": {
+      "compactness": 0.9163528680801392,
+      "consistency": 0.88034588098526,
+      "separability": 0.7897394399141318,
+      "n": 11,
+      "quality": 0.8675667435018731,
+      "low_confidence": false
+    },
+    "A08_S31": {
+      "compactness": 0.903274655342102,
+      "consistency": 0.8848281502723694,
+      "separability": 0.7846991364465644,
+      "n": 14,
+      "quality": 0.8621680481525209,
+      "low_confidence": false
+    },
+    "A09_S31": {
+      "compactness": 0.901749312877655,
+      "consistency": 0.8952870965003967,
+      "separability": 0.710969669124242,
+      "n": 13,
+      "quality": 0.8425767548384535,
+      "low_confidence": false
+    },
+    "A10_S31": {
+      "compactness": 0.8971296548843384,
+      "consistency": 0.8870100378990173,
+      "separability": 0.7348468101156241,
+      "n": 13,
+      "quality": 0.8454089163581278,
+      "low_confidence": false
+    },
+    "A11_S31": {
+      "compactness": 0.9047859907150269,
+      "consistency": 0.8928143382072449,
+      "separability": 0.7498520858559361,
+      "n": 12,
+      "quality": 0.854714323504965,
+      "low_confidence": false
+    },
+    "A12_S31": {
+      "compactness": 0.8838871717453003,
+      "consistency": 0.8905025124549866,
+      "separability": 0.684137799577751,
+      "n": 13,
+      "quality": 0.8259469623079414,
+      "low_confidence": false
+    },
+    "A13_S31": {
+      "compactness": 0.905020534992218,
+      "consistency": 0.8781025409698486,
+      "separability": 0.7893451519198421,
+      "n": 15,
+      "quality": 0.8622425218637945,
+      "low_confidence": false
+    },
+    "A14_S31": {
+      "compactness": 0.9152040481567383,
+      "consistency": 0.8769306540489197,
+      "separability": 0.7993091795703621,
+      "n": 14,
+      "quality": 0.8689535693484798,
+      "low_confidence": false
+    },
+    "A15_S31": {
+      "compactness": 0.8801471590995789,
+      "consistency": 0.9073682427406311,
+      "separability": 0.6837248289909734,
+      "n": 11,
+      "quality": 0.8293867851593129,
+      "low_confidence": false
+    },
+    "A16_S31": {
+      "compactness": 0.9073664546012878,
+      "consistency": 0.90659099817276,
+      "separability": 0.7184304450567087,
+      "n": 11,
+      "quality": 0.8504530148093558,
+      "low_confidence": false
+    },
+    "A17_S31": {
+      "compactness": 0.8876476287841797,
+      "consistency": 0.872806191444397,
+      "separability": 0.7864715517507912,
+      "n": 21,
+      "quality": 0.8528423744722283,
+      "low_confidence": false
+    },
+    "A18_S31": {
+      "compactness": 0.8915013670921326,
+      "consistency": 0.8781522512435913,
+      "separability": 0.7714269649675571,
+      "n": 19,
+      "quality": 0.8514743117001976,
+      "low_confidence": false
+    },
+    "A19_S31": {
+      "compactness": 0.8813552260398865,
+      "consistency": 0.9001798033714294,
+      "separability": 0.6975707467331125,
+      "n": 13,
+      "quality": 0.8318672554473172,
+      "low_confidence": false
+    },
+    "A20_S31": {
+      "compactness": 0.9103511571884155,
+      "consistency": 0.9029662609100342,
+      "separability": 0.7427343187020756,
+      "n": 10,
+      "quality": 0.8578506367589991,
+      "low_confidence": false
+    },
+    "A21_S31": {
+      "compactness": 0.8999224305152893,
+      "consistency": 0.9065959453582764,
+      "separability": 0.7383672468699242,
+      "n": 11,
+      "quality": 0.8534579298745759,
+      "low_confidence": false
+    },
+    "A22_S31": {
+      "compactness": 0.8987453579902649,
+      "consistency": 0.866150975227356,
+      "separability": 0.715947061280651,
+      "n": 11,
+      "quality": 0.834127554148508,
+      "low_confidence": false
+    },
+    "A23_S31": {
+      "compactness": 0.9063680171966553,
+      "consistency": 0.8926893472671509,
+      "separability": 0.7143922039230247,
+      "n": 13,
+      "quality": 0.8446716722357148,
+      "low_confidence": false
+    },
+    "A24_S31": {
+      "compactness": 0.9031891226768494,
+      "consistency": 0.8803980946540833,
+      "separability": 0.7268911050168755,
+      "n": 15,
+      "quality": 0.8434624089720274,
+      "low_confidence": false
+    },
+    "A25_S31": {
+      "compactness": 0.8996140956878662,
+      "consistency": 0.8883061408996582,
+      "separability": 0.7527089936090692,
+      "n": 15,
+      "quality": 0.8521501786277647,
+      "low_confidence": false
+    },
+    "A26_S31": {
+      "compactness": 0.8605626225471497,
+      "consistency": 0.9274766445159912,
+      "separability": 0.7909140821142313,
+      "n": 29,
+      "quality": 0.8597422670079267,
+      "low_confidence": false
+    },
+    "A27_S31": {
+      "compactness": 0.8925977349281311,
+      "consistency": 0.8812112212181091,
+      "separability": 0.7294867922371294,
+      "n": 11,
+      "quality": 0.8402484980078241,
+      "low_confidence": false
+    },
+    "A01_S32": {
+      "compactness": 0.8793649077415466,
+      "consistency": 0.8798161745071411,
+      "separability": 0.66746886766106,
+      "n": 31,
+      "quality": 0.815931475747079,
+      "low_confidence": false
+    },
+    "A02_S32": {
+      "compactness": 0.8930404782295227,
+      "consistency": 0.9010617136955261,
+      "separability": 0.7389181159107551,
+      "n": 8,
+      "quality": 0.8492101401736935,
+      "low_confidence": false
+    },
+    "A03_S32": {
+      "compactness": 0.9035835266113281,
+      "consistency": 0.9021720290184021,
+      "separability": 0.7455501237264622,
+      "n": 8,
+      "quality": 0.8557500564679905,
+      "low_confidence": false
+    },
+    "A04_S32": {
+      "compactness": 0.8994272947311401,
+      "consistency": 0.8914725184440613,
+      "separability": 0.713408953298675,
+      "n": 9,
+      "quality": 0.8412353594152769,
+      "low_confidence": false
+    },
+    "A05_S32": {
+      "compactness": 0.9072661399841309,
+      "consistency": 0.8989047408103943,
+      "separability": 0.7422230121665249,
+      "n": 9,
+      "quality": 0.855244781886728,
+      "low_confidence": false
+    },
+    "A06_S32": {
+      "compactness": 0.8816420435905457,
+      "consistency": 0.9196904301643372,
+      "separability": 0.813309157963358,
+      "n": 24,
+      "quality": 0.8725566938745268,
+      "low_confidence": false
+    },
+    "A07_S32": {
+      "compactness": 0.9044510722160339,
+      "consistency": 0.8782416582107544,
+      "separability": 0.7605972839297882,
+      "n": 9,
+      "quality": 0.8534321115285763,
+      "low_confidence": false
+    },
+    "A08_S32": {
+      "compactness": 0.9048412442207336,
+      "consistency": 0.8835437297821045,
+      "separability": 0.7722318454699364,
+      "n": 9,
+      "quality": 0.8586691702639058,
+      "low_confidence": false
+    },
+    "A09_S32": {
+      "compactness": 0.8996121883392334,
+      "consistency": 0.8726341724395752,
+      "separability": 0.6970902640928262,
+      "n": 9,
+      "quality": 0.8307622062954139,
+      "low_confidence": false
+    },
+    "A10_S32": {
+      "compactness": 0.8982928395271301,
+      "consistency": 0.873669445514679,
+      "separability": 0.7222563942460168,
+      "n": 8,
+      "quality": 0.8380948877390608,
+      "low_confidence": false
+    },
+    "A11_S32": {
+      "compactness": 0.9053692817687988,
+      "consistency": 0.8805977702140808,
+      "separability": 0.7581626307866572,
+      "n": 9,
+      "quality": 0.853775833007741,
+      "low_confidence": false
+    },
+    "A12_S32": {
+      "compactness": 0.8925905227661133,
+      "consistency": 0.8933168053627014,
+      "separability": 0.6904444854437575,
+      "n": 9,
+      "quality": 0.832164596348383,
+      "low_confidence": false
+    },
+    "A13_S32": {
+      "compactness": 0.900971531867981,
+      "consistency": 0.8821002840995789,
+      "separability": 0.7752136118840014,
+      "n": 12,
+      "quality": 0.8575827815422664,
+      "low_confidence": false
+    },
+    "A14_S32": {
+      "compactness": 0.9131678938865662,
+      "consistency": 0.8817827105522156,
+      "separability": 0.7856443793495317,
+      "n": 12,
+      "quality": 0.8654952845251506,
+      "low_confidence": false
+    },
+    "A15_S32": {
+      "compactness": 0.8900119066238403,
+      "consistency": 0.9057990312576294,
+      "separability": 0.6930052034692873,
+      "n": 10,
+      "quality": 0.8356460330676112,
+      "low_confidence": false
+    },
+    "A16_S32": {
+      "compactness": 0.891685962677002,
+      "consistency": 0.8969925045967102,
+      "separability": 0.6833529960752069,
+      "n": 9,
+      "quality": 0.8307780352723759,
+      "low_confidence": false
+    },
+    "A17_S32": {
+      "compactness": 0.8951830863952637,
+      "consistency": 0.8687577247619629,
+      "separability": 0.7944680499333493,
+      "n": 15,
+      "quality": 0.8570409669666992,
+      "low_confidence": false
+    },
+    "A18_S32": {
+      "compactness": 0.9023788571357727,
+      "consistency": 0.8699976801872253,
+      "separability": 0.805485914757153,
+      "n": 15,
+      "quality": 0.8635966213376225,
+      "low_confidence": false
+    },
+    "A19_S32": {
+      "compactness": 0.8926064968109131,
+      "consistency": 0.8907769918441772,
+      "separability": 0.7284004253125205,
+      "n": 11,
+      "quality": 0.8427958238713745,
+      "low_confidence": false
+    },
+    "A20_S32": {
+      "compactness": 0.8776297569274902,
+      "consistency": 0.9074445366859436,
+      "separability": 0.7662969770364758,
+      "n": 11,
+      "quality": 0.8531743568877219,
+      "low_confidence": false
+    },
+    "A21_S32": {
+      "compactness": 0.8940454125404358,
+      "consistency": 0.9062284231185913,
+      "separability": 0.7119805385950876,
+      "n": 10,
+      "quality": 0.843080853530278,
+      "low_confidence": false
+    },
+    "A22_S32": {
+      "compactness": 0.8941724300384521,
+      "consistency": 0.901077389717102,
+      "separability": 0.7145229685422181,
+      "n": 13,
+      "quality": 0.8423490794931769,
+      "low_confidence": false
+    },
+    "A23_S32": {
+      "compactness": 0.8924011588096619,
+      "consistency": 0.9071843028068542,
+      "separability": 0.7309491842431979,
+      "n": 12,
+      "quality": 0.8484005096388804,
+      "low_confidence": false
+    },
+    "A24_S32": {
+      "compactness": 0.8885593414306641,
+      "consistency": 0.8871657252311707,
+      "separability": 0.7178130358962146,
+      "n": 17,
+      "quality": 0.8369173649104813,
+      "low_confidence": false
+    },
+    "A25_S32": {
+      "compactness": 0.8848398923873901,
+      "consistency": 0.8900918960571289,
+      "separability": 0.7298970778021429,
+      "n": 14,
+      "quality": 0.8399326491127376,
+      "low_confidence": false
+    },
+    "A26_S32": {
+      "compactness": 0.8261314034461975,
+      "consistency": 0.9263203144073486,
+      "separability": 0.7915317174580653,
+      "n": 28,
+      "quality": 0.8458081709381032,
+      "low_confidence": false
+    },
+    "A27_S32": {
+      "compactness": 0.8815921545028687,
+      "consistency": 0.8804571032524109,
+      "separability": 0.6691573254421538,
+      "n": 11,
+      "quality": 0.8175211904095169,
+      "low_confidence": false
+    }
+  },
+  "low_quality": [
+    "A22_S15",
+    "A01_S17",
+    "A19_S24",
+    "A01_S27",
+    "A19_S25",
+    "A01_S04",
+    "A06_S21",
+    "A01_S32",
+    "A01_S24",
+    "A27_S32",
+    "A25_S27",
+    "A01_S16",
+    "A27_S24",
+    "A23_S26",
+    "A11_S26",
+    "A19_S27",
+    "A06_S16",
+    "A25_S24",
+    "A23_S25",
+    "A27_S27"
+  ],
+  "dataset": "datasets/mmfi/v4",
+  "version": "v4"
+}
