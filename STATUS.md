@@ -359,3 +359,14 @@ log_dirs: [logs]
   - **核心修正**：depth 动作信号在**跨帧运动**而非单帧外观——手写帧差分统计 0.27 碾压一切学习方案；推荐 depth 输入加运动通道（帧差分）作为 M6 数据改进方向
   - 产物：`docs/reports/depth_foreground_prior_v4.md` + `results/depth_arms_ckpt/vit_mae.pt`（可复用 MAE 权重）+ `framework/models/depth_vit.py`
   - 基建坑（已修）：GPU 节点需 `LD_LIBRARY_PATH` 完全覆盖为 env lib（否则 cudnn 符号冲突 abort）；hf-mirror 大文件重定向 us.aws.cdn.hf.co 被墙，torchvision 权重走 download.pytorch.org 并行 range 下载
+- [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
+  1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
+  2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型
+  3. 验收：depth-keypoints 单模态 probe ≥ 手写特征 0.27；miss-rgb 时融合模型掉分收窄
+  - 成本：~1 天（蒸馏训练 + probe 验证）；风险：rgb 老师自身遮挡误差、外参精度
+- [ ] `[提议]`：**Depth/Lidar 振兴路线 B——T=16/32 重 ingest + 运动通道 + 大规模 MAE（2026-09-02）**——T=5 帧协议把时序信息掐死（业内点云动作 SOTA 用 32-64 帧），是数据协议缺陷非模型缺陷：
+  1. 重 ingest MMFi 原始序列到 T=16（或 32），帧率/采样间隔对齐 27 类动作时长分布
+  2. depth 输入加显式运动通道 `[d_t, d_t-d_{t-1}×k]`（DMM 思路，业内验证；手写帧差分 0.27 已证明该信号存在）
+  3. MAE 预训练扩规模：全 46k train 的 ~230k 帧 + 100 epochs（当前 15k 帧/50ep 玩具规模已验证管线，权重 `results/depth_arms_ckpt/vit_mae.pt`）
+  - 成本：重 ingest ~1 天 + 预训练 ~0.5 天 GPU；**决策点**：T 升级会让数据体积 ×3-6，需先量后跑确认磁盘/内存预算（preflight_dataset 会把关）
+  - 退出条件：depth 单模态 probe 0.27→≥0.4 视为路线成立；否则 depth 维持 v5_structfeat 手写特征方案
