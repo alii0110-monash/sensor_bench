@@ -340,4 +340,5 @@ log_dirs: [logs]
   3. **mmwave-aware dropout**：训练时强制 rgb-miss 而 mmwave-pres 比率 ≥ 0.5，强迫模型依赖 mmwave 决策路径
   4. 与现有 modality_dropout（已验证负结果）正交 — 上述都是**主动**正则，不是被动 dropout
   - **⚠ 2026-09-02 controls 修正**（`results/layer_cka_controls.json`，job 1059481）：随机初始化同架构模型 layer1_out CKA=0.97-1.0（全塌缩），训练后 0.15-0.48 → **深层 CKA 上升主要是架构塌缩倾向被训练部分抵消，不是"学出融合"**。原前提"其他模态融合、mmwave 不融合"不成立（实为"训练让所有对保持分化、程度不同：wifi×rgb 0.15 最分化 … wifi×depth 0.48 最接近塌缩"）。**M6c 实验设计需先补 per-layer linear probe 区分"对齐 vs 塌缩"再定**，上述 3 候选降优先级保留
+  - **⚠ 2026-09-02 probe 迭代完成**（`results/layer_probe_v4.json`，job 1059621）：深层是**功能性信息混写**——wifi/depth/lidar 浅层探针 ≈ 随机（0.04-0.10）但深层 0.66-0.70（attention 把类信息写进各模态 token 段），同时 CKA 0.15-0.48 ≪ 随机 0.97（几何不塌缩）。**mmwave 独立 oracle 获探针证据**（enc 0.422 / layer1 0.574 各自可解码 + 与 rgb CKA 仅 0.23）。浅层探针独立复现 dataset_quality 模态层级（rgb 0.78/mmwave 0.42/其余随机）。**对 M6c：alignment loss 仍应避免**；wifi 深层高分是借来的（miss-wifi 不掉分三角印证），v5 方向仍是弱模态自有信息。masked-context probe（仅 wifi 可用）为下步
   - **退出条件**：① val acc 提升 > 0.02 或 miss-mmwave robustness 提升 > 0.05 → 进入主流程；② 3 个变体均无显著差异 → 收尾 M6c

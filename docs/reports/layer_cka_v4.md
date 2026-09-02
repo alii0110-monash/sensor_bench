@@ -249,3 +249,39 @@ mmwave×rgb 平坦（0.18→0.22-0.23）在修正框架下仍成立：该对在�
 
 - `results/layer_cka_controls.json`
 - `scripts/layer_cka_controls.py` + `jobs/layer_cka_controls.slurm`（job 1059481，315s）
+
+---
+
+## 10. MVP 迭代 #2：per-layer linear probe（2026-09-02，job 1059621）
+
+`scripts/layer_probe.py`：train 分层子集 2997 → val 1870，Linear(256→27) + z-score，30 epochs，3 seeds。
+label-CKA = 特征与 one-hot 标签的 CKA（类结构含量）。
+
+### 10.1 结果（3-seed mean）
+
+| modality | enc_out probe | layer1_out probe | Δ | label-CKA enc | label-CKA layer1 |
+|---|---|---|---|---|---|
+| wifi | 0.041 | **0.656** | +0.62 | 0.010 | 0.239 |
+| depth | 0.102 | **0.683** | +0.58 | 0.027 | 0.257 |
+| lidar | 0.068 | **0.699** | +0.63 | 0.068 | 0.163 |
+| mmwave | **0.422** | **0.574** | +0.15 | 0.238 | 0.291 |
+| rgb | **0.782** | **0.818** | +0.04 | 0.335 | 0.403 |
+
+（随机 = 1/27 ≈ 0.037）
+
+### 10.2 判读（对照 §9.3 判据矩阵）
+
+1. **深层是"功能性的信息混写"，不是平凡塌缩**：wifi/depth/lidar 的 enc_out 探针 ≈ 随机（0.04-0.10），但 layer1_out 探针 0.66-0.70——cross-modal attention 把类判别信息**写进了每个模态的 token 段**（探针在单模态段上即可读出类信息）。同时 CKA 0.15-0.48 远低于随机模型的 0.97 → 训练学会了"传递类信息但不塌缩几何"。
+2. **浅层探针独立复现了 dataset_quality 的模态层级**：rgb 0.78 / mmwave 0.42 / 其余 ≈ 随机，与 `dataset_quality_v1_v2_v4.md`（0.819/0.348/≈0.05）交叉验证一致——两套独立方法同一结论。
+3. **mmwave「独立 oracle」获探针证据**：mmwave 自带判别几何（enc 0.422）+ 深层仍可独立解码（0.574）+ 与 rgb 几何不合并（CKA 0.23）。rgb 与 mmwave 是深层**共存的两套各自可解码、几何互不合并的表征**。
+4. **wifi 深层 0.656 ≠ wifi 数据好**：其信息是 attention 从 rgb/mmwave 借来的（enc 0.041 ≈ 随机）。与 modality_dropout 实验（miss-wifi 几乎不掉分）三角印证：wifi 无独立贡献。
+5. **数据质量总判**（回到用户最初问题）：v4 **无模态冗余**（浅层全独立）、**无致命错位**（attention 能有效跨模态传递类信息）、模态信息层级 rgb > mmwave ≫ wifi/depth/lidar（原始编码）。理想曲线 A 的修正版：**浅层特异 + 深层功能性混写 + 几何保持可分**。
+
+### 10.3 残留问题（下步）
+
+- probe acc 的"借用信息"与"自有信息"需 masked-context probe 分离：仅 wifi 可用时提取 layer1_out 再探针（avail={wifi}）→ 读出 wifi 自有贡献上限
+- lidar label-CKA 深层反降（0.068→0.163 vs 其他模态升）+ seed 方差大 → lidar 深层几何最不稳定
+
+### 10.4 新增产物
+
+- `results/layer_probe_v4.json` + `scripts/layer_probe.py` + `jobs/layer_probe.slurm`（1127s）
