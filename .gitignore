@@ -76,3 +76,10 @@ results/__pycache__/
 # ===== Project: tokens intermediate =====
 # v5tokens 是中间表示产物（用户选择含 results，但不含中间表示）
 datasets/mmfi/v5tokens/
+
+# ===== Project: mask 缓存（24k npz 二进制，不入库）=====
+datasets/mmfi/*/masks_m2f/
+
+# ===== Project: 模型权重缓存 =====
+models/
+.models/

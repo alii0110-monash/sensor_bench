@@ -95,7 +95,12 @@ log_dirs: [logs]
 
 ## 🧠 判断层
 
-- 当前阶段：**v5_structfeat 主流程重训完成（A 完整落地）**——token_fusion robustness 0.4961→0.6858、acc_full 0.7632→0.9184；late_fusion robustness 0.3823→0.4979、acc_full 0.7084→0.8841。结构化特征让主流程直接用了 probe 已验证的可分特征。M5a/b/c 完成（M5c 负结果已归档）；M6a 完成——伪 token 作为可移植跨模态统一表征（CanonicalToken 4096-dim + 资产化），与 LLM 空间解耦。
+- 当前阶段：**Alignment 重训 A/B 完成（2026-09-02，§11）**——同协议双臂（v4text vs schematext，冷启动 base-only 9205×20ep，作业 1059804/1059857）：**B 臂训练 InfoNCE 更低（2.858 vs 3.14）但样本级与类级检索全输**（r@1 0.0109 vs 0.0163；类级 0.407 vs 0.437）。机制确认：**类内文本一致性在对比训练中是缺陷**（近重复目标=任务变易+监督变粗），v4 逐样本改写=免费文本增广。与 §10 合并：schema=更好的静态文本锚（CLIP 可分 0.893），v4=更好的训练目标；M5a"模板趋同→检索失败"假设获机制级确认。路线 C 修正版：**schema 骨架 + LLM 类内多样改写（每样本 2-3 变体）**是唯一同时解释三组实验的方案。报告 §11，结果 `results/alignment_{caption_ab,class_ab}.json`，checkpoint `checkpoints_alignment/m6b_{v4text,schematext}_seed0.pt`。
+- 当前阶段（历史）：**Caption 区分性 MVP 完成 + CLIP 嵌入验证（2026-09-02）**——keypoint schema caption（路线 B）3 轮迭代：lexical gate FAIL（distinct-2 结构性差距，如实报告），但 full_centroid 0.864 反超 v4 0.846。**补充实验（§10）**：CLIP text tower 嵌入空间 27 类质心 acc **v4 0.675 → schema 0.893（+21.8pp）**，类间余弦全面改善——**文本锚路线（M5 方向）证据复活**；镜像对余弦双方 ≈0.97 → 左右方向语义是 CLIP 文本塔固有限制，措辞无法解决。报告 `docs/reports/preflight_caption_mvp_report.md`（含 §10），结果 `results/clip_separability_v4_vs_schema.json`，脚本 `scripts/eval_caption_clip_separability.py`。**基础设施备忘：hf-mirror LFS 数据面（us.aws.cdn.hf.co）集群不可达，权重下载改走 ModelScope（openai-mirror org），CLIP 权重已落 `sensorbench/.models/`，评测用 minimind-o 环境（transformers 4.57 兼容 torch 2.6；test 环境 transformers 5.14 与 torch 2.4 冲突）。**
+- [提议] gate 修订：distinct-2 对 anchor 型 caption 是错配指标（类内一致性本应是特性），改为 full_centroid 主指标 + 镜像对单列 + distinct-2 仅作下限（报告 §5）。
+- [提议] 下一步（CLIP 验证已正向）：① gate 修订拍板后全量生成 v7 并落盘数据集版本；② 用 schema caption 重启 alignment 对照实验（v4 文本 vs schema 文本，同 AlignmentModel+InfoNCE，看 L1 r@1 是否突破 0.011 天花板）；③ 路线 C（LLM 润色 schema 骨架）可与 ② 并行评估。
+- [提议] ② 已执行（§11，负结果+机制确认）——修正后的下一步：**路线 C 多样性版**（schema 骨架 + LLM 每样本 2-3 改写，控 distinct-2 与类锚并存），需 LLM 后端选型（ollama qwen2.5-vl 本地 vs deepseek-v4-flash:cloud）与全量 9205×3 生成成本估算后再提交；或先小样（200×3）过 A/B 闭环验证假设。
+- 当前阶段（历史）：**v5_structfeat 主流程重训完成（A 完整落地）**——token_fusion robustness 0.4961→0.6858、acc_full 0.7632→0.9184；late_fusion robustness 0.3823→0.4979、acc_full 0.7084→0.8841。结构化特征让主流程直接用了 probe 已验证的可分特征。M5a/b/c 完成（M5c 负结果已归档）；M6a 完成——伪 token 作为可移植跨模态统一表征（CanonicalToken 4096-dim + 资产化），与 LLM 空间解耦。
 - 发现与结论：
   - **v3 是首次真正提升**：token_fusion robustness 0.1425→0.3167（2.2x），acc_full 0.2382→0.5759；late_fusion 0.2138→0.2615。核心假设判明：弱模态缺独立判别力，不是任务难。
   - v2 全局过滤方向错误；数据 flywheel 靠"加信息"而非"删样本"。
@@ -342,3 +347,15 @@ log_dirs: [logs]
   - **⚠ 2026-09-02 controls 修正**（`results/layer_cka_controls.json`，job 1059481）：随机初始化同架构模型 layer1_out CKA=0.97-1.0（全塌缩），训练后 0.15-0.48 → **深层 CKA 上升主要是架构塌缩倾向被训练部分抵消，不是"学出融合"**。原前提"其他模态融合、mmwave 不融合"不成立（实为"训练让所有对保持分化、程度不同：wifi×rgb 0.15 最分化 … wifi×depth 0.48 最接近塌缩"）。**M6c 实验设计需先补 per-layer linear probe 区分"对齐 vs 塌缩"再定**，上述 3 候选降优先级保留
   - **⚠ 2026-09-02 probe 迭代完成**（`results/layer_probe_v4.json`，job 1059621）：深层是**功能性信息混写**——wifi/depth/lidar 浅层探针 ≈ 随机（0.04-0.10）但深层 0.66-0.70（attention 把类信息写进各模态 token 段），同时 CKA 0.15-0.48 ≪ 随机 0.97（几何不塌缩）。**mmwave 独立 oracle 获探针证据**（enc 0.422 / layer1 0.574 各自可解码 + 与 rgb CKA 仅 0.23）。浅层探针独立复现 dataset_quality 模态层级（rgb 0.78/mmwave 0.42/其余随机）。**对 M6c：alignment loss 仍应避免**；wifi 深层高分是借来的（miss-wifi 不掉分三角印证），v5 方向仍是弱模态自有信息。masked-context probe（仅 wifi 可用）为下步
   - **退出条件**：① val acc 提升 > 0.02 或 miss-mmwave robustness 提升 > 0.05 → 进入主流程；② 3 个变体均无显著差异 → 收尾 M6c
+- [x] `[已定]`：**Depth encoder 三臂诊断——模型式前景/先验注入（2026-09-02）**——回答"depth 语义丰富为何 encoder ≈ 随机、能否用模型替代传统分割"。8 臂同协议对比（train 2997 分层 → val 1870）：
+  | arm | val acc |
+  |---|---|
+  | tiny_raw / tiny_masked | 0.063 / 0.065 |
+  | vit_raw / vit_masked / vit_raw_long(150ep) | 0.078 / 0.054 / 0.079 |
+  | vit_mae_probe(冻结) / vit_mae_ft(lr1e-3) | 0.095 / 0.059 |
+  | **vit_mae_ft_lowlr(lr1e-4)** | **0.146** |
+  | 参照：手写运动统计(v5_structfeat) | 0.27 |
+  - **H1 容量 FAIL / H2 背景 FAIL（Mask R-CNN mask 干净但零收益，不进主流程）/ H3 MAE 先验 PARTIAL WIN（2×，但 lr 敏感：1e-3 打崩 0.059，1e-4 才 0.146）**
+  - **核心修正**：depth 动作信号在**跨帧运动**而非单帧外观——手写帧差分统计 0.27 碾压一切学习方案；推荐 depth 输入加运动通道（帧差分）作为 M6 数据改进方向
+  - 产物：`docs/reports/depth_foreground_prior_v4.md` + `results/depth_arms_ckpt/vit_mae.pt`（可复用 MAE 权重）+ `framework/models/depth_vit.py`
+  - 基建坑（已修）：GPU 节点需 `LD_LIBRARY_PATH` 完全覆盖为 env lib（否则 cudnn 符号冲突 abort）；hf-mirror 大文件重定向 us.aws.cdn.hf.co 被墙，torchvision 权重走 download.pytorch.org 并行 range 下载

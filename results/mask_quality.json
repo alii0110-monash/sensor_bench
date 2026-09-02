@@ -1,0 +1,9 @@
+{
+  "model": "torchvision maskrcnn_resnet50_fpn (COCO, person=label1)",
+  "score_thr": 0.5,
+  "n_frames": 24335,
+  "detection_rate": 0.8323813437435792,
+  "iou_vs_body_band_mean": 0.03523857837515302,
+  "iou_vs_body_band_p50": 0.04707689527423873,
+  "elapsed_s": 1076.3998653888702
+}
