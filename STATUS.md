@@ -359,6 +359,13 @@ log_dirs: [logs]
   - **核心修正**：depth 动作信号在**跨帧运动**而非单帧外观——手写帧差分统计 0.27 碾压一切学习方案；推荐 depth 输入加运动通道（帧差分）作为 M6 数据改进方向
   - 产物：`docs/reports/depth_foreground_prior_v4.md` + `results/depth_arms_ckpt/vit_mae.pt`（可复用 MAE 权重）+ `framework/models/depth_vit.py`
   - 基建坑（已修）：GPU 节点需 `LD_LIBRARY_PATH` 完全覆盖为 env lib（否则 cudnn 符号冲突 abort）；hf-mirror 大文件重定向 us.aws.cdn.hf.co 被墙，torchvision 权重走 download.pytorch.org 并行 range 下载
+- [x] `[已定]`：**Depth 振兴路线 A 执行完成——rgb关键点对比蒸馏（2026-09-02，job 1060087）**——原提案"关键点回归"因标定缺失降级为 InfoNCE 对比蒸馏（teacher=rgb keypoints MLP 帧级 sanity 0.604；student=MAE init ViTDepthEncoder）：
+  - **distill_probe（冻结）0.133**（纯 MAE 0.095 的 1.4×）
+  - **distill_ft（低lr微调）0.223**（纯 MAE 0.146 的 **1.53×**、从零 0.078 的 2.9×），逼近手写 0.27
+  - **语义中间表示假设在 MMFi 成立**；MAE 先验与蒸馏两级可加（0.078→0.146→0.223）；蒸馏管线可推广（teacher 换 mmwave/wifi）
+  - 产物：`results/distill_route_a.json` + `scripts/distill_depth_route_a.py` + 报告 `docs/reports/depth_revival_ab_v4.md`
+- [x] `[已定]`：**Depth 振兴路线 B 阻塞确认（2026-09-02）**——原始 82G tar 解压时已损坏（`exp/mmfi_extract3.log` Unexpected EOF）且删除，`~/MMFi_dataset/` 已空，官方分发（GitHub→GDrive/百度）集群无可靠再获取路径 → **T=16/32 重 ingest 无源可用**。若未来重获数据按 STATUS 路线 B 原案执行
+- [ ] `[提议]`：**路线 B'（T=5 运动通道）+ 组合拳（2026-09-02）**——B'：depth 输入 1ch→5ch `[d_0, 4×帧差]`（DMM 思路，作业 1060121 进行中）；组合拳：运动通道 × MAE init × 蒸馏三者正交可叠加，预期 depth 单模态突破 0.27 后接回 token_fusion 主流程重训
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型
