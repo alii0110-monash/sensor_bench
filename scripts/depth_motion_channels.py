@@ -30,9 +30,9 @@ OUT = ROOT / 'results' / 'depth_motion_channels.json'
 
 
 class ViTMotionEncoder(nn.Module):
-    """5-channel depth+diffs -> (B,T,16,256) same token contract."""
+    """2-channel [d_t, Δ_t] per frame -> (B,T,16,256) same token contract."""
 
-    def __init__(self, in_ch: int = 5, d: int = 256, n_layers: int = 4):
+    def __init__(self, in_ch: int = 2, d: int = 256, n_layers: int = 4):
         super().__init__()
         self.patch_embed = nn.Conv2d(in_ch, d, kernel_size=16, stride=16)
         self.pos = nn.Parameter(torch.randn(1, GRID * GRID, d) * 0.02)
@@ -56,13 +56,11 @@ class ViTMotionEncoder(nn.Module):
 
 
 def make_motion(depth: np.ndarray) -> np.ndarray:
-    """(T,1,224,224) -> (T,T,224,224): [d_0, d_1-d_0, ..., d_{T-1}-d_{T-2}].
-    T=5 → 5 channels (1 raw + 4 diffs)."""
+    """(T,1,224,224) -> (T,2,224,224): per-frame [d_t, d_t-d_{t-1}] (Δ_0=0)."""
     d = depth[:, 0]  # (T,224,224)
-    chans = [d]
-    for t in range(1, d.shape[0]):
-        chans.append(d[t] - d[t - 1])
-    return np.stack(chans, axis=1).astype(np.float32)
+    diff = np.zeros_like(d)
+    diff[1:] = d[1:] - d[:-1]
+    return np.stack([d, diff], axis=1).astype(np.float32)
 
 
 def batch_input(batch_samples):

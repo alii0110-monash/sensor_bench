@@ -366,6 +366,11 @@ log_dirs: [logs]
   - 产物：`results/distill_route_a.json` + `scripts/distill_depth_route_a.py` + 报告 `docs/reports/depth_revival_ab_v4.md`
 - [x] `[已定]`：**Depth 振兴路线 B 阻塞确认（2026-09-02）**——原始 82G tar 解压时已损坏（`exp/mmfi_extract3.log` Unexpected EOF）且删除，`~/MMFi_dataset/` 已空，官方分发（GitHub→GDrive/百度）集群无可靠再获取路径 → **T=16/32 重 ingest 无源可用**。若未来重获数据按 STATUS 路线 B 原案执行
 - [ ] `[提议]`：**路线 B'（T=5 运动通道）+ 组合拳（2026-09-02）**——B'：depth 输入 1ch→5ch `[d_0, 4×帧差]`（DMM 思路，作业 1060121 进行中）；组合拳：运动通道 × MAE init × 蒸馏三者正交可叠加，预期 depth 单模态突破 0.27 后接回 token_fusion 主流程重训
+- [x] `[已定]`：**路线 B' 完成——帧差分通道是 depth 的最大单项杠杆（2026-09-02，job 1060783）**——depth 输入 1ch→2ch `[d_t, d_t-d_{t-1}]`（Δ_0=0），vit_motion_raw 从零训练：
+  - **val acc 0.4738**：vs vit_raw 0.078（**6.1×**）、vs 手写运动统计 0.27（**1.75×**）、vs 蒸馏最优 0.223（2.1×）
+  - **确证**：depth 判别信号在跨帧运动，显式给帧差分后无需任何先验；mask/MAE/蒸馏在原始 1ch 输入上的努力全部被这一行预处理超越
+  - **下一步**：组合臂（motion × MAE init × distill 正交性未测，预期继续上探）+ motion 通道接回 token_fusion 主流程重训（8 通道×5 模态融合重评 leaderboard）
+  - 产物：`results/depth_motion_channels.json` + `scripts/depth_motion_channels.py`（`ViTMotionEncoder` 2ch 契约兼容）
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型

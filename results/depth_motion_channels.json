@@ -1,0 +1,6 @@
+{
+  "arm": "vit_motion_raw",
+  "val_acc": 0.4737967914438503,
+  "epochs": 30,
+  "elapsed_s": 495.6762149333954
+}
