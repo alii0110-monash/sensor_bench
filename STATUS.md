@@ -389,6 +389,11 @@ log_dirs: [logs]
   - **修正结论链**：信息>先验（单模态）→ **单模态增益 ≠ 融合增益（共享 fusion 中换 encoder 不是局部手术）**
   - 下一步选项：① encoder 输出 LayerNorm 对齐 token 统计后重验 ② 保守变体（tiny conv + diff 通道）③ mmwave/rgb 缺失时路由 motion-depth 专家头 ④ 修 only-* 悖论（单模态可用时旁路 MISSING 机制）
   - 产物：`docs/reports/motion_main_pipeline_v4.md` + `leaderboard_motion_v4.json` + `checkpoints_motion_v4/`
+- [x] `[已定]`：**选项 1（LayerNorm token 对齐）验证完成——无效（2026-09-03，job 1062327）**——`motion_depth_layernorm` 开关（depth token encoder 后 LayerNorm，已合入契约持久化），1 seed 验证：
+  - robustness 0.6352 vs 无 LN 3-seed 0.6399（持平略降，种子方差内）；acc_full 0.9057 vs 0.9159；val best 0.837 vs 0.820（+0.017 未兑现到 leaderboard）
+  - **排除假设：劣化不是 token 统计（范数）问题，而是信息内容**——强 motion-depth token 使共享 transformer 训练时重新分配注意力、边缘化弱模态路径；LayerNorm 无法改变信息内容
+  - 选项 1 关闭。剩余：② 保守变体（tiny conv + diff 通道，分布扰动最小）③ 专家路由 ④ only-* 悖论修复
+  - 产物：`leaderboard_motion_ln_seed0.json` + `checkpoints_motion_ln/`
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型

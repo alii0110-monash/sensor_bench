@@ -68,7 +68,7 @@ class TokenFusionModel(nn.Module, SensorModel):
     def __init__(self, num_classes: int = 27, d: int = D, n_layers: int = 2,
                  n_heads: int = 4, structured: dict = None, domain: dict = None,
                  domain_dims: dict = None, temporal: bool = False,
-                 motion_depth: bool = False):
+                 motion_depth: bool = False, motion_depth_layernorm: bool = False):
         super().__init__()
         self.d = d
         self.num_classes = num_classes
@@ -81,6 +81,12 @@ class TokenFusionModel(nn.Module, SensorModel):
         self.structured = dict(structured) if structured else {}
         self.domain = dict(domain) if domain else {}
         self.domain_dims = dict(domain_dims) if domain_dims else {}
+        # motion_depth_layernorm: LayerNorm on depth tokens after the encoder,
+        # aligning ViT token statistics (norm scale) with the tiny-conv encoders
+        # of other modalities before the SHARED fusion transformer (fixes the
+        # shared-space perturbation seen in leaderboard_motion_v4).
+        self.motion_depth_layernorm = motion_depth_layernorm and motion_depth
+        self.depth_norm = nn.LayerNorm(d) if self.motion_depth_layernorm else None
         self.encoders = _build_encoders(self.structured, self.domain, self.domain_dims,
                                         temporal=temporal, motion_depth=motion_depth)
         self.missing = nn.ParameterDict({
@@ -103,6 +109,10 @@ class TokenFusionModel(nn.Module, SensorModel):
         for m in MODALITIES:
             if avail.get(m):
                 enc_out = self.encoders[m](mods[m])
+                if m == 'depth' and self.depth_norm is not None:
+                    # align motion-ViT token statistics with other modalities
+                    # BEFORE the shared fusion transformer
+                    enc_out = self.depth_norm(enc_out)
                 if self.temporal and m not in self.structured and m not in self.domain \
                         and enc_out.dim() == 4:
                     # (B, T, N, D) -> (B, N, D) via temporal aggregation
@@ -282,6 +292,7 @@ class TokenFusionModel(nn.Module, SensorModel):
                     "domain_dims": self.domain_dims,
                     "temporal": self.temporal,
                     "motion_depth": self.motion_depth,
+                    "motion_depth_layernorm": self.motion_depth_layernorm,
                     "num_classes": self.num_classes}, path)
 
     @classmethod
@@ -295,11 +306,14 @@ class TokenFusionModel(nn.Module, SensorModel):
             domain_dims = ckpt.get("domain_dims", {})
             temporal = ckpt.get("temporal", False)
             motion_depth = ckpt.get("motion_depth", False)
+            motion_depth_layernorm = ckpt.get("motion_depth_layernorm", False)
         else:
             state, structured, num_classes = ckpt, {}, 27
             domain, domain_dims, temporal, motion_depth = {}, {}, False, False
+            motion_depth_layernorm = False
         m = cls(num_classes=num_classes, structured=structured,
                 domain=domain, domain_dims=domain_dims, temporal=temporal,
-                motion_depth=motion_depth)
+                motion_depth=motion_depth,
+                motion_depth_layernorm=motion_depth_layernorm)
         m.load_state_dict(state)
         return m

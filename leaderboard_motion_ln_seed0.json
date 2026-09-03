@@ -1,0 +1,363 @@
+{
+  "protocol": {
+    "modalities": [
+      "wifi",
+      "depth",
+      "lidar",
+      "mmwave",
+      "rgb"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "profiles": [
+      {
+        "id": "full",
+        "available": [
+          "wifi",
+          "depth",
+          "lidar",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss-wifi",
+        "available": [
+          "depth",
+          "lidar",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss-depth",
+        "available": [
+          "wifi",
+          "lidar",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss-lidar",
+        "available": [
+          "wifi",
+          "depth",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss-mmwave",
+        "available": [
+          "wifi",
+          "depth",
+          "lidar",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss-rgb",
+        "available": [
+          "wifi",
+          "depth",
+          "lidar",
+          "mmwave"
+        ]
+      },
+      {
+        "id": "miss2-wifi-depth",
+        "available": [
+          "lidar",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss2-wifi-lidar",
+        "available": [
+          "depth",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss2-wifi-mmwave",
+        "available": [
+          "depth",
+          "lidar",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss2-wifi-rgb",
+        "available": [
+          "depth",
+          "lidar",
+          "mmwave"
+        ]
+      },
+      {
+        "id": "miss2-depth-lidar",
+        "available": [
+          "wifi",
+          "mmwave",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss2-depth-mmwave",
+        "available": [
+          "wifi",
+          "lidar",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss2-depth-rgb",
+        "available": [
+          "wifi",
+          "lidar",
+          "mmwave"
+        ]
+      },
+      {
+        "id": "miss2-lidar-mmwave",
+        "available": [
+          "wifi",
+          "depth",
+          "rgb"
+        ]
+      },
+      {
+        "id": "miss2-lidar-rgb",
+        "available": [
+          "wifi",
+          "depth",
+          "mmwave"
+        ]
+      },
+      {
+        "id": "miss2-mmwave-rgb",
+        "available": [
+          "wifi",
+          "depth",
+          "lidar"
+        ]
+      },
+      {
+        "id": "only-wifi",
+        "available": [
+          "wifi"
+        ]
+      },
+      {
+        "id": "only-depth",
+        "available": [
+          "depth"
+        ]
+      },
+      {
+        "id": "only-lidar",
+        "available": [
+          "lidar"
+        ]
+      },
+      {
+        "id": "only-mmwave",
+        "available": [
+          "mmwave"
+        ]
+      },
+      {
+        "id": "only-rgb",
+        "available": [
+          "rgb"
+        ]
+      }
+    ]
+  },
+  "dataset": "datasets/mmfi/v4",
+  "leaderboard": {
+    "token_fusion": {
+      "robustness": 0.6352,
+      "robustness_std": 0.0,
+      "acc_full": 0.9057,
+      "profiles": {
+        "full": {
+          "mean": 0.9057,
+          "std": 0.0,
+          "per_seed": [
+            0.9057
+          ]
+        },
+        "miss-wifi": {
+          "mean": 0.9036,
+          "std": 0.0,
+          "per_seed": [
+            0.9036
+          ]
+        },
+        "miss-depth": {
+          "mean": 0.9084,
+          "std": 0.0,
+          "per_seed": [
+            0.9084
+          ]
+        },
+        "miss-lidar": {
+          "mean": 0.9042,
+          "std": 0.0,
+          "per_seed": [
+            0.9042
+          ]
+        },
+        "miss-mmwave": {
+          "mean": 0.7059,
+          "std": 0.0,
+          "per_seed": [
+            0.7059
+          ]
+        },
+        "miss-rgb": {
+          "mean": 0.6502,
+          "std": 0.0,
+          "per_seed": [
+            0.6502
+          ]
+        },
+        "miss2-wifi-depth": {
+          "mean": 0.9059,
+          "std": 0.0,
+          "per_seed": [
+            0.9059
+          ]
+        },
+        "miss2-wifi-lidar": {
+          "mean": 0.9017,
+          "std": 0.0,
+          "per_seed": [
+            0.9017
+          ]
+        },
+        "miss2-wifi-mmwave": {
+          "mean": 0.7047,
+          "std": 0.0,
+          "per_seed": [
+            0.7047
+          ]
+        },
+        "miss2-wifi-rgb": {
+          "mean": 0.6412,
+          "std": 0.0,
+          "per_seed": [
+            0.6412
+          ]
+        },
+        "miss2-depth-lidar": {
+          "mean": 0.9038,
+          "std": 0.0,
+          "per_seed": [
+            0.9038
+          ]
+        },
+        "miss2-depth-mmwave": {
+          "mean": 0.7205,
+          "std": 0.0,
+          "per_seed": [
+            0.7205
+          ]
+        },
+        "miss2-depth-rgb": {
+          "mean": 0.6356,
+          "std": 0.0,
+          "per_seed": [
+            0.6356
+          ]
+        },
+        "miss2-lidar-mmwave": {
+          "mean": 0.7107,
+          "std": 0.0,
+          "per_seed": [
+            0.7107
+          ]
+        },
+        "miss2-lidar-rgb": {
+          "mean": 0.647,
+          "std": 0.0,
+          "per_seed": [
+            0.647
+          ]
+        },
+        "miss2-mmwave-rgb": {
+          "mean": 0.0699,
+          "std": 0.0,
+          "per_seed": [
+            0.0699
+          ]
+        },
+        "only-wifi": {
+          "mean": 0.0282,
+          "std": 0.0,
+          "per_seed": [
+            0.0282
+          ]
+        },
+        "only-depth": {
+          "mean": 0.0908,
+          "std": 0.0,
+          "per_seed": [
+            0.0908
+          ]
+        },
+        "only-lidar": {
+          "mean": 0.0524,
+          "std": 0.0,
+          "per_seed": [
+            0.0524
+          ]
+        },
+        "only-mmwave": {
+          "mean": 0.6281,
+          "std": 0.0,
+          "per_seed": [
+            0.6281
+          ]
+        },
+        "only-rgb": {
+          "mean": 0.7203,
+          "std": 0.0,
+          "per_seed": [
+            0.7203
+          ]
+        }
+      },
+      "degradation": {
+        "full": 0.0,
+        "miss-wifi": 0.0021,
+        "miss-depth": -0.0027,
+        "miss-lidar": 0.0015,
+        "miss-mmwave": 0.1998,
+        "miss-rgb": 0.2555,
+        "miss2-wifi-depth": -0.0002,
+        "miss2-wifi-lidar": 0.004,
+        "miss2-wifi-mmwave": 0.201,
+        "miss2-wifi-rgb": 0.2645,
+        "miss2-depth-lidar": 0.0019,
+        "miss2-depth-mmwave": 0.1852,
+        "miss2-depth-rgb": 0.2701,
+        "miss2-lidar-mmwave": 0.195,
+        "miss2-lidar-rgb": 0.2587,
+        "miss2-mmwave-rgb": 0.8358,
+        "only-wifi": 0.8775,
+        "only-depth": 0.8149,
+        "only-lidar": 0.8533,
+        "only-mmwave": 0.2776,
+        "only-rgb": 0.1854
+      }
+    }
+  }
+}
