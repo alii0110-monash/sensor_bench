@@ -47,12 +47,17 @@ def load_split_base(root: str, split: str, mode: str = "auto",
     estimated = sum(sizes)
     avail = available_memory_bytes()
     fits = estimated <= avail
-    preflight = {"n_selected": len(existing), "n_missing": len(missing),
-                 "estimated_bytes": estimated, "available_bytes": avail, "fits": fits}
+    if not existing:
+        raise RuntimeError(
+            f"[llm_sft] split '{split}' resolved to 0 samples "
+            f"({len(missing)} ids missing on disk) — check dataset path/symlinks")
     if mode == "auto":
         mode = "eager" if fits else "lazy"
     if mode not in ("eager", "lazy"):
         raise ValueError(f"mode must be auto/eager/lazy, got {mode!r}")
+    preflight = {"n_selected": len(existing), "n_missing": len(missing),
+                 "estimated_bytes": estimated, "available_bytes": avail,
+                 "fits": fits, "mode": mode}
     if mode == "eager" and not fits:
         raise MemoryError(
             f"[llm_sft] selected base samples need ~{estimated/1e9:.1f}GB but only "
