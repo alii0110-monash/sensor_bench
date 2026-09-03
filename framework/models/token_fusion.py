@@ -10,12 +10,14 @@ from .batching import build_batch_indexer, class_weights
 from .encoders import D, N_TOK, WifiEncoder, DepthEncoder, PointEncoder, MLPEncoder
 from .domain_encoder import DomainEncoder, _DOMAIN_EXTRACTORS
 from .temporal import TemporalAggregator
+from .depth_vit import ViTMotionEncoder, make_motion
 
 MODALITIES = ["wifi", "depth", "lidar", "mmwave", "rgb"]
 
 
 def _build_encoders(structured: dict, domain: dict = None,
-                    domain_dims: dict = None, temporal: bool = False) -> nn.ModuleDict:
+                    domain_dims: dict = None, temporal: bool = False,
+                    motion_depth: bool = False) -> nn.ModuleDict:
     """Build per-modality encoders.
 
     Priority per modality:
@@ -26,7 +28,8 @@ def _build_encoders(structured: dict, domain: dict = None,
          structured features (v5_structfeat).
       3. else: the raw-data encoder (Wifi/Depth/Point). With `temporal=True`,
          raw encoders keep the time axis and return (B, T, N_TOK, D) for later
-         TemporalAggregator.
+         TemporalAggregator. `motion_depth` swaps DepthEncoder for
+         ViTMotionEncoder (2ch [d_t, Δ_t]; requires temporal=True).
     """
     encoders = {}
     for m in MODALITIES:
@@ -37,7 +40,10 @@ def _build_encoders(structured: dict, domain: dict = None,
         elif m == "wifi":
             encoders[m] = WifiEncoder(temporal=temporal)
         elif m == "depth":
-            encoders[m] = DepthEncoder(temporal=temporal)
+            if motion_depth:
+                encoders[m] = ViTMotionEncoder(temporal=True)
+            else:
+                encoders[m] = DepthEncoder(temporal=temporal)
         elif m == "lidar":
             encoders[m] = PointEncoder(3, temporal=temporal)
         elif m == "mmwave":
@@ -61,16 +67,22 @@ class TokenFusionModel(nn.Module, SensorModel):
 
     def __init__(self, num_classes: int = 27, d: int = D, n_layers: int = 2,
                  n_heads: int = 4, structured: dict = None, domain: dict = None,
-                 domain_dims: dict = None, temporal: bool = False):
+                 domain_dims: dict = None, temporal: bool = False,
+                 motion_depth: bool = False):
         super().__init__()
         self.d = d
         self.num_classes = num_classes
         self.temporal = temporal
+        self.motion_depth = motion_depth
+        if motion_depth:
+            assert temporal, "motion_depth requires temporal=True (multi-frame raw depth)"
+            assert not structured or 'depth' not in structured, \
+                "motion_depth conflicts with structured depth features"
         self.structured = dict(structured) if structured else {}
         self.domain = dict(domain) if domain else {}
         self.domain_dims = dict(domain_dims) if domain_dims else {}
         self.encoders = _build_encoders(self.structured, self.domain, self.domain_dims,
-                                        temporal=temporal)
+                                        temporal=temporal, motion_depth=motion_depth)
         self.missing = nn.ParameterDict({
             m: nn.Parameter(torch.randn(N_TOK, d) * 0.02) for m in MODALITIES})
         # per-modality temporal aggregator (only when temporal=True; raw multi-frame
@@ -170,6 +182,12 @@ class TokenFusionModel(nn.Module, SensorModel):
         for m in MODALITIES:
             if avail.get(m):
                 arrs = [s.modalities[m].data for s in samples]
+                if self.motion_depth and m == 'depth':
+                    # (T,1,H,W) -> (T,2,H,W): explicit frame-difference channel.
+                    # Applied before stacking; time-mask augmentation is skipped
+                    # for depth here (5-dim tensor fails the dim()==4 check, which
+                    # also avoids diff spikes at mask boundaries).
+                    arrs = [make_motion(a) for a in arrs]
                 if m in self.structured:
                     # 1-D structured feature: (B, F) — no time axis.
                     mods[m] = torch.from_numpy(
@@ -230,6 +248,8 @@ class TokenFusionModel(nn.Module, SensorModel):
         mods = {}
         for m in available:
             data = sample.modalities[m].data
+            if self.motion_depth and m == 'depth':
+                data = make_motion(data)
             if m in self.structured:
                 mods[m] = torch.from_numpy(data)[None].to(dev)
             else:
@@ -246,6 +266,8 @@ class TokenFusionModel(nn.Module, SensorModel):
         mods = {}
         for m in available:
             arrs = [s.modalities[m].data for s in samples]
+            if self.motion_depth and m == 'depth':
+                arrs = [make_motion(a) for a in arrs]
             if m in self.structured:
                 mods[m] = torch.from_numpy(np.stack(arrs)).to(dev)
             else:
@@ -259,6 +281,7 @@ class TokenFusionModel(nn.Module, SensorModel):
                     "domain": self.domain,
                     "domain_dims": self.domain_dims,
                     "temporal": self.temporal,
+                    "motion_depth": self.motion_depth,
                     "num_classes": self.num_classes}, path)
 
     @classmethod
@@ -271,10 +294,12 @@ class TokenFusionModel(nn.Module, SensorModel):
             domain = ckpt.get("domain", {})
             domain_dims = ckpt.get("domain_dims", {})
             temporal = ckpt.get("temporal", False)
+            motion_depth = ckpt.get("motion_depth", False)
         else:
             state, structured, num_classes = ckpt, {}, 27
-            domain, domain_dims, temporal = {}, {}, False
+            domain, domain_dims, temporal, motion_depth = {}, {}, False, False
         m = cls(num_classes=num_classes, structured=structured,
-                domain=domain, domain_dims=domain_dims, temporal=temporal)
+                domain=domain, domain_dims=domain_dims, temporal=temporal,
+                motion_depth=motion_depth)
         m.load_state_dict(state)
         return m

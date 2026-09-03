@@ -95,7 +95,8 @@ log_dirs: [logs]
 
 ## 🧠 判断层
 
-- 当前阶段：**Alignment 重训 A/B 完成（2026-09-02，§11）**——同协议双臂（v4text vs schematext，冷启动 base-only 9205×20ep，作业 1059804/1059857）：**B 臂训练 InfoNCE 更低（2.858 vs 3.14）但样本级与类级检索全输**（r@1 0.0109 vs 0.0163；类级 0.407 vs 0.437）。机制确认：**类内文本一致性在对比训练中是缺陷**（近重复目标=任务变易+监督变粗），v4 逐样本改写=免费文本增广。与 §10 合并：schema=更好的静态文本锚（CLIP 可分 0.893），v4=更好的训练目标；M5a"模板趋同→检索失败"假设获机制级确认。路线 C 修正版：**schema 骨架 + LLM 类内多样改写（每样本 2-3 变体）**是唯一同时解释三组实验的方案。报告 §11，结果 `results/alignment_{caption_ab,class_ab}.json`，checkpoint `checkpoints_alignment/m6b_{v4text,schematext}_seed0.pt`。
+- 当前阶段：**路线 C 全量三臂闭环完成（2026-09-02，§13）**——全量生成 9205×2 改写（3h06m，全部 ≥2 变体零回退）→ 三臂重训（作业 1061674/1061723）：**排序稳定 A > C > B 两级一致**（样本级 r@1 A 0.0185 / C 0.0153 / B 0.0076；类级 0.507 / 0.431 / 0.398）。**C 把 B 救活**（r@1 翻倍，§11 多样性机制获正向因果证据），但 A 的无上限原生多样性仍领先；A vs C 样本级差距在单 seed 方差内，类级更实在。C 不可替代属性：动词锚 100%/零填充语/侧别 98.6%/零幻觉（A 无保证）。单 seed 方差大（±0.003-0.005），最终结论需多 seed。报告 §13，结果 `results/alignment_caption_ab.json`（三臂）+ `results/captions_route_c_train.jsonl`，checkpoint `checkpoints_alignment/m6b_routec_seed0.pt`。当日主线洞见：**文本侧类内多样性=监督信号宽度，一致性=静态锚质量，二者是一对代价，最优解在中间**。
+- 当前阶段（历史）：**Alignment 重训 A/B 完成（2026-09-02，§11）**——同协议双臂（v4text vs schematext，冷启动 base-only 9205×20ep，作业 1059804/1059857）：**B 臂训练 InfoNCE 更低（2.8581 vs 2.9618）但样本级与类级检索全输**（r@1 0.0109 vs 0.0163；类级 0.407 vs 0.437）。机制确认：**类内文本一致性在对比训练中是缺陷**（近重复目标=任务变易+监督变粗），v4 逐样本改写=免费文本增广。与 §10 合并：schema=更好的静态文本锚（CLIP 可分 0.893），v4=更好的训练目标；M5a"模板趋同→检索失败"假设获机制级确认。报告 §11，结果 `results/alignment_{caption_ab,class_ab}.json`，checkpoint `checkpoints_alignment/m6b_{v4text,schematext}_seed0.pt`。
 - 当前阶段（历史）：**Caption 区分性 MVP 完成 + CLIP 嵌入验证（2026-09-02）**——keypoint schema caption（路线 B）3 轮迭代：lexical gate FAIL（distinct-2 结构性差距，如实报告），但 full_centroid 0.864 反超 v4 0.846。**补充实验（§10）**：CLIP text tower 嵌入空间 27 类质心 acc **v4 0.675 → schema 0.893（+21.8pp）**，类间余弦全面改善——**文本锚路线（M5 方向）证据复活**；镜像对余弦双方 ≈0.97 → 左右方向语义是 CLIP 文本塔固有限制，措辞无法解决。报告 `docs/reports/preflight_caption_mvp_report.md`（含 §10），结果 `results/clip_separability_v4_vs_schema.json`，脚本 `scripts/eval_caption_clip_separability.py`。**基础设施备忘：hf-mirror LFS 数据面（us.aws.cdn.hf.co）集群不可达，权重下载改走 ModelScope（openai-mirror org），CLIP 权重已落 `sensorbench/.models/`，评测用 minimind-o 环境（transformers 4.57 兼容 torch 2.6；test 环境 transformers 5.14 与 torch 2.4 冲突）。**
 - [提议] gate 修订：distinct-2 对 anchor 型 caption 是错配指标（类内一致性本应是特性），改为 full_centroid 主指标 + 镜像对单列 + distinct-2 仅作下限（报告 §5）。
 - [提议] 下一步（CLIP 验证已正向）：① gate 修订拍板后全量生成 v7 并落盘数据集版本；② 用 schema caption 重启 alignment 对照实验（v4 文本 vs schema 文本，同 AlignmentModel+InfoNCE，看 L1 r@1 是否突破 0.011 天花板）；③ 路线 C（LLM 润色 schema 骨架）可与 ② 并行评估。
@@ -380,6 +381,14 @@ log_dirs: [logs]
   - **结论：信息 > 先验**——MAE（静态重建先验）/rgb 蒸馏（外观语义先验）只对信息匮乏的 raw 输入有效，motion 通道给出后无增益甚至轻微干扰（种子方差内单调降）。先验注入是信息不足时的拐杖
   - **下一步**：`ViTMotionEncoder`（2ch）接入 token_fusion 主流程（DepthEncoder 同契约可替换）+ 全量重训 + leaderboard 重评；wifi/lidar 试运动通道
   - 产物：`results/depth_combo_arms.json` + `results/distill_teacher.pt` + `scripts/depth_combo_arms.py`
+- [x] `[已定]`：**motion 通道接入主流程——负结果（2026-09-03，job 1061450，3h52m）**——token_fusion 新增 `motion_depth` 契约（DepthEncoder→ViTMotionEncoder 2ch，save/load 持久化 + `train.py --motion-depth`），v4 raw temporal 全量 3 seeds + 21 profiles 评测：
+  - **robustness 0.6399 vs 基线 0.6904（-0.050）；acc_full 0.9159 vs 0.9451（-0.029）**——单模态 6.1× 增益**未迁移**到融合
+  - 劣化集中：mmwave/rgb 缺失 profiles 均值 -0.092、only-lidar -0.082（depth 缺席的 profile 也劣化）
+  - **根因**：共享 transformer 全模态共享权重，depth token 分布改变重塑全部模态学习动态（非局部手术）；motion 版早停过早（ep11-16）也可能截断
+  - **新增独立问题**：only-depth 进融合后 ≈ 随机（0.058，基线同）——[MISSING]-token 淹没单模态 depth 信号，encoder 探针 0.474 无法通过融合路径兑现
+  - **修正结论链**：信息>先验（单模态）→ **单模态增益 ≠ 融合增益（共享 fusion 中换 encoder 不是局部手术）**
+  - 下一步选项：① encoder 输出 LayerNorm 对齐 token 统计后重验 ② 保守变体（tiny conv + diff 通道）③ mmwave/rgb 缺失时路由 motion-depth 专家头 ④ 修 only-* 悖论（单模态可用时旁路 MISSING 机制）
+  - 产物：`docs/reports/motion_main_pipeline_v4.md` + `leaderboard_motion_v4.json` + `checkpoints_motion_v4/`
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型

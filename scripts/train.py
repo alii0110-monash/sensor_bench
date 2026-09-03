@@ -38,6 +38,10 @@ def main():
                     help="keep time axis through raw encoders and aggregate via "
                          "TemporalAggregator (RoPE + intra-modality temporal "
                          "attention). Requires a raw multi-frame dataset (v4).")
+    ap.add_argument("--motion-depth", action="store_true",
+                    help="token_fusion only: swap DepthEncoder for ViTMotionEncoder "
+                         "(2ch [d_t, Δ_t] frame-difference input, DMM-style). "
+                         "Requires --temporal and raw depth (not structured/domain).")
     ap.add_argument("--mode", choices=["auto", "eager", "lazy"], default=None,
                     help="dataset loading mode. Default auto; when --temporal, "
                          "defaults to lazy (full v4 raw does not fit the 18GB "
@@ -80,7 +84,8 @@ def main():
         model = MODELS[args.model](num_classes=27, structured=structured)
     else:
         model = MODELS[args.model](num_classes=27, structured=structured, domain=domain,
-                                   domain_dims=domain_dims, temporal=args.temporal)
+                                   domain_dims=domain_dims, temporal=args.temporal,
+                                   motion_depth=args.motion_depth)
     model.fit(ds.train, ds.val, cfg)
     print(f"trained {args.model} seed {args.seed} -> {cfg.out_dir}")
 

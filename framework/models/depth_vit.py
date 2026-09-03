@@ -65,6 +65,53 @@ class ViTDepthEncoder(nn.Module):
         self._temporal = v
 
 
+def make_motion(depth: np.ndarray) -> np.ndarray:
+    """(T,1,H,W) -> (T,2,H,W): per-frame [d_t, d_t-d_{t-1}] (Δ_0 = 0).
+
+    Frame-difference channel (DMM-style): depth's action signal lives in
+    cross-frame motion — explicit differencing is depth's biggest single
+    lever (0.078 -> 0.474 from scratch, see depth_revival_ab_v4.md).
+    """
+    import numpy as np
+    d = depth[:, 0]
+    diff = np.zeros_like(d)
+    diff[1:] = d[1:] - d[:-1]
+    return np.stack([d, diff], axis=1).astype(np.float32)
+
+
+class ViTMotionEncoder(nn.Module):
+    """2-channel [d_t, Δ_t] ViT depth encoder, DepthEncoder-style contract.
+
+    forward((B,T,2,224,224)) -> (B,T,16,D) if temporal else (B,16,D).
+    Drop-in replacement for DepthEncoder when motion_depth=True.
+    """
+
+    def __init__(self, in_ch: int = 2, d: int = D, n_layers: int = 4,
+                 n_heads: int = 4, temporal: bool = False):
+        super().__init__()
+        self.temporal = temporal
+        self.patch_embed = nn.Conv2d(in_ch, d, kernel_size=PATCH, stride=PATCH)
+        self.pos = nn.Parameter(torch.randn(1, N_PATCH, d) * 0.02)
+        layer = nn.TransformerEncoderLayer(d, n_heads, dim_feedforward=4 * d,
+                                           batch_first=True, activation="gelu",
+                                           norm_first=True, dropout=0.1)
+        self.blocks = nn.TransformerEncoder(layer, num_layers=n_layers,
+                                            enable_nested_tensor=False)
+        self.norm = nn.LayerNorm(d)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        B, T = x.shape[:2]
+        xt = x.reshape(B * T, *x.shape[2:])
+        p = self.patch_embed(xt).flatten(2).transpose(1, 2)
+        p = self.blocks(p + self.pos)
+        p = self.norm(p)
+        g = p.transpose(1, 2).reshape(-1, D, GRID, GRID)
+        g = torch.nn.functional.adaptive_avg_pool2d(g, (4, 4))
+        tok = g.flatten(2).transpose(1, 2)               # (BT, 16, D)
+        out = tok.view(B, T, N_TOK, -1)
+        return out if self.temporal else out.mean(dim=1)
+
+
 class MAEDecoder(nn.Module):
     """Light decoder: reconstruct normalized depth patches from encoder patches.
 
