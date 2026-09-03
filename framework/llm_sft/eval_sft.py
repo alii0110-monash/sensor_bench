@@ -56,10 +56,13 @@ def run_condition(model, proj, alignment, tok, samples, pre_ids, post_ids,
 
 def evaluate(ckpt_dir: str, dataset_root: str, anchors_path: str, out_path: str,
              device: str = "cuda", batch_size: int = 16, load_mode: str = "auto",
-             max_new_tokens: int = 12, collect_gens: int = 200) -> dict:
+             max_new_tokens: int = 12, collect_gens: int = 200,
+             limit: int = 0) -> dict:
     model, proj, alignment, tok, cfg = load_sft_model(ckpt_dir, device)
     class_map = load_class_map(anchors_path)
     samples, missing, pre = load_split_base(dataset_root, "val", mode=load_mode)
+    if limit > 0:
+        samples = samples[:limit]
     print(f"[sftmvp-eval] val base={len(samples)} missing={len(missing)} "
           f"mode={pre['mode']}", flush=True)
     pre_ids, post_ids = encode_prompt_ids(tok)

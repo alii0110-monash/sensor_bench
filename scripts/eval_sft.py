@@ -18,6 +18,7 @@ def main():
     ap.add_argument("--mode", choices=["auto", "eager", "lazy"], default="auto")
     ap.add_argument("--max-new-tokens", type=int, default=12)
     ap.add_argument("--collect-gens", type=int, default=200)
+    ap.add_argument("--limit", type=int, default=0, help=">0: cap val samples (smoke)")
     args = ap.parse_args()
 
     if args.device == "cuda" and not __import__("torch").cuda.is_available():
@@ -27,7 +28,7 @@ def main():
                    anchors_path=args.anchors, out_path=args.out,
                    device=args.device, batch_size=args.batch_size,
                    load_mode=args.mode, max_new_tokens=args.max_new_tokens,
-                   collect_gens=args.collect_gens)
+                   collect_gens=args.collect_gens, limit=args.limit)
     print(f"[sftmvp] POSITIVE={res['positive']}")
 
 
