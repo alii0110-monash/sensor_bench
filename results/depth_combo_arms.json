@@ -1,0 +1,9 @@
+{
+  "arms": {
+    "motion_scratch_ref": 0.4738,
+    "motion_mae_ft": 0.46737967914438505,
+    "motion_distill_ft": 0.406951871657754,
+    "motion_mae_distill_ft": 0.3866310160427808
+  },
+  "elapsed_s": 1794.3281781673431
+}

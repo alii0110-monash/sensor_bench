@@ -72,18 +72,33 @@ STATUS 原提案是"depth→关键点回归"（需外参投影）。侦察发现
 | 手写运动统计（v5_structfeat） | 0.27 |
 | **+ 帧差分通道（vit_motion，从零）** | **0.474** |
 
-三者正交性（motion × MAE × distill）尚未测试——组合臂是明确的下一步，预期可继续上探。
+---
+
+## 3.5 组合臂（job 1061406）：先验在 motion 通道上无增益
+
+2×2 正交性检验（motion 2ch 输入，CE 协议同 depth_arms）：
+
+| input \ init | 从零 (lr 1e-3) | +MAE (lr 1e-4) | +蒸馏 (lr 1e-4) | +MAE+蒸馏 |
+|---|---|---|---|---|
+| raw 1ch | 0.078 | 0.146 | 0.223 | — |
+| motion 2ch | **0.474** | 0.467 | 0.407 | 0.387 |
+
+**结论：motion 通道包含（subsume）了全部先验收益**。MAE（静态重建先验）与 rgb-蒸馏（外观语义先验）只对信息匮乏的 raw 输入有效；一旦信息显式给出，先验不但无增益、甚至轻微干扰（0.474 → 0.39-0.47 单调下降，种子方差 ±0.03-0.06）。
+
+**科学结论**：信息 > 先验。给模型正确的信息（帧差分）是唯一本质干预；先验注入是信息不足时的拐杖。
 
 ---
 
 ## 4. 对 M6 的建议（下一步）
 
-1. **主推组合拳**：depth 输入 = 运动通道（B'）× encoder = MAE init（已验证）× 训练 = 蒸馏对齐（A）——三者正交，预期逐级叠加
-2. 蒸馏管线可复用：teacher 换 mmwave（高阶互补）或 wifi，任意弱模态都能"借"强模态的判别结构
-3. 蒸馏后的 depth encoder 接回 token_fusion 主流程重训（当前仅单模态验证）
+1. **motion 通道接入主流程**：token_fusion 的 DepthEncoder 换成 ViTMotionEncoder（2ch 契约兼容，已验证），全量重训 + leaderboard 重评——depth 单模态 0.474 意味着 miss-rgb 场景的深度兜底能力会显著增强
+2. **组合臂结论（1061406）**：MAE/蒸馏在 motion 输入上无增益（0.467/0.407/0.387 vs 从零 0.474）——先验只对信息匮乏输入有效，motion 通道已包含其全部收益；**信息 > 先验**
+3. wifi/lidar 同样试运动通道：wifi CSI 时间轴本就编码运动；lidar 点云帧差 = 运动点云
+4. 蒸馏管线保留为弱模态通用工具（teacher 可换 mmwave），但**仅当输入信息不足时使用**
+5. ~~mask~~：正式关闭（两轮实验零收益）
 
 ## 5. 产物
 
-- `results/distill_route_a.json` · `results/depth_motion_channels.json`
+- `results/distill_route_a.json` · `results/depth_motion_channels.json` · `results/depth_combo_arms.json` · `results/distill_teacher.pt`（可复用 teacher）
 - `scripts/distill_depth_route_a.py` · `scripts/depth_motion_channels.py`
 - `jobs/distill_route_a.slurm` · `jobs/depth_motion.slurm`

@@ -100,6 +100,7 @@ log_dirs: [logs]
 - [提议] gate 修订：distinct-2 对 anchor 型 caption 是错配指标（类内一致性本应是特性），改为 full_centroid 主指标 + 镜像对单列 + distinct-2 仅作下限（报告 §5）。
 - [提议] 下一步（CLIP 验证已正向）：① gate 修订拍板后全量生成 v7 并落盘数据集版本；② 用 schema caption 重启 alignment 对照实验（v4 文本 vs schema 文本，同 AlignmentModel+InfoNCE，看 L1 r@1 是否突破 0.011 天花板）；③ 路线 C（LLM 润色 schema 骨架）可与 ② 并行评估。
 - [提议] ② 已执行（§11，负结果+机制确认）——修正后的下一步：**路线 C 多样性版**（schema 骨架 + LLM 每样本 2-3 改写，控 distinct-2 与类锚并存），需 LLM 后端选型（ollama qwen2.5-vl 本地 vs deepseek-v4-flash:cloud）与全量 9205×3 生成成本估算后再提交；或先小样（200×3）过 A/B 闭环验证假设。
+- 当前阶段（接上）：**路线 C 小样完成（§12，2026-09-02）**——ollama qwen2.5-vl-3b 作业内生成（3.7s/条），216×2 改写：多样性达标（distinct-2 0.054→0.255）、侧别保留 98.6%、动词过滤内联（19% 改写丢锚被拒）；**静态 CLIP 质心 acc 0.839→0.598**（改写表面变化抹平质心，反证 schema 高分离度来自词汇刚性）。判定：静态分离度与多样性是一对代价，裁决只能靠全量闭环训练。全量生成作业（9205×2，~2.4h，`gen_route_c_full.py`+`sb_route_c_full.slurm`，作业 1061391）排队中；产出后跑 C 臂训练（variants 轮转，`run_caption_alignment_ab.py` 需加 --captions-multi 支持）。
 - 当前阶段（历史）：**v5_structfeat 主流程重训完成（A 完整落地）**——token_fusion robustness 0.4961→0.6858、acc_full 0.7632→0.9184；late_fusion robustness 0.3823→0.4979、acc_full 0.7084→0.8841。结构化特征让主流程直接用了 probe 已验证的可分特征。M5a/b/c 完成（M5c 负结果已归档）；M6a 完成——伪 token 作为可移植跨模态统一表征（CanonicalToken 4096-dim + 资产化），与 LLM 空间解耦。
 - 发现与结论：
   - **v3 是首次真正提升**：token_fusion robustness 0.1425→0.3167（2.2x），acc_full 0.2382→0.5759；late_fusion 0.2138→0.2615。核心假设判明：弱模态缺独立判别力，不是任务难。
@@ -371,6 +372,14 @@ log_dirs: [logs]
   - **确证**：depth 判别信号在跨帧运动，显式给帧差分后无需任何先验；mask/MAE/蒸馏在原始 1ch 输入上的努力全部被这一行预处理超越
   - **下一步**：组合臂（motion × MAE init × distill 正交性未测，预期继续上探）+ motion 通道接回 token_fusion 主流程重训（8 通道×5 模态融合重评 leaderboard）
   - 产物：`results/depth_motion_channels.json` + `scripts/depth_motion_channels.py`（`ViTMotionEncoder` 2ch 契约兼容）
+- [x] `[已定]`：**组合臂完成——motion 通道包含全部先验收益（2026-09-03，job 1061406）**——2×2 正交检验（raw/motion × MAE/蒸馏）：
+  | input \ init | 从零 | +MAE | +蒸馏 | +MAE+蒸馏 |
+  |---|---|---|---|---|
+  | raw 1ch | 0.078 | 0.146 | 0.223 | — |
+  | motion 2ch | **0.474** | 0.467 | 0.407 | 0.387 |
+  - **结论：信息 > 先验**——MAE（静态重建先验）/rgb 蒸馏（外观语义先验）只对信息匮乏的 raw 输入有效，motion 通道给出后无增益甚至轻微干扰（种子方差内单调降）。先验注入是信息不足时的拐杖
+  - **下一步**：`ViTMotionEncoder`（2ch）接入 token_fusion 主流程（DepthEncoder 同契约可替换）+ 全量重训 + leaderboard 重评；wifi/lidar 试运动通道
+  - 产物：`results/depth_combo_arms.json` + `results/distill_teacher.pt` + `scripts/depth_combo_arms.py`
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型
