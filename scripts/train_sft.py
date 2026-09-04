@@ -24,6 +24,8 @@ def main():
     ap.add_argument("--mode", choices=["auto", "eager", "lazy"], default="auto")
     ap.add_argument("--max-train", type=int, default=0, help=">0: cap train samples (smoke)")
     ap.add_argument("--log", default="results/sftmvp/train_log.json")
+    ap.add_argument("--variants-jsonl", default="",
+                    help="C2 captions jsonl: per-class answer variants (supervision width)")
     args = ap.parse_args()
 
     if args.device == "cuda" and not __import__("torch").cuda.is_available():
@@ -34,7 +36,8 @@ def main():
           model_dir=args.model_dir, out_dir=args.out, epochs=args.epochs,
           batch_size=args.batch_size, seed=args.seed, lr_proj=args.lr_proj,
           lr_lora=args.lr_lora, device=args.device, load_mode=args.mode,
-          max_train=args.max_train, log_path=args.log)
+          max_train=args.max_train, log_path=args.log,
+          variants_jsonl=args.variants_jsonl)
 
 
 if __name__ == "__main__":

@@ -26,6 +26,36 @@ def answer_for(label: int, class_map: dict) -> str:
     return f"A person is {class_map[label]}."
 
 
+def load_class_variants(captions_jsonl: str, class_map: dict) -> dict[int, list]:
+    """Per-class list of [canonical anchor, variant sentences (<=24 words)...]
+    from a C2-style captions jsonl {id,label,variants}."""
+    import json as _json
+    by_class: dict[int, list] = {}
+    with open(captions_jsonl) as f:
+        for line in f:
+            d = _json.loads(line)
+            lst = by_class.setdefault(int(d["label"]), [])
+            for v in d["variants"]:
+                words = v.split()
+                if len(words) > 24:
+                    v = " ".join(words[:24])
+                if v and v not in lst:
+                    lst.append(v)
+    for lbl, anchor in class_map.items():
+        lst = by_class.setdefault(lbl, [f"A person is {anchor}."])
+        if f"A person is {anchor}." not in lst:
+            lst.insert(0, f"A person is {anchor}.")
+    return by_class
+
+
+def answer_for_step(label: int, sid: str, epoch: int, variants: dict[int, list]) -> str:
+    """Rotate per-sample through the class's answer list (slot 0 = canonical
+    anchor, rest = C2 variant sentences) — supervision width with a stable anchor."""
+    opts = variants[label]
+    phase = sum(ord(c) for c in sid) % len(opts)
+    return opts[(epoch + phase) % len(opts)]
+
+
 @torch.no_grad()
 def val_loss(model, proj, alignment, tok, samples, pre_ids, post_ids,
              class_map, device, max_samples: int = 500, batch_size: int = 32) -> float:
@@ -57,7 +87,8 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
           epochs: int = 4, batch_size: int = 32, seed: int = 0,
           lr_proj: float = 1e-3, lr_lora: float = 1e-4,
           device: str = "cuda", load_mode: str = "auto",
-          max_train: int = 0, log_every: int = 20, log_path: str = "") -> dict:
+          max_train: int = 0, log_every: int = 20, log_path: str = "",
+          variants_jsonl: str = "") -> dict:
     torch.manual_seed(seed)
     os.makedirs(out_dir, exist_ok=True)
     tok = AutoTokenizer.from_pretrained(model_dir)
@@ -72,6 +103,17 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
     model.train()
 
     class_map = load_class_map(anchors_path)
+    if variants_jsonl:
+        class_variants = load_class_variants(variants_jsonl, class_map)
+        n_opts = sum(len(v) for v in class_variants.values()) / max(len(class_variants), 1)
+        print(f"[sftmvp] answer variants: {n_opts:.1f}/class (supervision width on)",
+              flush=True)
+    else:
+        class_variants = {lbl: [f"A person is {a}."] for lbl, a in class_map.items()}
+
+    def _answer(s, ep: int) -> str:
+        return answer_for_step(s.label, s.id, ep, class_variants)
+
     cap_ids = load_caption_ids(captions_jsonl)
     train_samples, train_missing, pre_train = load_split_base(
         dataset_root, "train", mode=load_mode, caption_ids=cap_ids)
@@ -110,7 +152,7 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
             sensor = proj(extract_tokens(alignment, mods))
             rows = []
             for s, se in zip(batch, sensor):
-                t_ids = encode_target_ids(tok, answer_for(s.label, class_map))
+                t_ids = encode_target_ids(tok, _answer(s, ep))
                 rows.append(build_train_sample(emb_layer, pre_ids, post_ids, t_ids,
                                                se, device, pad_emb))
             embeds, attn, labels = pad_train_batch(rows, pad_emb)

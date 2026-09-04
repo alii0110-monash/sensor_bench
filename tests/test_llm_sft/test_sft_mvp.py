@@ -95,6 +95,35 @@ def test_classmap_build_and_match(tmp_path):
     assert match_answer("I have no idea", cm) == -1
 
 
+def test_match_answer_morphology():
+    from framework.llm_sft.classmap import match_answer, stem_tokens
+    cm = {0: "stretching and relaxing", 1: "marking time in place"}
+    assert match_answer("The person bends their arms for stretching and "
+                        "relaxation", cm) == 0
+    assert match_answer("He is marking time in the room", cm) == 1
+    assert match_answer("completely unrelated words", cm) == -1
+
+
+def test_stemmer_anchor_distinctness():
+    from framework.llm_sft.classmap import load_class_map, stem_tokens
+    cm = load_class_map(os.path.join(os.path.dirname(os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__)))),
+        "results", "sftmvp", "class_anchors.json"))
+    stems = {lbl: tuple(stem_tokens(p)) for lbl, p in cm.items()}
+    vals = list(stems.values())
+    assert len(set(vals)) == len(vals), "stemming collapsed distinct anchors"
+
+
+def test_answer_for_step_rotation():
+    from framework.llm_sft.train_sft import load_class_variants, answer_for_step
+    cm = {0: "stretching and relaxing"}
+    variants = {0: ["A person is stretching and relaxing.",
+                    "The individual bends their arms for stretching and "
+                    "relaxation; the tempo is brisk."]}
+    got = {answer_for_step(0, f"s{i}", 0, variants) for i in range(20)}
+    assert len(got) == 2 and any(g.startswith("A person is") for g in got)
+
+
 def test_load_split_base(tmp_path):
     from framework.llm_sft.dataset import load_caption_ids, load_split_base
     root, cap_path = _toy_dataset(str(tmp_path))
