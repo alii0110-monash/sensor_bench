@@ -95,7 +95,8 @@ log_dirs: [logs]
 
 ## 🧠 判断层
 
-- 当前阶段：**多 seed 定案完成（2026-09-03，§15，对齐文本路线收官）**——三臂×seeds 1/2/3：**A（v4 原生 caption）3/3 seeds 两级评测全部第一**（样本 r@1 0.0131±0.0029；类级 0.4702±0.0105），类级 A vs C2 差 ~10pp（t≈2.5）。**撤回 §13"C2 救活 B"**（正确 seeding 后 C2≈B，差异 < 方差）；**多样性假说部分证伪**——C2 distinct-2 达 v4 水平仍未恢复对齐优势，A 的领先来自信息内容（真实 RGB 视频来源）而非词汇多样性。B≈C2 → schema 锚的保证对对齐中性，B/C2 选择由对齐外需求决定（可信文本→C2）。**项目建议：对齐文本源定案用 v4 原生 caption，caption 改写路线关闭；剩余天花板（样本级 ~1.3%）是传感编码器/协议问题。** 报告 §15，聚合 `results/alignment_{multiseed,class_multiseed}_summary.json`。
+- 当前阶段：**M7 候选预研完成（2026-09-04，NO-GO 止损）**——「隐空间想象补全缺模态」（WeakToStrongPrior 弱模态→强模态 seat tokens 回归 + 直替填充，声明 docs/reports/m7imag-charter.md）：kill-test 重构 lift 0.011-0.023 < 0.05 门槛；直替评测净 RS **0.7230 vs 基线 0.7386（−0.0156）**，13 个无填充 profile 与基线逐位一致（parity 铁证）。**三个机制发现：①重构信息≠决策信息**（预测 tokens 类探针 0.40-0.42 > 真实强模态 tokens 0.25-0.28，继承的是 wifi/mmwave 判别信号，强模态 seat tokens 本身不是类信息优质载体）；**②填充不对称**：depth 想象稳定微正（+0.0015~+0.0071×4 profiles）、lidar 想象稳定为负（−0.027~−0.094）；**③条件子集 off-distribution**：prior 训练条件恒齐备时单条件填充灾难（−0.15~−0.46），条件 dropout 0.15 修复大半（iter1 0.6832→iter2 0.7230）。**教训：高维 token cosine lift 不能当信息量门槛**（各向异性 shuffled cos≈0.88 淹没信号），用分类探针/下游指标。报告 `docs/reports/m7imag-gap-report.md`，结果 `results/m7imag/`，分支 `agent/m7imag`（7 commit 待合并），LESSONS §10-13。
+- 当前阶段（历史）：**多 seed 定案完成（2026-09-03，§15，对齐文本路线收官）**——三臂×seeds 1/2/3：**A（v4 原生 caption）3/3 seeds 两级评测全部第一**（样本 r@1 0.0131±0.0029；类级 0.4702±0.0105），类级 A vs C2 差 ~10pp（t≈2.5）。**撤回 §13"C2 救活 B"**（正确 seeding 后 C2≈B，差异 < 方差）；**多样性假说部分证伪**——C2 distinct-2 达 v4 水平仍未恢复对齐优势，A 的领先来自信息内容（真实 RGB 视频来源）而非词汇多样性。B≈C2 → schema 锚的保证对对齐中性，B/C2 选择由对齐外需求决定（可信文本→C2）。**项目建议：对齐文本源定案用 v4 原生 caption，caption 改写路线关闭；剩余天花板（样本级 ~1.3%）是传感编码器/协议问题。** 报告 §15，聚合 `results/alignment_{multiseed,class_multiseed}_summary.json`。
 - 当前阶段（历史）：**C2 修复版全量闭环完成（2026-09-03，§14）——A/B/C 排序定案（单 seed）**。C1 后置检发现两洞（60.8% 复读、13% 幻觉过弱过滤）→ C2 管线修复（严格动作词过滤+复读拒绝+重试升级+num_predict+行缓冲修 GPFS 缓冲写丢失），3 分片 3.5h 全量生成（9205、均值 2.37 变体、strict-valid 100%、多样性 0.0712≈v4）。三臂重训：**排序 A > C2 > B 两级复现**（样本 r@1 0.0131/0.0109/0.0087；类级 0.4651/0.4444/0.3911），C2 仍救活 B 但未越过 A——v4 优势=多样性+信息内容（真实 RGB 视频来源），C2 只是槽位事实的同义重排。**A 自身跨轮方差 0.0185→0.0131 吞掉样本级 A/C 差距；最终定论必须多 seed。** 对齐绝对水平仍弱信号区。报告 §14，结果 `results/alignment_caption_c2.json`+`alignment_class_c2.json`，checkpoint `m6b_routec2_seed0.pt`，文本 `results/captions_route_c2_train.jsonl`（3 分片拼接）。
 - 当前阶段（历史）：**sftmvp 伪 token SFT 反转实验 POSITIVE（2026-09-03，§15）**——LoRA(Qwen2.5-0.5B-Instruct, r16 qkvo) + projector 联合 SFT（冻结 m6b_v4text encoder 在线提 5×16 token；9205 train base × 4ep；作业 1062679 冒烟 / 1062693 全量，gpu_v100 29min）：**acc_pseudo 0.1396 vs text-only 0.0000（Δ=+0.1396，N=1870，双判据 0.074/+0.05 均过）**——M5c"冻结 LLM 读不懂伪 token"根因确认为**缺 SFT 教学段**，伪 token 本身可读。类结构发现：lunging 前向镜像对 0.98/0.91（传感器 token 空间比 CLIP 文本塔更可分），小幅静态动作（expanding chest ×2 / marking time / extending limb ×2）全 0，与弱模态短板类重叠。工程记录：① worktree 整树 datasets symlink 被 git 跟踪元数据破坏（splits/meta 入库 data/ 忽略）→ 改 data/ 逐个链接 + loader 0 样本 fail-fast；② minimind-o env 实测 = transformers 4.57.6 + torch 2.6.0+cu124 无 peft（补装 peft 0.20 + accelerate 1.14）；`conda run`/共享 base 解析有污染，作业一律用 env python 绝对路径。spec `docs/superpowers/specs/2026-09-03-sftmvp-design.md`（r2，含声明差距节），报告 `docs/reports/sftmvp_mvp_report.md`，产物 `checkpoints_sftmvp/` + `results/sftmvp/`。已合并 main（原 agent/sftmvp 分支 7 commit）。
 - 当前阶段（历史）：**路线 C 全量三臂闭环完成（2026-09-02，§13）**——全量生成 9205×2 改写（3h06m，全部 ≥2 变体零回退）→ 三臂重训（作业 1061674/1061723）：**排序稳定 A > C > B 两级一致**（样本级 r@1 A 0.0185 / C 0.0153 / B 0.0076；类级 0.507 / 0.431 / 0.398）。**C 把 B 救活**（r@1 翻倍，§11 多样性机制获正向因果证据），但 A 的无上限原生多样性仍领先；A vs C 样本级差距在单 seed 方差内，类级更实在。C 不可替代属性：动词锚 100%/零填充语/侧别 98.6%/零幻觉（A 无保证）。单 seed 方差大（±0.003-0.005），最终结论需多 seed。报告 §13，结果 `results/alignment_caption_ab.json`（三臂）+ `results/captions_route_c_train.jsonl`，checkpoint `checkpoints_alignment/m6b_routec_seed0.pt`。当日主线洞见：**文本侧类内多样性=监督信号宽度，一致性=静态锚质量，二者是一对代价，最优解在中间**。
@@ -184,6 +185,7 @@ log_dirs: [logs]
 
 ## 🗂 决策层
 
+- [提议]（m7imag）：M7「隐空间想象补全缺模态」按声明双门槛 **NO-GO**，关闭正式立项，预研归档为 negative results + 机制分析（报告 docs/reports/m7imag-gap-report.md §5）。可选跟进：仅 depth 缺失场景启用想象（净 +0.0008 量级，不足以独立成篇）；Stretch Goal（显式几何监督的弱→强 lifting）不受本阴性结论约束但建议换条件模态/数据集后再议。agent/m7imag 分支 7 commit 待合并。
 - [提议]（sftmvp §15）：多 seed 复跑（seed 1/2，~30min/次）确认 acc_pseudo 方差后，再决定是否投入 7B 同构复现。
 - [提议]（sftmvp §15）：A/B 文本臂迁移——SFT 答案措辞用 v4text vs route-C caption 对照，验证"监督信号宽度"洞见在 SFT 范式下是否成立。
 - [x] 下一步行动（已定）：重跑 v2 评估，生成 leaderboard_v2.json，更新 robustness 报告。✓ 完成
@@ -412,6 +414,14 @@ log_dirs: [logs]
   - **训练不稳定本身是新问题**（val 曲线剧烈震荡），与 motion token 引入后共享 transformer 学习动态更敏感有关
   - EXT（+extreme0.3）seed0 = 0.7386 且收敛更平滑——extreme 批次的正则效应可能恰好稳定训练；**决定性测试 = EXT seeds 1,2**（job 1063376 进行中）
   - 产物：`leaderboard_motion_ap_3seed.json`
+- [x] `[已定]`：**✅ EXT 3-seed 确认——三组件栈成为项目新 SOTA（2026-09-04，job 1063376）**——motion_depth + adaptive_pool + extreme_missing_p=0.3：
+  - **robustness 0.7319 ± 0.068**（per-seed [0.7386, 0.6922, 0.7649]，**3 seeds 全部 ≥ 基线 0.6904**）
+  - **acc_full 0.9510**（也超基线 0.9451，+0.006）
+  - vs 基线：miss-rgb +0.077 / miss2-wifi-rgb +0.083 / miss2-mmwave-rgb **+0.219**（0.147→0.366）/ only-lidar **+0.178** / only-depth +0.082；唯一小亏 only-rgb -0.040
+  - **对照**：无 extreme 的 motion+AP 是 [0.71, 0.55, 0.59]（崩）——extreme-missing 同时修复缺失场景性能**和**训练稳定性（正则效应）
+  - **主流程默认建议**：`--motion-depth --adaptive-pool --extreme-missing-p 0.3` 三旗标为新默认配置
+  - 残留：only-rgb 小亏（-0.04）；only-depth 0.138 仍远低于单模态探针潜力（0.474，深度穿透融合的机制问题独立存在但已从 0.056→0.138）
+  - 产物：`leaderboard_motion_ap_ext_3seed.json` + `checkpoints_motion_ap_ext/`
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型

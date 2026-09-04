@@ -80,7 +80,28 @@ motion 版 3 seeds 均在 ep11-16 早停（best 0.82-0.87），基线 acc_full 0
 
 **选项 1 关闭。** 剩余：保守 tiny conv 变体 / 专家路由 / only-* 悖论修复。
 
-## 5. 产物
+## 7. 结局：三组件栈确认——motion 负结果被完全逆转（2026-09-04）
 
-- `leaderboard_motion_v4.json` · `checkpoints_motion_v4/`
-- `framework/models/{token_fusion,depth_vit}.py`（motion_depth 契约，已合入）· `scripts/train.py --motion-depth`
+后续两个修复（`adaptive_pool` 修 only-\* 悖论稀释 + `extreme_missing_p=0.3` 修训练分布）将本报告的负结果**完全逆转**：
+
+| 配置 | robustness | acc_full |
+|---|---|---|
+| temporal 基线 | 0.6904 | 0.9451 |
+| motion（本报告 §1-3 的负结果） | 0.6399 | 0.9159 |
+| motion+AP（3-seed） | 0.6149 ± 0.083（seed 方差大） | 0.8808 |
+| **motion+AP+EXT（3-seed）** | **0.7319 ± 0.068** | **0.9510** |
+
+- **3 seeds 全部 ≥ 基线**（[0.7386, 0.6922, 0.7649]）；acc_full 也反超
+- 最大单项：miss2-mmwave-rgb 0.147→**0.366**（+0.22）、only-lidar 0.143→**0.321**（+0.18）
+- extreme-missing 的正则效应同时修复了 §2.2 的训练不稳定（无 EXT 时 seed 间 0.55-0.71 剧烈波动）
+- 完整实验链：`motion_main_pipeline_v4.md`（负）→ `depth_revival_ab_v4.md` → 本节（正）
+
+**主流程新默认**：`train.py --motion-depth --adaptive-pool --extreme-missing-p 0.3`
+---
+
+## 产物（累计）
+
+- `leaderboard_motion_v4.json`（负结果）· `leaderboard_motion_ln_seed0.json`（LN 无效）· `leaderboard_motion_ap_seed0.json` / `leaderboard_motion_ap_3seed.json`（seed0 幸运/均值回归）· **`leaderboard_motion_ap_ext_3seed.json`（最终确认，新 SOTA）**
+- `checkpoints_motion_v4/` · `checkpoints_motion_ln/` · `checkpoints_motion_ap/` · `checkpoints_motion_ap_ext/`
+- `framework/models/{token_fusion,depth_vit}.py`：`motion_depth` / `motion_depth_layernorm` / `adaptive_pool` 契约（全部持久化，向后兼容）· `scripts/train.py --motion-depth [--motion-depth-layernorm] [--adaptive-pool] [--extreme-missing-p]`
+- 作业链：1061450（负）→ 1062327（LN）→ 1063019（AP seed0）→ 1063225（AP 3seed）→ 1063226（EXT seed0）→ **1063376（EXT 3seed，终局）**
