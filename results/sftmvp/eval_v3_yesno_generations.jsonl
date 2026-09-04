@@ -1,0 +1,400 @@
+{"id": "E04_S37_A18_f1-3", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S37_A18_f1-3", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S35_A11_f194-214", "probe": "pos", "gen": "Yes, the person is extending both limbs.", "hit": true}
+{"id": "E04_S35_A11_f194-214", "probe": "neg", "gen": "No, actually the person is extending both limbs.", "hit": true}
+{"id": "E04_S37_A04_f98-123", "probe": "pos", "gen": "Yes, the person is twisting left.", "hit": true}
+{"id": "E04_S37_A04_f98-123", "probe": "neg", "gen": "No, actually the person is twisting left.", "hit": true}
+{"id": "E04_S37_A25_f1-7", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A25_f1-7", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S35_A15_f266-285", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S35_A15_f266-285", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S33_A07_f165-195", "probe": "pos", "gen": "Yes, the person is extending the left limb.", "hit": true}
+{"id": "E04_S33_A07_f165-195", "probe": "neg", "gen": "No, actually the person is extending the left limb.", "hit": true}
+{"id": "E04_S34_A24_f122-139", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S34_A24_f122-139", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S35_A26_f65-74", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S35_A26_f65-74", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S35_A23_f211-221", "probe": "pos", "gen": "Yes, the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S35_A23_f211-221", "probe": "neg", "gen": "No, actually the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S35_A13_f261-276", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S35_A13_f261-276", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A08_f95-121", "probe": "pos", "gen": "Yes, the person is extending the right limb.", "hit": true}
+{"id": "E04_S37_A08_f95-121", "probe": "neg", "gen": "No, actually the person is extending the right limb.", "hit": true}
+{"id": "E04_S37_A15_f252-284", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S37_A15_f252-284", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S35_A01_f115-121", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A01_f115-121", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A22_f282-294", "probe": "pos", "gen": "No, actually the person is kicking toward the right side.", "hit": false}
+{"id": "E04_S35_A22_f282-294", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S35_A07_f181-203", "probe": "pos", "gen": "Yes, the person is extending the left limb.", "hit": true}
+{"id": "E04_S35_A07_f181-203", "probe": "neg", "gen": "No, actually the person is extending the left limb.", "hit": true}
+{"id": "E04_S36_A06_f253-265", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S36_A06_f253-265", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S37_A25_f47-66", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A25_f47-66", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A27_f35-58", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S37_A27_f35-58", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S34_A17_f171-188", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S34_A17_f171-188", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S35_A25_f172-186", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S35_A25_f172-186", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S34_A04_f262-295", "probe": "pos", "gen": "Yes, the person is twisting left.", "hit": true}
+{"id": "E04_S34_A04_f262-295", "probe": "neg", "gen": "No, actually the person is twisting right.", "hit": true}
+{"id": "E04_S34_A26_f190-197", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S34_A26_f190-197", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S34_A05_f1-20", "probe": "pos", "gen": "Yes, the person is twisting right.", "hit": true}
+{"id": "E04_S34_A05_f1-20", "probe": "neg", "gen": "No, actually the person is twisting right.", "hit": true}
+{"id": "E04_S37_A03_f264-296", "probe": "pos", "gen": "Yes, the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S37_A03_f264-296", "probe": "neg", "gen": "No, actually the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S33_A25_f30-54", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S33_A25_f30-54", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S36_A13_f152-174", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S36_A13_f152-174", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A10_f266-290", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S37_A10_f266-290", "probe": "neg", "gen": "No, actually the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S34_A23_f43-66", "probe": "pos", "gen": "No, actually the person is squatting down.", "hit": false}
+{"id": "E04_S34_A23_f43-66", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A27_f131-153", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S37_A27_f131-153", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S36_A01_f40-45", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f40-45", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A26_f36-43", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S36_A26_f36-43", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A12_f208-227", "probe": "pos", "gen": "No, actually the person is extending the left side of the body.", "hit": false}
+{"id": "E04_S37_A12_f208-227", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S36_A10_f186-213", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S36_A10_f186-213", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S37_A26_f127-142", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S37_A26_f127-142", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S34_A06_f55-67", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S34_A06_f55-67", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S35_A01_f209-214", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A01_f209-214", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S33_A25_f238-260", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S33_A25_f238-260", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A01_f52-59", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S37_A01_f52-59", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S33_A17_f243-267", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S33_A17_f243-267", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A26_f16-29", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S37_A26_f16-29", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A18_f164-178", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S37_A18_f164-178", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S36_A23_f91-113", "probe": "pos", "gen": "Yes, the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S36_A23_f91-113", "probe": "neg", "gen": "Yes, the person is throwing toward the left side.", "hit": false}
+{"id": "E04_S35_A04_f134-149", "probe": "pos", "gen": "Yes, the person is twisting left.", "hit": true}
+{"id": "E04_S35_A04_f134-149", "probe": "neg", "gen": "Yes, the person is twisting right.", "hit": false}
+{"id": "E04_S35_A22_f130-146", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S35_A22_f130-146", "probe": "neg", "gen": "No, actually the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S36_A03_f119-149", "probe": "pos", "gen": "Yes, the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S36_A03_f119-149", "probe": "neg", "gen": "No, actually the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S33_A26_f20-33", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S33_A26_f20-33", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S35_A06_f270-282", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S35_A06_f270-282", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S35_A17_f236-251", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S35_A17_f236-251", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S35_A01_f291-294", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A01_f291-294", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A12_f111-131", "probe": "pos", "gen": "Yes, the person is squatting down.", "hit": true}
+{"id": "E04_S36_A12_f111-131", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S36_A17_f64-82", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S36_A17_f64-82", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A27_f271-292", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S37_A27_f271-292", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S34_A15_f37-59", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S34_A15_f37-59", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S36_A01_f287-297", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f287-297", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A18_f203-217", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S35_A18_f203-217", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S37_A20_f223-251", "probe": "pos", "gen": "No, actually the person is extending the left side of the body.", "hit": false}
+{"id": "E04_S37_A20_f223-251", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S35_A26_f273-282", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S35_A26_f273-282", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S34_A24_f178-196", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S34_A24_f178-196", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S33_A14_f36-60", "probe": "pos", "gen": "Yes, the person is raising the right hand.", "hit": true}
+{"id": "E04_S33_A14_f36-60", "probe": "neg", "gen": "No, actually the person is raising the right hand.", "hit": true}
+{"id": "E04_S37_A11_f261-287", "probe": "pos", "gen": "Yes, the person is extending both limbs.", "hit": true}
+{"id": "E04_S37_A11_f261-287", "probe": "neg", "gen": "No, actually the person is extending both limbs.", "hit": true}
+{"id": "E04_S36_A01_f234-239", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f234-239", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S33_A01_f284-293", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S33_A01_f284-293", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S33_A24_f270-292", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S33_A24_f270-292", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S36_A26_f278-286", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S36_A26_f278-286", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A17_f155-170", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A17_f155-170", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S35_A13_f55-70", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S35_A13_f55-70", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S36_A26_f118-126", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S36_A26_f118-126", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A14_f249-270", "probe": "pos", "gen": "Yes, the person is raising the right hand.", "hit": true}
+{"id": "E04_S37_A14_f249-270", "probe": "neg", "gen": "No, actually the person is raising the right hand.", "hit": true}
+{"id": "E04_S37_A08_f150-176", "probe": "pos", "gen": "Yes, the person is extending the right limb.", "hit": true}
+{"id": "E04_S37_A08_f150-176", "probe": "neg", "gen": "No, actually the person is extending the right limb.", "hit": true}
+{"id": "E04_S36_A21_f32-54", "probe": "pos", "gen": "Yes, the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S36_A21_f32-54", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S36_A14_f170-192", "probe": "pos", "gen": "Yes, the person is raising the right hand.", "hit": true}
+{"id": "E04_S36_A14_f170-192", "probe": "neg", "gen": "No, actually the person is raising the right hand.", "hit": true}
+{"id": "E04_S33_A01_f15-25", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S33_A01_f15-25", "probe": "neg", "gen": "No, actually the person is twisting right.", "hit": true}
+{"id": "E04_S36_A12_f154-171", "probe": "pos", "gen": "Yes, the person is squatting down.", "hit": true}
+{"id": "E04_S36_A12_f154-171", "probe": "neg", "gen": "Yes, the person is lunging to the left side.", "hit": false}
+{"id": "E04_S35_A24_f119-132", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S35_A24_f119-132", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S37_A15_f120-153", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S37_A15_f120-153", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S37_A21_f39-67", "probe": "pos", "gen": "Yes, the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S37_A21_f39-67", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S35_A04_f233-248", "probe": "pos", "gen": "Yes, the person is twisting left.", "hit": true}
+{"id": "E04_S35_A04_f233-248", "probe": "neg", "gen": "No, actually the person is twisting left.", "hit": true}
+{"id": "E04_S34_A22_f1-30", "probe": "pos", "gen": "No, actually the person is lunging to the left side.", "hit": false}
+{"id": "E04_S34_A22_f1-30", "probe": "neg", "gen": "Yes, the person is squatting down.", "hit": false}
+{"id": "E04_S37_A01_f60-66", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S37_A01_f60-66", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A03_f229-252", "probe": "pos", "gen": "Yes, the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S35_A03_f229-252", "probe": "neg", "gen": "No, actually the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S36_A26_f11-18", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S36_A26_f11-18", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A21_f204-229", "probe": "pos", "gen": "Yes, the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S37_A21_f204-229", "probe": "neg", "gen": "Yes, the person is twisting right.", "hit": false}
+{"id": "E04_S33_A14_f61-85", "probe": "pos", "gen": "Yes, the person is raising the right hand.", "hit": true}
+{"id": "E04_S33_A14_f61-85", "probe": "neg", "gen": "No, actually the person is raising the right hand.", "hit": true}
+{"id": "E04_S34_A13_f83-99", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S34_A13_f83-99", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S36_A05_f1-12", "probe": "pos", "gen": "Yes, the person is twisting right.", "hit": true}
+{"id": "E04_S36_A05_f1-12", "probe": "neg", "gen": "No, actually the person is twisting right.", "hit": true}
+{"id": "E04_S34_A18_f25-47", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S34_A18_f25-47", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S34_A21_f30-52", "probe": "pos", "gen": "Yes, the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S34_A21_f30-52", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S37_A11_f180-204", "probe": "pos", "gen": "Yes, the person is extending both limbs.", "hit": true}
+{"id": "E04_S37_A11_f180-204", "probe": "neg", "gen": "Yes, the person is expanding chest vertically.", "hit": false}
+{"id": "E04_S34_A05_f156-188", "probe": "pos", "gen": "Yes, the person is twisting right.", "hit": true}
+{"id": "E04_S34_A05_f156-188", "probe": "neg", "gen": "No, actually the person is twisting right.", "hit": true}
+{"id": "E04_S37_A11_f153-179", "probe": "pos", "gen": "Yes, the person is extending both limbs.", "hit": true}
+{"id": "E04_S37_A11_f153-179", "probe": "neg", "gen": "No, actually the person is extending both limbs.", "hit": true}
+{"id": "E04_S36_A01_f160-166", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f160-166", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A19_f69-84", "probe": "pos", "gen": "Yes, the person is picking up things.", "hit": true}
+{"id": "E04_S35_A19_f69-84", "probe": "neg", "gen": "No, actually the person is picking up things.", "hit": true}
+{"id": "E04_S33_A24_f32-55", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S33_A24_f32-55", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S33_A18_f267-287", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S33_A18_f267-287", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S35_A02_f229-267", "probe": "pos", "gen": "Yes, the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S35_A02_f229-267", "probe": "neg", "gen": "No, actually the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S37_A22_f166-191", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S37_A22_f166-191", "probe": "neg", "gen": "No, actually the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S35_A25_f274-286", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S35_A25_f274-286", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S35_A24_f1-14", "probe": "pos", "gen": "No, actually the person is extending the left side of the body.", "hit": false}
+{"id": "E04_S35_A24_f1-14", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S33_A27_f205-232", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S33_A27_f205-232", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S35_A01_f87-96", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A01_f87-96", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f265-271", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f265-271", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A27_f151-176", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S34_A27_f151-176", "probe": "neg", "gen": "Yes, the person is squatting down.", "hit": false}
+{"id": "E04_S36_A26_f60-68", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S36_A26_f60-68", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S34_A01_f231-242", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A01_f231-242", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f218-225", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f218-225", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A04_f217-232", "probe": "pos", "gen": "Yes, the person is twisting left.", "hit": true}
+{"id": "E04_S35_A04_f217-232", "probe": "neg", "gen": "Yes, the person is marking time in place.", "hit": false}
+{"id": "E04_S37_A13_f121-142", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A13_f121-142", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S36_A01_f128-133", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f128-133", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A15_f1-12", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S34_A15_f1-12", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S36_A10_f270-297", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S36_A10_f270-297", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S36_A01_f212-217", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f212-217", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A07_f207-242", "probe": "pos", "gen": "Yes, the person is extending the left limb.", "hit": true}
+{"id": "E04_S36_A07_f207-242", "probe": "neg", "gen": "No, actually the person is extending the left limb.", "hit": true}
+{"id": "E04_S34_A26_f280-287", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S34_A26_f280-287", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S35_A18_f279-294", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S35_A18_f279-294", "probe": "neg", "gen": "No, actually the person is raising the right hand.", "hit": true}
+{"id": "E04_S33_A24_f56-79", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S33_A24_f56-79", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S36_A09_f186-211", "probe": "pos", "gen": "Yes, the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S36_A09_f186-211", "probe": "neg", "gen": "No, actually the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S37_A10_f197-218", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S37_A10_f197-218", "probe": "neg", "gen": "No, actually the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S35_A02_f43-71", "probe": "pos", "gen": "Yes, the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S35_A02_f43-71", "probe": "neg", "gen": "No, actually the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S36_A06_f50-62", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S36_A06_f50-62", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S34_A21_f190-213", "probe": "pos", "gen": "Yes, the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S34_A21_f190-213", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S34_A27_f93-121", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S34_A27_f93-121", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S34_A12_f102-120", "probe": "pos", "gen": "Yes, the person is squatting down.", "hit": true}
+{"id": "E04_S34_A12_f102-120", "probe": "neg", "gen": "No, actually the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S34_A13_f12-28", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S34_A13_f12-28", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A14_f111-129", "probe": "pos", "gen": "Yes, the person is raising the right hand.", "hit": true}
+{"id": "E04_S37_A14_f111-129", "probe": "neg", "gen": "No, actually the person is raising the right hand.", "hit": true}
+{"id": "E04_S34_A12_f215-235", "probe": "pos", "gen": "Yes, the person is squatting down.", "hit": true}
+{"id": "E04_S34_A12_f215-235", "probe": "neg", "gen": "No, actually the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S33_A06_f127-139", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S33_A06_f127-139", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S36_A12_f172-192", "probe": "pos", "gen": "Yes, the person is squatting down.", "hit": true}
+{"id": "E04_S36_A12_f172-192", "probe": "neg", "gen": "Yes, the person is throwing toward the left side.", "hit": false}
+{"id": "E04_S36_A19_f63-86", "probe": "pos", "gen": "Yes, the person is picking up things.", "hit": true}
+{"id": "E04_S36_A19_f63-86", "probe": "neg", "gen": "No, actually the person is picking up things.", "hit": true}
+{"id": "E04_S34_A24_f160-177", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S34_A24_f160-177", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S35_A22_f267-281", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S35_A22_f267-281", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S33_A17_f1-12", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S33_A17_f1-12", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S33_A23_f237-269", "probe": "pos", "gen": "Yes, the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S33_A23_f237-269", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S36_A22_f184-202", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S36_A22_f184-202", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S37_A04_f68-97", "probe": "pos", "gen": "Yes, the person is twisting left.", "hit": true}
+{"id": "E04_S37_A04_f68-97", "probe": "neg", "gen": "No, actually the person is twisting left.", "hit": true}
+{"id": "E04_S34_A02_f155-188", "probe": "pos", "gen": "Yes, the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S34_A02_f155-188", "probe": "neg", "gen": "No, actually the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S37_A22_f245-273", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S37_A22_f245-273", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S34_A06_f132-143", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S34_A06_f132-143", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S33_A07_f45-75", "probe": "pos", "gen": "Yes, the person is extending the left limb.", "hit": true}
+{"id": "E04_S33_A07_f45-75", "probe": "neg", "gen": "No, actually the person is extending the left limb.", "hit": true}
+{"id": "E04_S37_A17_f230-244", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A17_f230-244", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A26_f4-15", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S37_A26_f4-15", "probe": "neg", "gen": "Yes, the person is expanding chest vertically.", "hit": false}
+{"id": "E04_S36_A25_f158-180", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S36_A25_f158-180", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A15_f220-251", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S37_A15_f220-251", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S36_A01_f134-139", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f134-139", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A23_f73-90", "probe": "pos", "gen": "Yes, the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S36_A23_f73-90", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S35_A12_f118-131", "probe": "pos", "gen": "Yes, the person is squatting down.", "hit": true}
+{"id": "E04_S35_A12_f118-131", "probe": "neg", "gen": "No, actually the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S37_A17_f80-93", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A17_f80-93", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S35_A27_f102-124", "probe": "pos", "gen": "Yes, the person is bowing.", "hit": true}
+{"id": "E04_S35_A27_f102-124", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S34_A26_f95-101", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S34_A26_f95-101", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S35_A26_f283-292", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S35_A26_f283-292", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S37_A12_f266-288", "probe": "pos", "gen": "No, actually the person is extending the left side of the body.", "hit": false}
+{"id": "E04_S37_A12_f266-288", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S34_A20_f149-175", "probe": "pos", "gen": "Yes, the person is throwing toward the left side.", "hit": true}
+{"id": "E04_S34_A20_f149-175", "probe": "neg", "gen": "No, actually the person is throwing toward the left side.", "hit": true}
+{"id": "E04_S37_A18_f136-148", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S37_A18_f136-148", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S34_A17_f39-58", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S34_A17_f39-58", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S37_A25_f187-206", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A25_f187-206", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S36_A22_f203-226", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S36_A22_f203-226", "probe": "neg", "gen": "No, actually the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S36_A08_f57-91", "probe": "pos", "gen": "Yes, the person is extending the right limb.", "hit": true}
+{"id": "E04_S36_A08_f57-91", "probe": "neg", "gen": "No, actually the person is extending the right limb.", "hit": true}
+{"id": "E04_S37_A14_f271-285", "probe": "pos", "gen": "Yes, the person is raising the right hand.", "hit": true}
+{"id": "E04_S37_A14_f271-285", "probe": "neg", "gen": "No, actually the person is twisting right.", "hit": true}
+{"id": "E04_S35_A15_f202-223", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S35_A15_f202-223", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S36_A06_f164-176", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S36_A06_f164-176", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S34_A26_f87-94", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S34_A26_f87-94", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S35_A19_f148-160", "probe": "pos", "gen": "Yes, the person is picking up things.", "hit": true}
+{"id": "E04_S35_A19_f148-160", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S35_A24_f90-104", "probe": "pos", "gen": "Yes, the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S35_A24_f90-104", "probe": "neg", "gen": "No, actually the person is extending the left side of the body.", "hit": true}
+{"id": "E04_S36_A19_f244-265", "probe": "pos", "gen": "Yes, the person is picking up things.", "hit": true}
+{"id": "E04_S36_A19_f244-265", "probe": "neg", "gen": "No, actually the person is picking up things.", "hit": true}
+{"id": "E04_S36_A17_f100-116", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S36_A17_f100-116", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S36_A25_f202-222", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S36_A25_f202-222", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S37_A09_f262-285", "probe": "pos", "gen": "Yes, the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S37_A09_f262-285", "probe": "neg", "gen": "No, actually the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S35_A07_f132-156", "probe": "pos", "gen": "Yes, the person is extending the left limb.", "hit": true}
+{"id": "E04_S35_A07_f132-156", "probe": "neg", "gen": "No, actually the person is extending the left limb.", "hit": true}
+{"id": "E04_S33_A22_f1-13", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S33_A22_f1-13", "probe": "neg", "gen": "Yes, the person is kicking toward the right side.", "hit": false}
+{"id": "E04_S35_A03_f181-204", "probe": "pos", "gen": "Yes, the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S35_A03_f181-204", "probe": "neg", "gen": "No, actually the person is expanding chest vertically.", "hit": true}
+{"id": "E04_S34_A01_f65-71", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A01_f65-71", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S35_A23_f222-233", "probe": "pos", "gen": "Yes, the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S35_A23_f222-233", "probe": "neg", "gen": "No, actually the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S36_A07_f172-206", "probe": "pos", "gen": "Yes, the person is extending the left limb.", "hit": true}
+{"id": "E04_S36_A07_f172-206", "probe": "neg", "gen": "No, actually the person is extending the left limb.", "hit": true}
+{"id": "E04_S36_A15_f107-134", "probe": "pos", "gen": "Yes, the person is lunging to the left side.", "hit": true}
+{"id": "E04_S36_A15_f107-134", "probe": "neg", "gen": "No, actually the person is lunging to the left side.", "hit": true}
+{"id": "E04_S35_A05_f1-19", "probe": "pos", "gen": "Yes, the person is twisting right.", "hit": true}
+{"id": "E04_S35_A05_f1-19", "probe": "neg", "gen": "No, actually the person is twisting left.", "hit": true}
+{"id": "E04_S37_A18_f4-18", "probe": "pos", "gen": "Yes, the person is waving the right hand.", "hit": true}
+{"id": "E04_S37_A18_f4-18", "probe": "neg", "gen": "No, actually the person is waving the right hand.", "hit": true}
+{"id": "E04_S34_A13_f46-63", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S34_A13_f46-63", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S34_A21_f236-257", "probe": "pos", "gen": "Yes, the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S34_A21_f236-257", "probe": "neg", "gen": "No, actually the person is throwing toward the right side.", "hit": true}
+{"id": "E04_S33_A02_f233-271", "probe": "pos", "gen": "Yes, the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S33_A02_f233-271", "probe": "neg", "gen": "No, actually the person is expanding chest horizontally.", "hit": true}
+{"id": "E04_S37_A01_f79-84", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S37_A01_f79-84", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A26_f26-33", "probe": "pos", "gen": "Yes, the person is jumping up.", "hit": true}
+{"id": "E04_S34_A26_f26-33", "probe": "neg", "gen": "No, actually the person is jumping up.", "hit": true}
+{"id": "E04_S34_A01_f89-97", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A01_f89-97", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S34_A17_f244-262", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S34_A17_f244-262", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S35_A09_f200-221", "probe": "pos", "gen": "Yes, the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S35_A09_f200-221", "probe": "neg", "gen": "No, actually the person is lunging toward the left front.", "hit": true}
+{"id": "E04_S37_A10_f35-57", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S37_A10_f35-57", "probe": "neg", "gen": "No, actually the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S34_A10_f39-67", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S34_A10_f39-67", "probe": "neg", "gen": "No, actually the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S35_A16_f220-240", "probe": "pos", "gen": "No, actually the person is lunging to the left side.", "hit": false}
+{"id": "E04_S35_A16_f220-240", "probe": "neg", "gen": "No, actually the person is lunging to the right side.", "hit": true}
+{"id": "E04_S37_A13_f166-185", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A13_f166-185", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A08_f42-68", "probe": "pos", "gen": "Yes, the person is extending the right limb.", "hit": true}
+{"id": "E04_S37_A08_f42-68", "probe": "neg", "gen": "No, actually the person is extending the right limb.", "hit": true}
+{"id": "E04_S34_A06_f43-54", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S34_A06_f43-54", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S37_A19_f14-33", "probe": "pos", "gen": "Yes, the person is picking up things.", "hit": true}
+{"id": "E04_S37_A19_f14-33", "probe": "neg", "gen": "No, actually the person is bowing.", "hit": true}
+{"id": "E04_S36_A25_f74-95", "probe": "pos", "gen": "Yes, the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S36_A25_f74-95", "probe": "neg", "gen": "No, actually the person is extending the right side of the body.", "hit": true}
+{"id": "E04_S34_A17_f189-207", "probe": "pos", "gen": "Yes, the person is waving the left hand.", "hit": true}
+{"id": "E04_S34_A17_f189-207", "probe": "neg", "gen": "No, actually the person is waving the left hand.", "hit": true}
+{"id": "E04_S33_A08_f219-251", "probe": "pos", "gen": "Yes, the person is extending the right limb.", "hit": true}
+{"id": "E04_S33_A08_f219-251", "probe": "neg", "gen": "No, actually the person is extending the right limb.", "hit": true}
+{"id": "E04_S37_A13_f226-247", "probe": "pos", "gen": "Yes, the person is raising the left hand.", "hit": true}
+{"id": "E04_S37_A13_f226-247", "probe": "neg", "gen": "No, actually the person is raising the left hand.", "hit": true}
+{"id": "E04_S36_A06_f13-24", "probe": "pos", "gen": "Yes, the person is marking time in place.", "hit": true}
+{"id": "E04_S36_A06_f13-24", "probe": "neg", "gen": "No, actually the person is marking time in place.", "hit": true}
+{"id": "E04_S36_A16_f49-74", "probe": "pos", "gen": "Yes, the person is lunging to the right side.", "hit": true}
+{"id": "E04_S36_A16_f49-74", "probe": "neg", "gen": "Yes, the person is lunging toward the left front.", "hit": false}
+{"id": "E04_S36_A01_f63-68", "probe": "pos", "gen": "Yes, the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A01_f63-68", "probe": "neg", "gen": "No, actually the person is stretching and relaxing.", "hit": true}
+{"id": "E04_S36_A10_f214-244", "probe": "pos", "gen": "Yes, the person is lunging toward the right front.", "hit": true}
+{"id": "E04_S36_A10_f214-244", "probe": "neg", "gen": "No, actually the person is kicking toward the right side.", "hit": true}
+{"id": "E04_S36_A22_f249-272", "probe": "pos", "gen": "Yes, the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S36_A22_f249-272", "probe": "neg", "gen": "No, actually the person is kicking toward the left side.", "hit": true}
+{"id": "E04_S33_A05_f40-61", "probe": "pos", "gen": "Yes, the person is twisting right.", "hit": true}
+{"id": "E04_S33_A05_f40-61", "probe": "neg", "gen": "Yes, the person is twisting left.", "hit": false}

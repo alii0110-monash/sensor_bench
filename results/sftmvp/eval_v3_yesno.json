@@ -1,0 +1,7 @@
+{
+ "ckpt": "checkpoints_sftmvp_v3",
+ "n_probes": 400,
+ "acc_yes": 0.96,
+ "acc_no": 0.935,
+ "acc_total": 0.9475
+}

@@ -71,3 +71,21 @@ v2：每类 482.5 个变体答案轮转 + 8 epochs。**acc_pseudo 0.4797（unmat
 - 当前最优：**v1 checkpoint + 词干匹配器 = acc_pseudo 0.7572**（0.5B、4ep、anchor-only、单 seed）
 - 下一杠杆排序修订：① 7B 基座 + anchor-only（M6b 先例）② 多 seed 方差 ③ 变体仅在对比学习/检索范式使用（已属 §13/§14 主线）
 - 产物：`results/sftmvp/{eval_v1_rebase.json, eval_v2.json, train_log_v2.json}`、`checkpoints_sftmvp_v2/`
+
+## 7. v3 多题型 SFT（2026-09-04）：0.8647 + 真·对话能力
+
+用户实测发现"问 is he jumping up? 仍答标准句"→ 根因：单模板 SFT 使问题文字被忽略。
+v3 = 问题条件化多题型混训（what 40% / yes-no 正负例 40% / describe 20%，答案格式随问题变，程序化生成零标注）。
+
+| 指标 | v1（anchor-only） | **v3（多题型）** |
+|---|---|---|
+| acc_pseudo（冻结协议 1870 val） | 0.7572 | **0.8647**（unmatched 仅 1） |
+| text_only | 0.0000 | 0.0048（语言先验微渗，可忽略） |
+| val loss | 0.0365 | **0.0281** |
+| **yes-no 探针**（200 样本×2） | 无此能力 | **acc_yes 0.960 / acc_no 0.935** |
+
+关键证据：acc_no=0.935 排除"顺着用户说"——模型对错误断言 93.5% 概率先生硬说 No，
+说明它同时读**问题意图**与**传感器 token**，对话能力成立。
+v2 教训（宽度伤生成）在 v3 得到平衡：题型多样但**答案始终锚定型短句**。
+
+产物：`checkpoints_sftmvp_v3/`、`results/sftmvp/{eval_v3,eval_v3_yesno}.json`。下一步：7B 基座 / 多 seed。
