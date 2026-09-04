@@ -92,7 +92,7 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
     torch.manual_seed(seed)
     os.makedirs(out_dir, exist_ok=True)
     tok = AutoTokenizer.from_pretrained(model_dir)
-    base = AutoModelForCausalLM.from_pretrained(model_dir, torch_dtype=torch.float32)
+    base = AutoModelForCausalLM.from_pretrained(model_dir, dtype=torch.float32)
     base.config.use_cache = False
     for p in base.parameters():
         p.requires_grad_(False)
