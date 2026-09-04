@@ -1,0 +1,56 @@
+{
+ "args": {
+  "dataset_root": "datasets/mmfi/v4",
+  "encoders_ckpt": "checkpoints_alignment/m6b_v4text_seed0.pt",
+  "captions_jsonl": "results/captions_route_c_train.jsonl",
+  "anchors_path": "results/sftmvp/class_anchors.json",
+  "model_dir": "/seu_share2/home/wangshuai02/220255046/models/qwen2.5-0.5b-instruct",
+  "out_dir": "checkpoints_sftmvp_smoke",
+  "epochs": 2,
+  "batch_size": 16,
+  "seed": 0,
+  "lr_proj": 0.001,
+  "lr_lora": 0.0001,
+  "device": "cuda",
+  "load_mode": "auto",
+  "max_train": 100,
+  "log_every": 20,
+  "log_path": "results/sftmvp/smoke_train_log.json",
+  "pad_id": 151643
+ },
+ "preflight": {
+  "train": {
+   "n_selected": 9205,
+   "n_missing": 0,
+   "estimated_bytes": 10789151790,
+   "available_bytes": 278965608448,
+   "fits": true,
+   "mode": "eager"
+  },
+  "val": {
+   "n_selected": 1870,
+   "n_missing": 98,
+   "estimated_bytes": 2191822814,
+   "available_bytes": 268896501760,
+   "fits": true,
+   "mode": "eager"
+  }
+ },
+ "n_train": 100,
+ "n_val": 1870,
+ "epochs": [
+  {
+   "epoch": 0,
+   "train_loss": 2.963727345466614,
+   "val_loss": 1.7585561180114746,
+   "sec": 26.7
+  },
+  {
+   "epoch": 1,
+   "train_loss": 0.40158394575119016,
+   "val_loss": 2.1847322549819945,
+   "sec": 38.7
+  }
+ ],
+ "steps": []
+}
