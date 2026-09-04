@@ -19,7 +19,7 @@ def load_sft_model(ckpt_dir: str, device: str):
     cfg = json.load(open(os.path.join(ckpt_dir, "run_config.json")))
     tok = AutoTokenizer.from_pretrained(os.path.join(ckpt_dir, "adapter"))
     base = AutoModelForCausalLM.from_pretrained(
-        cfg["model_dir"], torch_dtype=torch.float32)
+        cfg["model_dir"], dtype=torch.float32)
     model = PeftModel.from_pretrained(base, os.path.join(ckpt_dir, "adapter"))
     model.config.use_cache = True
     model = model.to(device).eval()
