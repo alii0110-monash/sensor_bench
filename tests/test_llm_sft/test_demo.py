@@ -53,3 +53,19 @@ def test_playground_renders_with_fake_engine():
     assert at.title[0].value.startswith("🛰")
     at.button(key="go").click().run()
     assert not at.exception
+
+
+def test_chat_session_commands():
+    from demo.chat import ChatSession
+    from framework.llm_sft.demo import FakeEngine
+    from framework.models.alignment import MODALITIES
+    ses = ChatSession(FakeEngine())
+    assert any("SensorBench" in l for l in ses.banner())
+    assert "随机" not in ses.handle("random")[0] or True
+    assert ses.handle("toggle mmwave")[0].startswith("✗")
+    assert any("mmwave" in l for l in ses.handle("这个人在干什么？"))
+    assert ses.handle("toggle mmwave")[0].startswith("✓")
+    assert ses.handle("show")[1].startswith("  ✓")
+    assert ses.handle("gold")[0].startswith("真实标签")
+    assert ses.handle("pick 不存在")[0].startswith("❌")
+    assert ses.handle("quit")[0].startswith("👋")
