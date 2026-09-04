@@ -95,7 +95,8 @@ log_dirs: [logs]
 
 ## 🧠 判断层
 
-- 当前阶段：**sftmvp 伪 token SFT 反转实验 POSITIVE（2026-09-03，§14）**——LoRA(Qwen2.5-0.5B-Instruct, r16 qkvo) + projector 联合 SFT（冻结 m6b_v4text encoder 在线提 5×16 token；9205 train base × 4ep；作业 1062679 冒烟 / 1062693 全量，gpu_v100 29min）：**acc_pseudo 0.1396 vs text-only 0.0000（Δ=+0.1396，N=1870，双判据 0.074/+0.05 均过）**——M5c"冻结 LLM 读不懂伪 token"根因确认为**缺 SFT 教学段**，伪 token 本身可读。类结构发现：lunging 前向镜像对 0.98/0.91（传感器 token 空间比 CLIP 文本塔更可分），小幅静态动作（expanding chest ×2 / marking time / extending limb ×2）全 0，与弱模态短板类重叠。工程记录：① worktree 整树 datasets symlink 被 git 跟踪元数据破坏（splits/meta 入库 data/ 忽略）→ 改 data/ 逐个链接 + loader 0 样本 fail-fast；② minimind-o env 实测 = transformers 4.57.6 + torch 2.6.0+cu124 无 peft（补装 peft 0.20 + accelerate 1.14）；`conda run`/共享 base 解析有污染，作业一律用 env python 绝对路径。spec `docs/superpowers/specs/2026-09-03-sftmvp-design.md`（r2，含声明差距节），报告 `docs/reports/sftmvp_mvp_report.md`，产物 `checkpoints_sftmvp/` + `results/sftmvp/`（均在 agent/sftmvp 分支，待人合并）。
+- 当前阶段：**C2 修复版全量闭环完成（2026-09-03，§14）——A/B/C 排序定案（单 seed）**。C1 后置检发现两洞（60.8% 复读、13% 幻觉过弱过滤）→ C2 管线修复（严格动作词过滤+复读拒绝+重试升级+num_predict+行缓冲修 GPFS 缓冲写丢失），3 分片 3.5h 全量生成（9205、均值 2.37 变体、strict-valid 100%、多样性 0.0712≈v4）。三臂重训：**排序 A > C2 > B 两级复现**（样本 r@1 0.0131/0.0109/0.0087；类级 0.4651/0.4444/0.3911），C2 仍救活 B 但未越过 A——v4 优势=多样性+信息内容（真实 RGB 视频来源），C2 只是槽位事实的同义重排。**A 自身跨轮方差 0.0185→0.0131 吞掉样本级 A/C 差距；最终定论必须多 seed。** 对齐绝对水平仍弱信号区。报告 §14，结果 `results/alignment_caption_c2.json`+`alignment_class_c2.json`，checkpoint `m6b_routec2_seed0.pt`，文本 `results/captions_route_c2_train.jsonl`（3 分片拼接）。
+- 当前阶段（历史）：**sftmvp 伪 token SFT 反转实验 POSITIVE（2026-09-03，§15）**——LoRA(Qwen2.5-0.5B-Instruct, r16 qkvo) + projector 联合 SFT（冻结 m6b_v4text encoder 在线提 5×16 token；9205 train base × 4ep；作业 1062679 冒烟 / 1062693 全量，gpu_v100 29min）：**acc_pseudo 0.1396 vs text-only 0.0000（Δ=+0.1396，N=1870，双判据 0.074/+0.05 均过）**——M5c"冻结 LLM 读不懂伪 token"根因确认为**缺 SFT 教学段**，伪 token 本身可读。类结构发现：lunging 前向镜像对 0.98/0.91（传感器 token 空间比 CLIP 文本塔更可分），小幅静态动作（expanding chest ×2 / marking time / extending limb ×2）全 0，与弱模态短板类重叠。工程记录：① worktree 整树 datasets symlink 被 git 跟踪元数据破坏（splits/meta 入库 data/ 忽略）→ 改 data/ 逐个链接 + loader 0 样本 fail-fast；② minimind-o env 实测 = transformers 4.57.6 + torch 2.6.0+cu124 无 peft（补装 peft 0.20 + accelerate 1.14）；`conda run`/共享 base 解析有污染，作业一律用 env python 绝对路径。spec `docs/superpowers/specs/2026-09-03-sftmvp-design.md`（r2，含声明差距节），报告 `docs/reports/sftmvp_mvp_report.md`，产物 `checkpoints_sftmvp/` + `results/sftmvp/`。已合并 main（原 agent/sftmvp 分支 7 commit）。
 - 当前阶段（历史）：**路线 C 全量三臂闭环完成（2026-09-02，§13）**——全量生成 9205×2 改写（3h06m，全部 ≥2 变体零回退）→ 三臂重训（作业 1061674/1061723）：**排序稳定 A > C > B 两级一致**（样本级 r@1 A 0.0185 / C 0.0153 / B 0.0076；类级 0.507 / 0.431 / 0.398）。**C 把 B 救活**（r@1 翻倍，§11 多样性机制获正向因果证据），但 A 的无上限原生多样性仍领先；A vs C 样本级差距在单 seed 方差内，类级更实在。C 不可替代属性：动词锚 100%/零填充语/侧别 98.6%/零幻觉（A 无保证）。单 seed 方差大（±0.003-0.005），最终结论需多 seed。报告 §13，结果 `results/alignment_caption_ab.json`（三臂）+ `results/captions_route_c_train.jsonl`，checkpoint `checkpoints_alignment/m6b_routec_seed0.pt`。当日主线洞见：**文本侧类内多样性=监督信号宽度，一致性=静态锚质量，二者是一对代价，最优解在中间**。
 - 当前阶段（历史）：**Alignment 重训 A/B 完成（2026-09-02，§11）**——同协议双臂（v4text vs schematext，冷启动 base-only 9205×20ep，作业 1059804/1059857）：**B 臂训练 InfoNCE 更低（2.8581 vs 2.9618）但样本级与类级检索全输**（r@1 0.0109 vs 0.0163；类级 0.407 vs 0.437）。机制确认：**类内文本一致性在对比训练中是缺陷**（近重复目标=任务变易+监督变粗），v4 逐样本改写=免费文本增广。与 §10 合并：schema=更好的静态文本锚（CLIP 可分 0.893），v4=更好的训练目标；M5a"模板趋同→检索失败"假设获机制级确认。报告 §11，结果 `results/alignment_{caption_ab,class_ab}.json`，checkpoint `checkpoints_alignment/m6b_{v4text,schematext}_seed0.pt`。
 - 当前阶段（历史）：**Caption 区分性 MVP 完成 + CLIP 嵌入验证（2026-09-02）**——keypoint schema caption（路线 B）3 轮迭代：lexical gate FAIL（distinct-2 结构性差距，如实报告），但 full_centroid 0.864 反超 v4 0.846。**补充实验（§10）**：CLIP text tower 嵌入空间 27 类质心 acc **v4 0.675 → schema 0.893（+21.8pp）**，类间余弦全面改善——**文本锚路线（M5 方向）证据复活**；镜像对余弦双方 ≈0.97 → 左右方向语义是 CLIP 文本塔固有限制，措辞无法解决。报告 `docs/reports/preflight_caption_mvp_report.md`（含 §10），结果 `results/clip_separability_v4_vs_schema.json`，脚本 `scripts/eval_caption_clip_separability.py`。**基础设施备忘：hf-mirror LFS 数据面（us.aws.cdn.hf.co）集群不可达，权重下载改走 ModelScope（openai-mirror org），CLIP 权重已落 `sensorbench/.models/`，评测用 minimind-o 环境（transformers 4.57 兼容 torch 2.6；test 环境 transformers 5.14 与 torch 2.4 冲突）。**
@@ -182,8 +183,8 @@ log_dirs: [logs]
 
 ## 🗂 决策层
 
-- [提议]（sftmvp §14）：多 seed 复跑（seed 1/2，~30min/次）确认 acc_pseudo 方差后，再决定是否投入 7B 同构复现。
-- [提议]（sftmvp §14）：A/B 文本臂迁移——SFT 答案措辞用 v4text vs route-C caption 对照，验证"监督信号宽度"洞见在 SFT 范式下是否成立。
+- [提议]（sftmvp §15）：多 seed 复跑（seed 1/2，~30min/次）确认 acc_pseudo 方差后，再决定是否投入 7B 同构复现。
+- [提议]（sftmvp §15）：A/B 文本臂迁移——SFT 答案措辞用 v4text vs route-C caption 对照，验证"监督信号宽度"洞见在 SFT 范式下是否成立。
 - [x] 下一步行动（已定）：重跑 v2 评估，生成 leaderboard_v2.json，更新 robustness 报告。✓ 完成
 - [x] `[已定]`：v3 迭代第一步——针对 miss-mmwave 降幅定位弱项（(profile × class × subject) 细粒度矩阵），不做全局样本过滤；评估 late_fusion 作为主模型。✓ 完成
 - [x] `[已定]`：v3 迭代第二步——加入 RGB/红外模态评估（用户选轻量方案：先只加 rgb）。✓ 完成，结论=数据信息量不足
@@ -397,6 +398,13 @@ log_dirs: [logs]
   - **排除假设：劣化不是 token 统计（范数）问题，而是信息内容**——强 motion-depth token 使共享 transformer 训练时重新分配注意力、边缘化弱模态路径；LayerNorm 无法改变信息内容
   - 选项 1 关闭。剩余：② 保守变体（tiny conv + diff 通道，分布扰动最小）③ 专家路由 ④ only-* 悖论修复
   - 产物：`leaderboard_motion_ln_seed0.json` + `checkpoints_motion_ln/`
+- [x] `[已定]`：**only-* 悖论修复（adaptive_pool）——大成功，motion 变体转正（2026-09-04，job 1063019）**——`adaptive_pool` 开关（fusion 后只平均在场 token：1 模态→/16、2→/32...，full profile 数学等价旧 mean，已 smoke 验证；契约持久化 + `train.py --adaptive-pool`）。motion_depth + adaptive_pool 1 seed：
+  - **robustness 0.7068**：vs 无 AP 0.6399（**+0.067**）、vs temporal 基线 0.6904（**+0.016，motion 变体首次转正**）
+  - **acc_full 0.9395**（vs 无 AP 0.9159 +0.024；vs 基线 0.9451 持平）
+  - mmwave/rgb 缺失 profiles 全面大幅回升（miss-rgb +0.144 / miss2-wifi-rgb +0.158 / miss-mmwave +0.117）；only-lidar 0.184 **超基线 0.143**、only-mmwave/only-wifi 也超基线
+  - **残留**：only-depth 仍 0.059——池化修复不覆盖它（训练中 depth-only 组合概率 ~0.3%，共享 transformer 未学过 depth-only 模式），独立后续问题
+  - 注意：1 seed 结果，扩 3 seeds 确认后建议 AP 进入主流程默认
+  - 产物：`leaderboard_motion_ap_seed0.json` + `checkpoints_motion_ap/`
 - [ ] `[提议]`：**Depth 振兴路线 A——rgb关键点→depth 跨模态蒸馏 MVP（2026-09-02）**——业内统治级范式是"语义中间表示"（NTU SOTA 全是 skeleton-based）；rgb 关键点 (17,2) 已在 v4 数据中当现成老师：
   1. 训 depth→关键点热图回归（小 CNN/ViT，逐帧任务**不依赖 T=5**），监督 = 同帧 rgb 关键点经外参投影对齐（MMFi 提供标定）
   2. 产出 depth-keypoints 新模态 → 复用现有 PointEncoder(2) 管线，与 rgb-keypoints 平行入融合模型
