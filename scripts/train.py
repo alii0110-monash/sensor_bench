@@ -52,6 +52,12 @@ def main():
                          "profiles where [MISSING]-token outputs dilute the "
                          "present modality's signal. Full-profile behavior is "
                          "mathematically identical to unconditional mean.")
+    ap.add_argument("--extreme-missing-p", type=float, default=0.0,
+                    help="token_fusion only: probability a training batch keeps "
+                         "only k in {1,2} random modalities (forces the shared "
+                         "transformer to learn single/few-modality patterns; "
+                         "i.i.d. dropout yields them ~0.3%% of the time). "
+                         "Pair with --adaptive-pool.")
     ap.add_argument("--mode", choices=["auto", "eager", "lazy"], default=None,
                     help="dataset loading mode. Default auto; when --temporal, "
                          "defaults to lazy (full v4 raw does not fit the 18GB "
@@ -72,7 +78,8 @@ def main():
                       batch_strategy=args.batch_strategy,
                       class_weight=args.class_weight,
                       modality_dropout_p=args.modality_dropout_p,
-                      modality_dropout=md, time_mask_p=args.time_mask_p)
+                      modality_dropout=md, time_mask_p=args.time_mask_p,
+                      extreme_missing_p=args.extreme_missing_p)
     structured = detect_structured_features(ds)
     domain = {m: 1 for m in (args.domain.split(",") if args.domain else [])}
     # compute domain_dims from the actual extractors on the first train sample

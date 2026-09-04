@@ -191,6 +191,15 @@ class TokenFusionModel(nn.Module, SensorModel):
 
     def _dropout_mask(self, cfg: TrainConfig, rng: torch.Generator) -> Dict[str, bool]:
         avail = {}
+        # extreme missing: with prob p, force the batch to keep only k ∈ {1,2}
+        # random modalities (i.i.d. dropout almost never yields these patterns:
+        # P(only depth) ≈ 0.3%). Pair with adaptive_pool at eval.
+        p_ext = getattr(cfg, 'extreme_missing_p', 0.0) or 0.0
+        if p_ext > 0 and torch.rand(1, generator=rng).item() < p_ext:
+            k = 1 if torch.rand(1, generator=rng).item() < 0.5 else 2
+            keep_idx = torch.randperm(len(MODALITIES), generator=rng)[:k].tolist()
+            keep = {MODALITIES[i] for i in keep_idx}
+            return {m: m in keep for m in MODALITIES}
         for m in MODALITIES:
             p = cfg.modality_dropout_p
             if cfg.modality_dropout and m in cfg.modality_dropout:

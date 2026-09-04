@@ -24,6 +24,12 @@ class TrainConfig:
         # During training, zero out a random contiguous run of frames on raw
         # multi-frame modalities, forcing the causal aggregator to reconstruct
         # the masked frame from earlier context (对标 MiniMind-O 时间遮蔽).
+    extreme_missing_p: float = 0.0  # probability that a training batch is forced
+        # to an extreme-missing pattern: keep only k ∈ {1,2} random modalities.
+        # Motivates the shared transformer to learn single/few-modality patterns,
+        # which standard i.i.d. modality dropout almost never produces
+        # (e.g. P(only depth) = 0.75 * 0.25^4 ≈ 0.3%). Requires adaptive_pool
+        # to pay off at eval time.
 
 
 class SensorModel:
