@@ -26,6 +26,25 @@ def answer_for(label: int, class_map: dict) -> str:
     return f"A person is {class_map[label]}."
 
 
+QA_WEIGHTS = {"what": 0.4, "yesno": 0.4, "describe": 0.2}
+DESCRIBE_Q = "Describe the motion you observe."
+
+
+def build_qa(label: int, sid: str, epoch: int, class_map: dict, rng) -> tuple:
+    """Question-conditioned (question, answer) pair; formats stay anchor-
+    contained so the frozen matcher keeps working."""
+    anchor = class_map[label]
+    r = rng.random()
+    if r < QA_WEIGHTS["what"]:
+        return None, f"A person is {anchor}."
+    if r < QA_WEIGHTS["what"] + QA_WEIGHTS["yesno"]:
+        wrong = rng.choice([l for l in class_map if l != label])
+        if rng.random() < 0.5:
+            return f"Is the person {class_map[wrong]}?", f"No, actually the person is {anchor}."
+        return f"Is the person {anchor}?", f"Yes, the person is {anchor}."
+    return DESCRIBE_Q, f"The person appears to be {anchor}."
+
+
 def load_class_variants(captions_jsonl: str, class_map: dict) -> dict[int, list]:
     """Per-class list of [canonical anchor, variant sentences (<=24 words)...]
     from a C2-style captions jsonl {id,label,variants}."""
@@ -88,7 +107,7 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
           lr_proj: float = 1e-3, lr_lora: float = 1e-4,
           device: str = "cuda", load_mode: str = "auto",
           max_train: int = 0, log_every: int = 20, log_path: str = "",
-          variants_jsonl: str = "") -> dict:
+          variants_jsonl: str = "", qa_multi: bool = False) -> dict:
     torch.manual_seed(seed)
     os.makedirs(out_dir, exist_ok=True)
     tok = AutoTokenizer.from_pretrained(model_dir)
@@ -113,6 +132,21 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
 
     def _answer(s, ep: int) -> str:
         return answer_for_step(s.label, s.id, ep, class_variants)
+
+    if qa_multi:
+        import random as _random
+        qa_rng = _random.Random(seed)
+        qa_cache = {}
+
+        def _qa_ids(s, ep: int):
+            q, ans = build_qa(s.label, s.id, ep, class_map, qa_rng)
+            if q not in qa_cache:
+                qa_cache[q] = encode_prompt_ids(tok, q)
+            pre, post = qa_cache[q]
+            return pre, post, encode_target_ids(tok, ans)
+    else:
+        def _qa_ids(s, ep: int):
+            return None
 
     cap_ids = load_caption_ids(captions_jsonl)
     train_samples, train_missing, pre_train = load_split_base(
@@ -153,7 +187,10 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
             rows = []
             for s, se in zip(batch, sensor):
                 t_ids = encode_target_ids(tok, _answer(s, ep))
-                rows.append(build_train_sample(emb_layer, pre_ids, post_ids, t_ids,
+                pre_s, post_s = pre_ids, post_ids
+                if qa_multi:
+                    pre_s, post_s, t_ids = _qa_ids(s, ep)
+                rows.append(build_train_sample(emb_layer, pre_s, post_s, t_ids,
                                                se, device, pad_emb))
             embeds, attn, labels = pad_train_batch(rows, pad_emb)
             out = model(inputs_embeds=embeds, attention_mask=attn, labels=labels)
@@ -185,7 +222,8 @@ def train(dataset_root: str, encoders_ckpt: str, captions_jsonl: str,
     json.dump({"dataset": dataset_root, "encoders_ckpt": encoders_ckpt,
                "anchors": anchors_path, "model_dir": model_dir,
                "hidden_size": model.config.hidden_size, "seed": seed,
-               "epochs": epochs, "batch_size": batch_size},
+               "epochs": epochs, "batch_size": batch_size,
+               "qa_multi": qa_multi, "variants_jsonl": variants_jsonl},
               open(os.path.join(out_dir, "run_config.json"), "w"), indent=1)
     if log_path:
         os.makedirs(os.path.dirname(log_path), exist_ok=True)

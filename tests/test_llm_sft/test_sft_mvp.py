@@ -124,6 +124,23 @@ def test_answer_for_step_rotation():
     assert len(got) == 2 and any(g.startswith("A person is") for g in got)
 
 
+def test_build_qa_formats_and_match():
+    import random
+    from framework.llm_sft.classmap import match_answer
+    from framework.llm_sft.train_sft import build_qa
+    cm = {0: "stretching and relaxing", 1: "bowing", 2: "jumping up"}
+    rng = random.Random(0)
+    seen_types = set()
+    for i in range(200):
+        lbl = i % 3
+        q, ans = build_qa(lbl, f"sample{i}", 0, cm, rng)
+        if q is None:
+            continue
+        seen_types.add(q.split()[0])
+        assert match_answer(ans, cm) == lbl, (q, ans)
+    assert seen_types == {"Is", "Describe"}
+
+
 def test_load_split_base(tmp_path):
     from framework.llm_sft.dataset import load_caption_ids, load_split_base
     root, cap_path = _toy_dataset(str(tmp_path))

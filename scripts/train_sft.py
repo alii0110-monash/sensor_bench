@@ -26,6 +26,8 @@ def main():
     ap.add_argument("--log", default="results/sftmvp/train_log.json")
     ap.add_argument("--variants-jsonl", default="",
                     help="C2 captions jsonl: per-class answer variants (supervision width)")
+    ap.add_argument("--qa-multi", action="store_true",
+                    help="question-conditioned multi-template SFT (what/yesno/describe)")
     args = ap.parse_args()
 
     if args.device == "cuda" and not __import__("torch").cuda.is_available():
@@ -37,7 +39,7 @@ def main():
           batch_size=args.batch_size, seed=args.seed, lr_proj=args.lr_proj,
           lr_lora=args.lr_lora, device=args.device, load_mode=args.mode,
           max_train=args.max_train, log_path=args.log,
-          variants_jsonl=args.variants_jsonl)
+          variants_jsonl=args.variants_jsonl, qa_multi=args.qa_multi)
 
 
 if __name__ == "__main__":
