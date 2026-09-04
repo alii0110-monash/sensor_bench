@@ -13,13 +13,13 @@ def _pre_text() -> str:
     return f"<|im_start|>system\n{SYSTEM}{IM_END}\n<|im_start|>user\n"
 
 
-def _post_text() -> str:
-    return f"{QUESTION}{IM_END}\n<|im_start|>assistant\n"
+def _post_text(question: str | None = None) -> str:
+    return f"{question or QUESTION}{IM_END}\n<|im_start|>assistant\n"
 
 
-def encode_prompt_ids(tokenizer):
+def encode_prompt_ids(tokenizer, question: str | None = None):
     pre = tokenizer(_pre_text(), add_special_tokens=False)["input_ids"]
-    post = tokenizer(_post_text(), add_special_tokens=False)["input_ids"]
+    post = tokenizer(_post_text(question), add_special_tokens=False)["input_ids"]
     return pre, post
 
 
