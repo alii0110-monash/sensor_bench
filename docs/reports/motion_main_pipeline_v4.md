@@ -56,10 +56,29 @@ motion 版 3 seeds 均在 ep11-16 早停（best 0.82-0.87），基线 acc_full 0
 
 ## 4. 下一步选项（按预期收益排序）
 
-1. **token 统计对齐**：ViTMotionEncoder 输出加 LayerNorm（对齐 token 范数分布），最小改动重跑 1 seed 验证
+1. ~~**token 统计对齐**：ViTMotionEncoder 输出加 LayerNorm~~ → **已验证无效（2026-09-03，job 1062327）**，见 §6
 2. **保守变体**：保留 tiny conv 架构只加 diff 通道（2ch conv），token 分布扰动最小
 3. **专家路由**：mmwave/rgb 缺失时路由到 motion-depth 专家头（绕过共享 transformer 干扰）
 4. **修 only-depth 悖论**：单模态可用时旁路 [MISSING] 机制（对 5 个 only-* profile 是普遍提升点）
+
+## 6. 选项 1 验证：LayerNorm token 对齐——无效（2026-09-03，job 1062327）
+
+**假设**：motion 版劣化源于 ViT depth token 的数值分布（范数/尺度）与其他模态不匹配。
+
+**干预**：`motion_depth_layernorm` 开关（`token_fusion.py` 已合入）——depth token 在 encoder 之后、共享 transformer 之前过 LayerNorm。1 seed 验证（对照 motion seed0 best val 0.820 / 3-seed robustness 0.6399 / 基线 0.6904）：
+
+| 指标 | LN (1 seed) | motion 无 LN | temporal 基线 |
+|---|---|---|---|
+| best val | 0.837 | 0.820 | — |
+| robustness | 0.6352 | 0.6399 (3-seed) | 0.6904 |
+| acc_full | 0.9057 | 0.9159 | 0.9451 |
+| only-depth | **0.0908** | 0.0580 | 0.0555 |
+
+**判定：无效**。robustness/acc_full 与无 LN 持平（种子方差内），val 上的 +0.017 未兑现到 leaderboard。
+
+**排除的假设**：劣化不是 token **统计**（数值范数/尺度）问题，而是**信息内容**问题——强 motion-depth token 让共享 transformer 在训练时重新分配注意力、边缘化弱模态路径；LayerNorm 抹平数值分布，抹不平信息竞争。唯一亮点：only-depth 0.058→0.091（LN 稍微帮了 depth 自己的路径）。
+
+**选项 1 关闭。** 剩余：保守 tiny conv 变体 / 专家路由 / only-* 悖论修复。
 
 ## 5. 产物
 
