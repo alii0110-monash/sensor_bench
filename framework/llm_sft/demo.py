@@ -33,6 +33,8 @@ class DemoEngine:
         self.samples = samples
         self.class_map = class_map
         self.device = device
+        self._ids = [s.id for s in samples]
+        self._index = {sid: i for i, sid in enumerate(self._ids)}
         self.pre_ids, self.post_ids = None, None
         self._question = None
 
@@ -61,13 +63,12 @@ class DemoEngine:
                 "top3": [(self.class_map.get(l, str(l)), round(s, 2)) for l, s in scores[:3]]}
 
     def sample_ids(self) -> list:
-        return [s.id for s in self.samples]
+        return self._ids
 
     def get_sample(self, sid: str):
-        for s in self.samples:
-            if s.id == sid:
-                return s
-        raise KeyError(sid)
+        if sid not in self._index:
+            raise KeyError(sid)
+        return self.samples[self._index[sid]]
 
     @classmethod
     def from_ckpt(cls, ckpt_dir: str, dataset_root: str, anchors_path: str,
