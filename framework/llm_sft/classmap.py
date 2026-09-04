@@ -49,15 +49,14 @@ def stem_tokens(text: str) -> list:
     return out
 
 
-def match_answer(text: str, class_map: dict[int, str]) -> int:
-    """Containment match first (exact rule), then stem-overlap >= 0.6 fallback
-    (morphology-robust); longest overlap wins; -1 if none."""
+def match_scores(text: str, class_map: dict[int, str]) -> list:
+    """Score all classes; containment beats stem-overlap. Sorted desc, [(label, score)].
+    match_answer = argmax of this."""
     t = normalize(text)
     if not t:
-        return -1
-    best, best_score = -1, 0.0
-    t_stems = stem_tokens(t)
-    t_set = set(t_stems)
+        return []
+    t_stems = set(stem_tokens(t))
+    scored = []
     for label, phrase in class_map.items():
         p = normalize(phrase)
         if not p:
@@ -66,12 +65,18 @@ def match_answer(text: str, class_map: dict[int, str]) -> int:
             score = len(p) + 100.0
         else:
             p_set = set(stem_tokens(p))
-            inter = t_set & p_set
+            inter = t_stems & p_set
             if not inter:
                 continue
             score = len(inter) / len(p_set)
             if score < 0.6:
                 continue
-        if score > best_score:
-            best, best_score = label, score
-    return best
+        scored.append((label, score))
+    return sorted(scored, key=lambda x: -x[1])
+
+
+def match_answer(text: str, class_map: dict[int, str]) -> int:
+    """Containment match first (exact rule), then stem-overlap >= 0.6 fallback
+    (morphology-robust); longest overlap wins; -1 if none."""
+    scored = match_scores(text, class_map)
+    return scored[0][0] if scored else -1

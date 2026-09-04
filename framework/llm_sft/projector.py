@@ -22,9 +22,12 @@ def load_frozen_encoders(ckpt_path: str, device: str) -> AlignmentModel:
 
 
 @torch.no_grad()
-def extract_tokens(model: AlignmentModel, mods: dict) -> torch.Tensor:
-    """Full-profile token extraction: (B, 5, N_TOK, D=256)."""
-    avail = {m: True for m in MODALITIES}
+def extract_tokens(model: AlignmentModel, mods: dict,
+                   avail: dict | None = None) -> torch.Tensor:
+    """Token extraction with explicit availability; missing modalities get a
+    zero slot (encode_modalities contract). avail=None → full profile."""
+    if avail is None:
+        avail = {m: True for m in MODALITIES}
     return model.encode_modalities(mods, avail)
 
 
