@@ -21,7 +21,8 @@ def run_probe(model, proj, alignment, tok, samples, class_map, device,
               batch_size=16, n=200, seed=0):
     from framework.llm_sft.prompting import encode_prompt_ids
     rng = random.Random(seed)
-    subset = rng.sample(samples, min(n, len(samples)))
+    idx = rng.sample(range(len(samples)), min(n, len(samples)))
+    subset = [samples[i] for i in idx]
     emb_layer = model.get_input_embeddings()
     res = {"yes": [0, 0], "no": [0, 0]}
     gens = []
