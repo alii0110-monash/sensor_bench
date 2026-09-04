@@ -83,3 +83,6 @@ datasets/mmfi/*/masks_m2f/
 # ===== Project: 模型权重缓存 =====
 models/
 .models/
+# ===== 并行开发：agent 认领与 worktree（会话状态，不入库）=====
+.agents/
+.worktrees/

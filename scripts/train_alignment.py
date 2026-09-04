@@ -5,7 +5,7 @@ Trains AlignmentModel with InfoNCE against a frozen text encoder on the v5
 dataset. `--text-encoder hash` uses the deterministic mock (CI/smoke);
 `--text-encoder clip` uses frozen CLIP (real training).
 """
-import argparse, os, sys
+import argparse, json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -38,7 +38,7 @@ def _stack_mods(samples, avail, device):
 
 def train_epoch(model, text_encoder, train, opt, batch_size=32,
                 device="cuda", dropout_p=0.25, aux_cls_weight=0.0,
-                neg_mine=False) -> tuple:
+                neg_mine=False, override=None, epoch=0) -> tuple:
     """返回 (avg_total_loss, avg_info_nce, avg_ce). ce 在未启用辅助时按 0 累计."""
     model.train()
     rng = np.random.default_rng(0)
@@ -49,8 +49,17 @@ def train_epoch(model, text_encoder, train, opt, batch_size=32,
         mods = _stack_mods(batch, avail, device)
         if not mods:
             continue
-        texts = [s.text.get("captions") or s.text.get("en", [""]) for s in batch]
-        texts = [t[0] if t else "" for t in texts]
+        if override is not None:
+            def _cap(s):
+                v = override.get(s.id) or override.get(s.id.split("__aug")[0])
+                if isinstance(v, list):
+                    phase = sum(ord(c) for c in s.id) % len(v)
+                    return v[(epoch + phase) % len(v)]
+                return v
+            texts = [_cap(s) for s in batch]
+        else:
+            texts = [s.text.get("captions") or s.text.get("en", [""]) for s in batch]
+            texts = [t[0] if t else "" for t in texts]
         text_emb = text_encoder.encode(texts).to(device)
         labels = torch.tensor([s.label for s in batch], device=device)
         info_nce, ce = model.forward_loss(mods, text_emb, avail,
@@ -85,13 +94,31 @@ def main():
                     help="checkpoint 名后缀: {out}/m6b_{tag}_seed0.pt (空=alignment_seed0.pt)")
     ap.add_argument("--cache-size", type=int, default=256,
                     help="lazy loader cache_size (batch=256 时传 4096 防 cache thrash)")
+    ap.add_argument("--base-only", action="store_true",
+                    help="只用 base 样本（剔除 __aug 变体），对齐 M5a 的 9205 base 协议")
+    ap.add_argument("--captions-override", default=None,
+                    help="JSONL {id,caption}: 覆盖训练文本（schema 臂）；变体 id 回退 base id")
+    ap.add_argument("--clip-model", default="/home/li/datasets/models/clip-vit-base-patch32",
+                    help="CLIP 权重路径（本地目录或 HF repo id）")
     args = ap.parse_args()
 
     torch.manual_seed(0)
     ds = load_dataset(args.dataset, cache_size=args.cache_size)
+    if args.base_only:
+        ds.train = [s for s in ds.train if "__aug" not in s.id]
+        print(f"[alignment] base-only: train={len(ds.train)}", flush=True)
+    override = None
+    if args.captions_override:
+        override = {}
+        for line in open(args.captions_override):
+            r = json.loads(line)
+            override[r["id"]] = r["caption"]
+        print(f"[alignment] captions override: {len(override)} ids "
+              f"({args.captions_override})", flush=True)
     device = args.device if args.device == "cuda" and torch.cuda.is_available() else "cpu"
     te_cls = TEXT_ENCODERS[args.text_encoder]
-    te = te_cls(dim=512) if args.text_encoder == "hash" else te_cls(device=device)
+    te = (te_cls(dim=512) if args.text_encoder == "hash"
+          else te_cls(model_name=args.clip_model, device=device))
     model = AlignmentModel(num_modalities=5, text_dim=te.dim,
                            num_classes=27 if args.aux_cls_weight > 0 else None).to(device)
 
@@ -135,7 +162,7 @@ def main():
         loss, nce, ce = train_epoch(model, te, ds.train, opt,
                                     batch_size=args.batch_size, device=device,
                                     aux_cls_weight=args.aux_cls_weight,
-                                    neg_mine=args.neg_mine)
+                                    neg_mine=args.neg_mine, override=override)
         ce_str = f", ce {ce:.4f}" if ce > 0 else ""
         print(f"[alignment] ep {ep} loss {loss:.4f} (info_nce {nce:.4f}{ce_str})", flush=True)
         if nce < best:                       # 按 info_nce 分量选 best (跨变体可比)

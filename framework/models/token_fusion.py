@@ -68,7 +68,8 @@ class TokenFusionModel(nn.Module, SensorModel):
     def __init__(self, num_classes: int = 27, d: int = D, n_layers: int = 2,
                  n_heads: int = 4, structured: dict = None, domain: dict = None,
                  domain_dims: dict = None, temporal: bool = False,
-                 motion_depth: bool = False, motion_depth_layernorm: bool = False):
+                 motion_depth: bool = False, motion_depth_layernorm: bool = False,
+                 adaptive_pool: bool = False):
         super().__init__()
         self.d = d
         self.num_classes = num_classes
@@ -87,6 +88,13 @@ class TokenFusionModel(nn.Module, SensorModel):
         # shared-space perturbation seen in leaderboard_motion_v4).
         self.motion_depth_layernorm = motion_depth_layernorm and motion_depth
         self.depth_norm = nn.LayerNorm(d) if self.motion_depth_layernorm else None
+        # adaptive_pool: mean-pool only AVAILABLE tokens after fusion
+        # (1 modality -> 16 tokens, 2 -> 32, ...). Fixes the only-* paradox:
+        # unconditioned pooling averages [MISSING]-token outputs over real
+        # tokens, diluting the present modality's signal (depth 0.474 probe
+        # -> 0.058 through fusion). Full-profile behavior is mathematically
+        # identical (mask all-ones == plain mean).
+        self.adaptive_pool = adaptive_pool
         self.encoders = _build_encoders(self.structured, self.domain, self.domain_dims,
                                         temporal=temporal, motion_depth=motion_depth)
         self.missing = nn.ParameterDict({
@@ -125,6 +133,12 @@ class TokenFusionModel(nn.Module, SensorModel):
         x = torch.cat(toks, dim=1)                                    # (B, 5*16, D)
         pad = torch.tensor(masks, device=x.device, dtype=torch.bool)[None].expand(B, -1)
         x = self.fusion(x, src_key_padding_mask=~pad)
+        if self.adaptive_pool:
+            # mean over AVAILABLE tokens only: 1 modality -> /16, 2 -> /32 ...
+            # (missing seats are excluded from the meeting minutes)
+            m_ = pad.unsqueeze(-1).to(x.dtype)
+            pooled = (x * m_).sum(dim=1) / m_.sum(dim=1).clamp(min=1.0)
+            return self.head(pooled)
         return self.head(x.mean(dim=1))
 
     # ---- SensorModel interface ----
@@ -293,6 +307,7 @@ class TokenFusionModel(nn.Module, SensorModel):
                     "temporal": self.temporal,
                     "motion_depth": self.motion_depth,
                     "motion_depth_layernorm": self.motion_depth_layernorm,
+                    "adaptive_pool": self.adaptive_pool,
                     "num_classes": self.num_classes}, path)
 
     @classmethod
@@ -307,13 +322,16 @@ class TokenFusionModel(nn.Module, SensorModel):
             temporal = ckpt.get("temporal", False)
             motion_depth = ckpt.get("motion_depth", False)
             motion_depth_layernorm = ckpt.get("motion_depth_layernorm", False)
+            adaptive_pool = ckpt.get("adaptive_pool", False)
         else:
             state, structured, num_classes = ckpt, {}, 27
             domain, domain_dims, temporal, motion_depth = {}, {}, False, False
             motion_depth_layernorm = False
+            adaptive_pool = False
         m = cls(num_classes=num_classes, structured=structured,
                 domain=domain, domain_dims=domain_dims, temporal=temporal,
                 motion_depth=motion_depth,
-                motion_depth_layernorm=motion_depth_layernorm)
+                motion_depth_layernorm=motion_depth_layernorm,
+                adaptive_pool=adaptive_pool)
         m.load_state_dict(state)
         return m

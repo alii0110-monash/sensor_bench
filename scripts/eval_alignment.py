@@ -55,12 +55,23 @@ def main():
                     help="checkpoint 使用原型头 (256→27→text_dim), 如 train_alignment --init-prototype")
     ap.add_argument("--diagnose-label", action="store_true",
                     help="输出诊断: 正样本平均 rank + 排前面的同 label 负样本数")
+    ap.add_argument("--captions-override", default=None,
+                    help="JSONL {id,caption}: 覆盖评测文本（schema 臂）")
+    ap.add_argument("--clip-model", default="/home/li/datasets/models/clip-vit-base-patch32",
+                    help="CLIP 权重路径（本地目录或 HF repo id）")
     args = ap.parse_args()
 
     ds = load_dataset(args.dataset)
     device = args.device if args.device == "cuda" and torch.cuda.is_available() else "cpu"
     te_cls = TEXT_ENCODERS[args.text_encoder]
-    te = te_cls(dim=512) if args.text_encoder == "hash" else te_cls(device=device)
+    te = (te_cls(dim=512) if args.text_encoder == "hash"
+          else te_cls(model_name=args.clip_model, device=device))
+    override = None
+    if args.captions_override:
+        override = {}
+        for line in open(args.captions_override):
+            r = json.loads(line)
+            override[r["id"]] = r["caption"]
 
     model = AlignmentModel(num_modalities=5, text_dim=te.dim)
     if args.prototype_head:
@@ -75,6 +86,11 @@ def main():
     held, _ = build_held_out_split(train_ids, fraction=args.fraction)
     held_bases = {i for i in held if "__aug" not in i}
     held_samples = [s for s in ds.train if s.id in held_bases]
+    if override is not None:
+        for s in held_samples:
+            cap = override.get(s.id) or override.get(s.id.split("__aug")[0])
+            if cap:
+                s.text = {"en": [cap]}
     res = evaluate_retrieval(model, te, held_samples, device=device)
     print(f"[eval] n={res['n']} r@1={res['r@1']:.4f} r@5={res['r@5']:.4f} r@10={res['r@10']:.4f} "
           f"tr@1={res['tr@1']:.4f} tr@5={res['tr@5']:.4f} tr@10={res['tr@10']:.4f}")

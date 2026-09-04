@@ -114,7 +114,8 @@ def evaluate_retrieval(model, text_encoder, samples, device="cuda",
                 if m in batch[0].modalities:
                     mods[m] = torch.stack(
                         [torch.from_numpy(s.modalities[m].data) for s in batch]).to(device)
-            texts = [s.text.get("en", [""])[0] for s in batch]
+            texts = [s.text.get("en") or s.text.get("captions") or [""] for s in batch]
+            texts = [t[0] if t else "" for t in texts]
             t = text_encoder.encode(texts).to(device)
             if mods:
                 toks = model.encode_modalities(mods, avail)

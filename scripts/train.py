@@ -46,6 +46,12 @@ def main():
                     help="with --motion-depth: LayerNorm on depth tokens after the "
                          "encoder, aligning ViT token statistics with other "
                          "modalities before the shared fusion transformer.")
+    ap.add_argument("--adaptive-pool", action="store_true",
+                    help="token_fusion only: mean-pool only AVAILABLE tokens after "
+                         "fusion (1 modality -> /16, 2 -> /32 ...). Fixes only-* "
+                         "profiles where [MISSING]-token outputs dilute the "
+                         "present modality's signal. Full-profile behavior is "
+                         "mathematically identical to unconditional mean.")
     ap.add_argument("--mode", choices=["auto", "eager", "lazy"], default=None,
                     help="dataset loading mode. Default auto; when --temporal, "
                          "defaults to lazy (full v4 raw does not fit the 18GB "
@@ -90,7 +96,8 @@ def main():
         model = MODELS[args.model](num_classes=27, structured=structured, domain=domain,
                                    domain_dims=domain_dims, temporal=args.temporal,
                                    motion_depth=args.motion_depth,
-                                   motion_depth_layernorm=args.motion_depth_layernorm)
+                                   motion_depth_layernorm=args.motion_depth_layernorm,
+                                   adaptive_pool=args.adaptive_pool)
     model.fit(ds.train, ds.val, cfg)
     print(f"trained {args.model} seed {args.seed} -> {cfg.out_dir}")
 
